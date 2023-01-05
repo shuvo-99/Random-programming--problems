@@ -892,10 +892,46 @@
 # Output:
 # 123454321
 
-def show_palindrome(n):
-  for i in range(1,n+1):
-    print(i,end='')
-  for j in range(n-1,0,-1):
-    print(j,end='')
+# def show_palindrome(n):
+#   for i in range(1,n+1):
+#     print(i,end='')
+#   for j in range(n-1,0,-1):
+#     print(j,end='')
 
-show_palindrome(5)
+# show_palindrome(5)
+
+# ----------------------------------------------------------------------------------------------------------------------------------
+
+# Write a function called show_palindromic_triangle that takes a number as a argument and prints a Palindromic Triangle in the function.
+
+# Input = 3
+
+# Output:
+#     1
+#   1 2 1
+# 1 2 3 2 1
+
+def show_palindrome(x):
+  no_digit = 1
+  no_space = x-1
+
+  for lines in range(1,x+1):
+    values = 0
+
+    for j in range(1,no_space+1):
+      print(' ',end='')
+
+    for j in range(1,no_digit + 1):
+      if (j<=lines):
+        values = values + 1
+
+      else:
+        values = values-1
+      
+      print(values,end='')
+
+    print()
+    no_digit = no_digit + 2
+    no_space = no_space - 1
+show_palindrome(3)
+
