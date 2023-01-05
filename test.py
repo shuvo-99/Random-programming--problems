@@ -660,160 +660,180 @@
 # user2.UserActivity("Comment")
 # print("9===========================")
 # print(user2.userDetail())
+# ------------------------------------------------------------------------------------------------------------
+# import numpy as np
+# # import pandas as pd
+# cnf_mat = np.array([[15,1,12,18,4],[ 1 ,44,  4,  0 , 1],[ 6,  2, 33,  6,  3],[ 7 , 2 , 6, 33,  2],[10,  5, 11, 16,  8]])
+# print(cnf_mat)
 
-import numpy as np
-# import pandas as pd
-cnf_mat = np.array([[15,1,12,18,4],[ 1 ,44,  4,  0 , 1],[ 6,  2, 33,  6,  3],[ 7 , 2 , 6, 33,  2],[10,  5, 11, 16,  8]])
-print(cnf_mat)
-
-def calc(cnf_matrix):
-  FP = cnf_matrix.sum(axis=0) - np.diag(cnf_matrix) 
-  FN = cnf_matrix.sum(axis=1) - np.diag(cnf_matrix)
-  TP = np.diag(cnf_matrix)
-  TN = cnf_matrix.sum() - (FP + FN + TP)
-  FP = FP.astype(float)
-  FN = FN.astype(float)
-  TP = TP.astype(float)
-  TN = TN.astype(float)
-  print('FP = ',FP)
-  print('FN = ',FN)
-  print('TP = ',TP)
-  print('TN = ',TN)
+# def calc(cnf_matrix):
+#   FP = cnf_matrix.sum(axis=0) - np.diag(cnf_matrix) 
+#   FN = cnf_matrix.sum(axis=1) - np.diag(cnf_matrix)
+#   TP = np.diag(cnf_matrix)
+#   TN = cnf_matrix.sum() - (FP + FN + TP)
+#   FP = FP.astype(float)
+#   FN = FN.astype(float)
+#   TP = TP.astype(float)
+#   TN = TN.astype(float)
+#   print('FP = ',FP)
+#   print('FN = ',FN)
+#   print('TP = ',TP)
+#   print('TN = ',TN)
   # Sensitivity, hit rate, recall, or true positive rate
-  TPR = TP/(TP+FN)
+  # TPR = TP/(TP+FN)
 
   # Specificity or true negative rate
-  TNR = TN/(TN+FP) 
+  # TNR = TN/(TN+FP) 
 
   # Precision or positive predictive value
-  PPV = TP/(TP+FP)
+  # PPV = TP/(TP+FP)
 
-  # Negative predictive value
-  NPV = TN/(TN+FN)
+  # # Negative predictive value
+  # NPV = TN/(TN+FN)
 
-  # F1 Score
-  F1 = 2*((PPV)*(TPR)/(PPV + TPR))  
+  # # F1 Score
+  # F1 = 2*((PPV)*(TPR)/(PPV + TPR))  
 
-  # Overall accuracy for each class
-  ACC = (TP+TN)/(TP+FP+FN+TN)
-  print('Sensitivity = ',TPR)
-  print('Specificity = ',TNR)
-  print('PPV = ',PPV)
-  print('NPV = ',NPV)
-  print('F1 Score = ',F1)
-  print('Accuray = ',ACC)
-  
-  return TPR, TNR, PPV, NPV, F1
+  # # Overall accuracy for each class
+  # ACC = (TP+TN)/(TP+FP+FN+TN)
   # print('Sensitivity = ',TPR)
   # print('Specificity = ',TNR)
   # print('PPV = ',PPV)
   # print('NPV = ',NPV)
   # print('F1 Score = ',F1)
   # print('Accuray = ',ACC)
-TPR, TNR, PPV, NPV, F1= calc(cnf_mat)
+#   return TPR, TNR, PPV, NPV, F1
+#   # print('Sensitivity = ',TPR)
+#   # print('Specificity = ',TNR)
+#   # print('PPV = ',PPV)
+#   # print('NPV = ',NPV)
+#   # print('F1 Score = ',F1)
+#   # print('Accuray = ',ACC)
+# TPR, TNR, PPV, NPV, F1= calc(cnf_mat)
 
-def formTable(a):
+# def formTable(a):
   
 
+# #   for i in range(len(a)):
+# #     print(i)
+# #   print('',end='')
 #   for i in range(len(a)):
-#     print(i)
-#   print('',end='')
-  for i in range(len(a)):
-    if i == 0:
-      first.append(round(a[i],2))
-    if i == 1:
-      second.append(round(a[i],2))
-    if i == 2:
-      third.append(round(a[i],2))
-    if i == 3:
-      fourth.append(round(a[i],2))
-    if i == 4:
-      fifth.append(round(a[i],2))
+#     if i == 0:
+#       first.append(round(a[i],2))
+#     if i == 1:
+#       second.append(round(a[i],2))
+#     if i == 2:
+#       third.append(round(a[i],2))
+#     if i == 3:
+#       fourth.append(round(a[i],2))
+#     if i == 4:
+#       fifth.append(round(a[i],2))
 
-first=[]
-second = []
-third = []
-fourth = []
-fifth = []
-t=[]
+# first=[]
+# second = []
+# third = []
+# fourth = []
+# fifth = []
+# t=[]
 
-formTable(TPR)
-formTable(TNR)
-formTable(PPV)
-formTable(NPV)
-formTable(F1)
+# formTable(TPR)
+# formTable(TNR)
+# formTable(PPV)
+# formTable(NPV)
+# formTable(F1)
 
-t.append(first)
-t.append(second)
-t.append(third)
-t.append(fourth)
-t.append(fifth)
-print(t)
+# t.append(first)
+# t.append(second)
+# t.append(third)
+# t.append(fourth)
+# t.append(fifth)
+# print(t)
 
-# df = pd.DataFrame(t, columns = ['Sensitivity', 'Specificity', 'PPV', 'NPV', 'F1 Score', 'Accuray'], index=['0', '1', '2', '3', '4','avg'])
-# print(df)
+# # df = pd.DataFrame(t, columns = ['Sensitivity', 'Specificity', 'PPV', 'NPV', 'F1 Score', 'Accuray'], index=['0', '1', '2', '3', '4','avg'])
+# # print(df)
 
-slst=[]
-slst_ML2=[]
-slst_ML2_t6 =[]
-def formt(t):
-  s0=0
-  s1=0
-  s2=0
-  s3=0
-  s4=0
-  s5=0
+# slst=[]
+# slst_ML2=[]
+# slst_ML2_t6 =[]
+# def formt(t):
+#   s0=0
+#   s1=0
+#   s2=0
+#   s3=0
+#   s4=0
+#   s5=0
 
-  for i in range(len(t)+1):
-    for j in range(len(t)):
-      if i!=0:
-        break
-      else:
-        s0+= t[j][i]
-      avg_s0 = s0/len(t)
-    for j in range(len(t)):
-      if i!=1:
-        break
-      else:
-        s1+= t[j][i]
-      avg_s1 = s1/len(t)
-    for j in range(len(t)):
-      if i!=2:
-        break
-      else:
-        s2+= t[j][i]
-      avg_s2 = s2/len(t)
-    for j in range(len(t)):
-      if i!=3:
-        break
-      else:
-        s3+= t[j][i]
-      avg_s3 = s3/len(t)
-    for j in range(len(t)):
-      if i!=4:
-        break
-      else:
-        s4+= t[j][i]
-      avg_s4 = s4/len(t)
-    for j in range(len(t)):
-      if i!=5:
-        break
-      else:
-        s5+= t[j][i]
-      avg_s5 = s5/len(t)
+#   for i in range(len(t)+1):
+#     for j in range(len(t)):
+#       if i!=0:
+#         break
+#       else:
+#         s0+= t[j][i]
+#       avg_s0 = s0/len(t)
+#     for j in range(len(t)):
+#       if i!=1:
+#         break
+#       else:
+#         s1+= t[j][i]
+#       avg_s1 = s1/len(t)
+#     for j in range(len(t)):
+#       if i!=2:
+#         break
+#       else:
+#         s2+= t[j][i]
+#       avg_s2 = s2/len(t)
+#     for j in range(len(t)):
+#       if i!=3:
+#         break
+#       else:
+#         s3+= t[j][i]
+#       avg_s3 = s3/len(t)
+#     for j in range(len(t)):
+#       if i!=4:
+#         break
+#       else:
+#         s4+= t[j][i]
+#       avg_s4 = s4/len(t)
+#     for j in range(len(t)):
+#       if i!=5:
+#         break
+#       else:
+#         s5+= t[j][i]
+#       avg_s5 = s5/len(t)
   
-  slst.append(round(avg_s0,2))
-  slst.append(round(avg_s1,2))
-  slst.append(round(avg_s2,2))
-  slst.append(round(avg_s3,2))
-  slst.append(round(avg_s4,2))
-  slst.append(round(avg_s5,2))
-  # print(slst)
-  t.append(slst)
-  return t
-formt(t)
+#   slst.append(round(avg_s0,2))
+#   slst.append(round(avg_s1,2))
+#   slst.append(round(avg_s2,2))
+#   slst.append(round(avg_s3,2))
+#   slst.append(round(avg_s4,2))
+#   slst.append(round(avg_s5,2))
+#   # print(slst)
+#   t.append(slst)
+#   return t
+# formt(t)
 
 # t1 = np.array(t)
 # print(t1)
 # t1.transpose()
 # print(t1)
+
+# ------------------------------------------------------------------------------------------------------------
+
+# Write a python function that takes the limit as an argument of the Fibonacci series and prints till that limit.
+
+# Function Call:
+# fibonacci(10)
+
+# Output:
+# 0 1 1 2 3 5 8
+
+def fibonacci(arg):
+  a= 0
+  b= 1
+  c= a+b
+  while a<=arg:
+    print(a,end=' ')
+    a=b
+    b=c
+    c=a+b
+fibonacci(10)
