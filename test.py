@@ -869,16 +869,33 @@
 # 50 Taka: 1 note(s)
 # 1 Taka: 1 note(s)
 
-num = int(input('Enter the value = '))
-def splitfunc(n):
-  money_list = [500,100,50,20,10,5,2,1]
-  for i in range(len(money_list)):
-    note = n//money_list[i]
-    n = n%money_list[i]
+# num = int(input('Enter the value = '))
+# def splitfunc(n):
+#   money_list = [500,100,50,20,10,5,2,1]
+#   for i in range(len(money_list)):
+#     note = n//money_list[i]
+#     n = n%money_list[i]
 
-    if note!=0:
-      print(money_list[i],'taka :',note,'notes(s)')
+#     if note!=0:
+#       print(money_list[i],'taka :',note,'notes(s)')
 
 
-splitfunc(num)
+# splitfunc(num)
 
+# ----------------------------------------------------------------------------------------------------------------------------------
+
+# Write a function called show_palindrome that takes a number as an argument and then returns a palindrome string. 
+
+# Example1:
+# Input = 5
+
+# Output:
+# 123454321
+
+def show_palindrome(n):
+  for i in range(1,n+1):
+    print(i,end='')
+  for j in range(n-1,0,-1):
+    print(j,end='')
+
+show_palindrome(5)
