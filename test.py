@@ -827,13 +827,33 @@
 # Output:
 # 0 1 1 2 3 5 8
 
-def fibonacci(arg):
-  a= 0
-  b= 1
-  c= a+b
-  while a<=arg:
-    print(a,end=' ')
-    a=b
-    b=c
-    c=a+b
-fibonacci(10)
+# def fibonacci(arg):
+#   a= 0
+#   b= 1
+#   c= a+b
+#   while a<=arg:
+#     print(a,end=' ')
+#     a=b
+#     b=c
+#     c=a+b
+# fibonacci(10)
+
+# ------------------------------------------------------------------------------------------------------------------------
+
+#Take an input and calculate the total number of years, months and days as output.
+
+# Input:
+# 4330
+
+# Output:
+# 11 years, 10 months and 15 days
+
+num = int(input('Enter value = '))
+def findYear(n):
+  year = n//365
+  remainder1 = n%365
+  month = remainder1//30
+  day = remainder1%30
+  print(year,'years',month,'months',day,'days')
+
+findYear(num)
