@@ -848,12 +848,37 @@
 # Output:
 # 11 years, 10 months and 15 days
 
-num = int(input('Enter value = '))
-def findYear(n):
-  year = n//365
-  remainder1 = n%365
-  month = remainder1//30
-  day = remainder1%30
-  print(year,'years',month,'months',day,'days')
+# num = int(input('Enter value = '))
+# def findYear(n):
+#   year = n//365
+#   remainder1 = n%365
+#   month = remainder1//30
+#   day = remainder1%30
+#   print(year,'years',month,'months',day,'days')
 
-findYear(num)
+# findYear(num)
+
+# -------------------------------------------------------------------------------------------------------------------------------
+
+# Take an input and calculate how that can be split into 500, 100, 50, 20, 10, 5, 2, and 1 taka notes.
+
+# Input = 151
+
+# Output =
+# 100 Taka: 1 note(s)
+# 50 Taka: 1 note(s)
+# 1 Taka: 1 note(s)
+
+num = int(input('Enter the value = '))
+def splitfunc(n):
+  money_list = [500,100,50,20,10,5,2,1]
+  for i in range(len(money_list)):
+    note = n//money_list[i]
+    n = n%money_list[i]
+
+    if note!=0:
+      print(money_list[i],'taka :',note,'notes(s)')
+
+
+splitfunc(num)
+
