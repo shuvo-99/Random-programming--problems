@@ -911,27 +911,54 @@
 #   1 2 1
 # 1 2 3 2 1
 
-def show_palindrome(x):
-  no_digit = 1
-  no_space = x-1
+# def show_palindrome(x):
+#   no_digit = 1
+#   no_space = x-1
 
-  for lines in range(1,x+1):
-    values = 0
+#   for lines in range(1,x+1):
+#     values = 0
 
-    for j in range(1,no_space+1):
-      print(' ',end='')
+#     for j in range(1,no_space+1):
+#       print(' ',end='')
 
-    for j in range(1,no_digit + 1):
-      if (j<=lines):
-        values = values + 1
+#     for j in range(1,no_digit + 1):
+#       if (j<=lines):
+#         values = values + 1
 
-      else:
-        values = values-1
+#       else:
+#         values = values-1
       
-      print(values,end='')
+#       print(values,end='')
 
-    print()
-    no_digit = no_digit + 2
-    no_space = no_space - 1
-show_palindrome(3)
+#     print()
+#     no_digit = no_digit + 2
+#     no_space = no_space - 1
+# show_palindrome(3)
+
+# Takes a list as an argument & Create a new list where each element can be present at max 2 times. 
+# Print the number of elements removed from the given list
+
+# Input :
+# [1, 2, 3, 3, 3, 3, 4, 5, 8, 8]
+# Output:
+# Removed: 2
+# [1, 2, 3, 3, 4, 5, 8, 8]
+
+def valid_element(n):
+  remove = 0
+  new_list = []
+  for i in n:
+    if i not in new_list:
+      new_list.append(i)
+
+    elif i in new_list:
+      repeat_count  = new_list.count(i)
+      if repeat_count< 2 :
+        new_list.append(i)
+      else:
+        remove = remove + 1
+  print('Remove = ', remove)
+  print(new_list)
+
+valid_element([1, 2, 3, 3, 3, 3, 4, 5, 8, 8])
 
