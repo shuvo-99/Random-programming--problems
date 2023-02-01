@@ -944,21 +944,58 @@
 # Removed: 2
 # [1, 2, 3, 3, 4, 5, 8, 8]
 
-def valid_element(n):
-  remove = 0
-  new_list = []
-  for i in n:
-    if i not in new_list:
-      new_list.append(i)
+# def valid_element(n):
+#   remove = 0
+#   new_list = []
+#   for i in n:
+#     if i not in new_list:
+#       new_list.append(i)
 
-    elif i in new_list:
-      repeat_count  = new_list.count(i)
-      if repeat_count< 2 :
-        new_list.append(i)
-      else:
-        remove = remove + 1
-  print('Remove = ', remove)
-  print(new_list)
+#     elif i in new_list:
+#       repeat_count  = new_list.count(i)
+#       if repeat_count< 2 :
+#         new_list.append(i)
+#       else:
+#         remove = remove + 1
+#   print('Remove = ', remove)
+#   print(new_list)
 
-valid_element([1, 2, 3, 3, 3, 3, 4, 5, 8, 8])
+# valid_element([1, 2, 3, 3, 3, 3, 4, 5, 8, 8])
 
+
+
+# num = int(input())
+# add = []
+# res = 0
+# for i in range(num):
+#   list1 = [j for j in input().split(" ")]
+  
+#   print(list1)
+#   for i in list1:
+#     res += int(i)
+#   add.append(res)
+#   print(add)
+#   max = add[0]
+#   for i in range(len(add)):
+#     if add[i]>max:
+#       index = i
+
+# print(max)
+# print(list1[index])
+
+# inp = int(input(''))
+# res = 0
+# highest = 0
+# lst2=[]
+# for i in range(inp):
+#   lst=input().split(' ')
+#   for j in range(len(lst)):
+#     res += int(lst[j])
+#   if res>highest:
+#     highest = res
+#     lst2 = lst
+#   res = 0
+# print(highest)
+# print(lst2)
+
+# print(23//4)
