@@ -999,3 +999,35 @@
 # print(lst2)
 
 # print(23//4)
+
+var="ha, hermionea"
+var=var.split(",")
+string=""
+if len(var[0])<len(var[1]):
+  var1=var[0]
+  var2=var[1]
+  for i in var1:
+    if i in var2:
+      string+=i
+  for j in var2:
+    if j in var1:
+      string+=j
+
+if string=="" :
+  print("Nothing in common.")
+else:
+  print(string)
+
+# else:
+#   var1=var[1]
+#   var2=var[0]
+# print(var1)
+# print(var2)
+# for j in var2:
+#   if j in var1:
+#     # if j==i:
+#     string+=j
+
+
+
+
