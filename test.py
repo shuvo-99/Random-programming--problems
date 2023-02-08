@@ -1000,23 +1000,23 @@
 
 # print(23//4)
 
-var="ha, hermionea"
-var=var.split(",")
-string=""
-if len(var[0])<len(var[1]):
-  var1=var[0]
-  var2=var[1]
-  for i in var1:
-    if i in var2:
-      string+=i
-  for j in var2:
-    if j in var1:
-      string+=j
+# var="ha, hermionea"
+# var=var.split(",")
+# string=""
+# if len(var[0])<len(var[1]):
+#   var1=var[0]
+#   var2=var[1]
+#   for i in var1:
+#     if i in var2:
+#       string+=i
+#   for j in var2:
+#     if j in var1:
+#       string+=j
 
-if string=="" :
-  print("Nothing in common.")
-else:
-  print(string)
+# if string=="" :
+#   print("Nothing in common.")
+# else:
+#   print(string)
 
 # else:
 #   var1=var[1]
@@ -1028,6 +1028,17 @@ else:
 #     # if j==i:
 #     string+=j
 
+# print('h')
 
+def capitalized(sen) :
+    res=""
+    for i in range(len(sen)) :
+        if i==0 or (i>1 and (sen[i-2]=="." or sen[i-2]=="!" or sen[i-2]=="?" )) :
+          res+=chr(ord(sen[i])-32)
+        else :
+          res+=str(sen[i])
+    return res
+sen='my favourite animal is a dog. a dog has sharp teeth so that it can eat flesh very easily. do you know my pet dog’s name? i love my pet very much.'
+print(capitalized(sen))
 
 
