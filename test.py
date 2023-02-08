@@ -1030,15 +1030,29 @@
 
 # print('h')
 
-def capitalized(sen) :
-    res=""
-    for i in range(len(sen)) :
-        if i==0 or (i>1 and (sen[i-2]=="." or sen[i-2]=="!" or sen[i-2]=="?" )) :
-          res+=chr(ord(sen[i])-32)
-        else :
-          res+=str(sen[i])
-    return res
-sen='my favourite animal is a dog. a dog has sharp teeth so that it can eat flesh very easily. do you know my pet dog’s name? i love my pet very much.'
-print(capitalized(sen))
+# def capitalized(sen) :
+#     res=""
+#     for i in range(len(sen)) :
+#         if i==0 or (i>1 and (sen[i-2]=="." or sen[i-2]=="!" or sen[i-2]=="?" )) :
+#           res+=chr(ord(sen[i])-32)
+#         else :
+#           res+=str(sen[i])
+#     return res
+# sen='my favourite animal is a dog. a dog has sharp teeth so that it can eat flesh very easily. do you know my pet dog’s name? i love my pet very much.'
+# print(capitalized(sen))
 
+class Point:
+  def __init__(self, x=0, y=0):
+    self.x = x
+    self.y = y
+  def __str__(self):
+    return "({0},{1})".format(self.x, self.y)
+  # def __add__(self, other):
+  #   x = self.x + other.x
+  #   y = self.y + other.y
+  #   return Point(x, y)
 
+p1 = Point(1, 2)
+# p2 = Point(2, 3)
+# print(p1+p2)
+print(p1)
