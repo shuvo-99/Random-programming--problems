@@ -1090,32 +1090,48 @@
 #       if i in j:
 #         print(str(key)*c,end='')
 
-p = 5
-q = 6
-r = 9
-sum = 0
-if (p < 12):
-    print(r + 2)
-else:
-    print(r + p)
-if (q > 20):
-    print(r + 19)
-elif (q <= 6):
-    print(q + 3)
-else:
-    print(p + q + r)
-if (r > 15):
-    print(r)
-elif (r == 0):
-    print(p + q)
-else:
-    print(p)
-if (sum != 0):
-    print(3)
-else:
-    print(sum + 32)
-if (p>0 and r<10):
-    print(p+r)
-else:
-    print(p-r)
+# p = 5
+# q = 6
+# r = 9
+# sum = 0
+# if (p < 12):
+#     print(r + 2)
+# else:
+#     print(r + p)
+# if (q > 20):
+#     print(r + 19)
+# elif (q <= 6):
+#     print(q + 3)
+# else:
+#     print(p + q + r)
+# if (r > 15):
+#     print(r)
+# elif (r == 0):
+#     print(p + q)
+# else:
+#     print(p)
+# if (sum != 0):
+#     print(3)
+# else:
+#     print(sum + 32)
+# if (p>0 and r<10):
+#     print(p+r)
+# else:
+#     print(p-r)
 
+string = '12'         
+c = 0
+number = '0123456789' 
+for i in string:        
+    # if (i>='A'and i<='Z') or (i>='a'and i<='z'):  
+    #     word += 1            
+    if i in number: 
+        c += 1
+if c == len(string):
+    print('NUMBER')
+
+elif c==0:
+    print('Word')
+
+elif c <= len(string):
+    print('Mixed')
