@@ -1057,20 +1057,20 @@
 # print(p1+p2)
 # print(p1)
 
-dict_1 = {
-1:'.,?!:',
-2:'ABC',
-3:'DEF',
-4:'GHI',
-5:'JKL',
-6:'MNO',
-7:'PQRS',
-8:'TUV',
-9:'WXYZ',
-0:' '
-}
+# dict_1 = {
+# 1:'.,?!:',
+# 2:'ABC',
+# 3:'DEF',
+# 4:'GHI',
+# 5:'JKL',
+# 6:'MNO',
+# 7:'PQRS',
+# 8:'TUV',
+# 9:'WXYZ',
+# 0:' '
+# }
 
-text = input("Please input a text = ").upper()
+# text = input("Please input a text = ").upper()
 
 # for index in range(len(text)):
 #     for key,value in dict_1.items():
@@ -1082,10 +1082,40 @@ text = input("Please input a text = ").upper()
 #                     b = str(key)*(i+1)
 #                     print(b,end='')
 
-for i in text:
-  for key,value in dict_1.items():
-    c=0
-    for j in value:
-      c+=1
-      if i in j:
-        print(str(key)*c,end='')
+# for i in text:
+#   for key,value in dict_1.items():
+#     c=0
+#     for j in value:
+#       c+=1
+#       if i in j:
+#         print(str(key)*c,end='')
+
+p = 5
+q = 6
+r = 9
+sum = 0
+if (p < 12):
+    print(r + 2)
+else:
+    print(r + p)
+if (q > 20):
+    print(r + 19)
+elif (q <= 6):
+    print(q + 3)
+else:
+    print(p + q + r)
+if (r > 15):
+    print(r)
+elif (r == 0):
+    print(p + q)
+else:
+    print(p)
+if (sum != 0):
+    print(3)
+else:
+    print(sum + 32)
+if (p>0 and r<10):
+    print(p+r)
+else:
+    print(p-r)
+
