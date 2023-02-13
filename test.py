@@ -1198,32 +1198,39 @@
 # obj1.methodB()
 # obj1.methodC()
 
-string = 'HOusE'
-upper = 0
-lower = 0 
-up= ''
-l = ''
-for i in string:        
-    if (i>='A'and i<='Z'): 
-      upper += 1    
-      up+=i 
-    else:
-      up+=i.upper()    
-    if (i>='a'and i<='z'): 
-      lower += 1
-      l+=i 
-    else:
-      l+=i.lower() 
-if upper > lower :
-    print(up)
-else:
-    print(l)
+# string = 'HOusE'
+# upper = 0
+# lower = 0 
+# up= ''
+# l = ''
+# for i in string:        
+#     if (i>='A'and i<='Z'): 
+#       upper += 1    
+#       up+=i 
+#     else:
+#       up+=i.upper()    
+#     if (i>='a'and i<='z'): 
+#       lower += 1
+#       l+=i 
+#     else:
+#       l+=i.lower() 
+# if upper > lower :
+#     print(up)
+# else:
+#     print(l)
 
-# string_1 = 'harry'
-# string_2 = 'hermioneh'
-# final_string_1 = ''
-# final_string_2 = ''
-# count = 0
+string_1 = 'harry'
+string_2 = 'hermione'
+final_string_1 = ''
+final_string_2 = ''
+count = 0
+l = ['harry','hermione']
+for i in l:
+  for j in i:
+    if (j in l[0] and j in l[1]):
+      final_string_1+=j
+if (len(final_string_1)>1):
+  print(final_string_1)
 
 # for i in string_1:
     
