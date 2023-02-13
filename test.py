@@ -1135,19 +1135,38 @@
 
 # elif c <= len(string):
 #     print('Mixed')
-u = 'baNgladEsh'
-indx1=0
-indx2=0
-for i in u:
-  if 65<=ord(i)<=90:
-    break
-  indx1+=1
-for j in u:
-  if 65<=ord(j)<=90:
-    indx3=indx2
-  indx2+=1
-# indx1 = 1
-if indx1==indx2:
-  print('blank')
-else:
-  print(u[indx1+1:indx3])
+# u = 'baNgladEsh'
+# indx1=0
+# indx2=0
+# for i in u:
+#   if 65<=ord(i)<=90:
+#     break
+#   indx1+=1
+# for j in u:
+#   if 65<=ord(j)<=90:
+#     indx3=indx2
+#   indx2+=1
+# # indx1 = 1
+# if indx1==indx2:
+#   print('blank')
+# else:
+#   print(u[indx1+1:indx3])
+lst1 = []
+while True:
+  user_imp = input("Enter the list:")
+  if user_imp != "STOP":
+      lst1= user_imp.split(' ')
+  else:
+      break
+  list2=[]
+  sum=0
+  for i in range(1,len(lst1)):
+    diff=int(lst1[i-1])-int(lst1[i])
+    list2.append(abs(diff))
+  for j in list2:
+    sum+=j
+
+  if (len(lst1)*(len(lst1)-1))/2 == sum:
+    print('UB')
+  else:
+    print('no')
