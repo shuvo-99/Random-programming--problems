@@ -1198,23 +1198,48 @@
 # obj1.methodB()
 # obj1.methodC()
 
-string = 'HOusE'
-upper = 0
-lower = 0 
-up= ''
-l = ''
-for i in string:        
-    if (i>='A'and i<='Z'): 
-      upper += 1    
-      up+=i 
-    else:
-      up+=i.upper()    
-    if (i>='a'and i<='z'): 
-      lower += 1
-      l+=i 
-    else:
-      l+=i.lower() 
-if upper > lower :
-    print(up)
+# string = 'HOusE'
+# upper = 0
+# lower = 0 
+# up= ''
+# l = ''
+# for i in string:        
+#     if (i>='A'and i<='Z'): 
+#       upper += 1    
+#       up+=i 
+#     else:
+#       up+=i.upper()    
+#     if (i>='a'and i<='z'): 
+#       lower += 1
+#       l+=i 
+#     else:
+#       l+=i.lower() 
+# if upper > lower :
+#     print(up)
+# else:
+#     print(l)
+
+string_1 = 'harry'
+string_2 = 'hermioneh'
+final_string_1 = ''
+final_string_2 = ''
+count = 0
+
+for i in string_1:
+    
+    for j in string_2:
+      if i==j:
+        final_string_1 += i 
+        count+=1
+    
+for i in string_2:
+   
+    if i in string_1:
+        final_string_2 += i
+            
+final_string = final_string_1 + final_string_2
+            
+if(count==0):
+    print("Nothing in common.")
 else:
-    print(l)
+    print(final_string)
