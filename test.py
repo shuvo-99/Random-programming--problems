@@ -1151,22 +1151,49 @@
 #   print('blank')
 # else:
 #   print(u[indx1+1:indx3])
-lst1 = []
-while True:
-  user_imp = input("Enter the list:")
-  if user_imp != "STOP":
-      lst1= user_imp.split(' ')
-  else:
-      break
-  list2=[]
-  sum=0
-  for i in range(1,len(lst1)):
-    diff=int(lst1[i-1])-int(lst1[i])
-    list2.append(abs(diff))
-  for j in list2:
-    sum+=j
+# lst1 = []
+# while True:
+#   user_imp = input("Enter the list:")
+#   if user_imp != "STOP":
+#       lst1= user_imp.split(' ')
+#   else:
+#       break
+#   list2=[]
+#   sum=0
+#   for i in range(1,len(lst1)):
+#     diff=int(lst1[i-1])-int(lst1[i])
+#     list2.append(abs(diff))
+#   for j in list2:
+#     sum+=j
 
-  if (len(lst1)*(len(lst1)-1))/2 == sum:
-    print('UB')
-  else:
-    print('no')
+#   if (len(lst1)*(len(lst1)-1))/2 == sum:
+#     print('UB')
+#   else:
+#     print('no')
+
+class Easy:
+  def __init__(self, x, y ):
+    self.m = y 
+    self.n = x 
+    self.a = []
+
+  def methodA(self, *args):
+    if len(args) == 0:
+      self.m += self.n
+      self.a.append(True)
+      print(self.a[0], self.m)
+    else:
+      self.a.append(args[0])
+      self.methodB(self.m)
+
+  def methodB(self,a):
+    print(self.a[-1], a)
+
+
+  def methodC(self):
+    print(self.a[len(self.a)-1])
+
+obj1 = Easy(2 , 3)
+obj1.methodA(1)
+obj1.methodB()
+obj1.methodC()
