@@ -1219,27 +1219,40 @@
 # else:
 #     print(l)
 
-string_1 = 'harry'
-string_2 = 'hermioneh'
-final_string_1 = ''
-final_string_2 = ''
-count = 0
+# string_1 = 'harry'
+# string_2 = 'hermioneh'
+# final_string_1 = ''
+# final_string_2 = ''
+# count = 0
 
-for i in string_1:
+# for i in string_1:
     
-    for j in string_2:
-      if i==j:
-        final_string_1 += i 
-        count+=1
+#     for j in string_2:
+#       if i==j:
+#         final_string_1 += i 
+#         count+=1
     
-for i in string_2:
+# for i in string_2:
    
-    if i in string_1:
-        final_string_2 += i
+#     if i in string_1:
+#         final_string_2 += i
             
-final_string = final_string_1 + final_string_2
+# final_string = final_string_1 + final_string_2
             
-if(count==0):
-    print("Nothing in common.")
-else:
-    print(final_string)
+# if(count==0):
+#     print("Nothing in common.")
+# else:
+#     print(final_string)
+
+def maxt(n,k,y):
+  y=sorted(y,reverse=True)
+  c=0
+  for i in range(0,n,3):
+    if y[i]>=k:
+      c+=1
+    else:
+      break
+  return c
+
+y=list(map(int,input().split()))
+print(maxt(5,2,y))
