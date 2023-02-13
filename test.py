@@ -1119,19 +1119,35 @@
 # else:
 #     print(p-r)
 
-string = '12'         
-c = 0
-number = '0123456789' 
-for i in string:        
-    # if (i>='A'and i<='Z') or (i>='a'and i<='z'):  
-    #     word += 1            
-    if i in number: 
-        c += 1
-if c == len(string):
-    print('NUMBER')
+# string = '12'         
+# c = 0
+# number = '0123456789' 
+# for i in string:        
+#     # if (i>='A'and i<='Z') or (i>='a'and i<='z'):  
+#     #     word += 1            
+#     if i in number: 
+#         c += 1
+# if c == len(string):
+#     print('NUMBER')
 
-elif c==0:
-    print('Word')
+# elif c==0:
+#     print('Word')
 
-elif c <= len(string):
-    print('Mixed')
+# elif c <= len(string):
+#     print('Mixed')
+u = 'baNgladEsh'
+indx1=0
+indx2=0
+for i in u:
+  if 65<=ord(i)<=90:
+    break
+  indx1+=1
+for j in u:
+  if 65<=ord(j)<=90:
+    indx3=indx2
+  indx2+=1
+# indx1 = 1
+if indx1==indx2:
+  print('blank')
+else:
+  print(u[indx1+1:indx3])
