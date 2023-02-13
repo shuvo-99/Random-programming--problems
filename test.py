@@ -1219,18 +1219,18 @@
 # else:
 #     print(l)
 
-string_1 = 'harry'
-string_2 = 'hermione'
-final_string_1 = ''
-final_string_2 = ''
-count = 0
-l = ['harry','hermione']
-for i in l:
-  for j in i:
-    if (j in l[0] and j in l[1]):
-      final_string_1+=j
-if (len(final_string_1)>1):
-  print(final_string_1)
+# string_1 = 'harry'
+# string_2 = 'hermione'
+# final_string_1 = ''
+# final_string_2 = ''
+# count = 0
+# l = ['harry','hermione']
+# for i in l:
+#   for j in i:
+#     if (j in l[0] and j in l[1]):
+#       final_string_1+=j
+# if (len(final_string_1)>1):
+#   print(final_string_1)
 
 # for i in string_1:
     
@@ -1263,3 +1263,10 @@ if (len(final_string_1)>1):
 
 # y=list(map(int,input().split()))
 # print(maxt(5,2,y))
+c=0
+l=[10,20,10,20,30,50,90]
+for i in l:
+  for j in l:
+    if i==j:
+      c+=1
+  print(i,'-',c)
