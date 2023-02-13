@@ -1171,29 +1171,50 @@
 #   else:
 #     print('no')
 
-class Easy:
-  def __init__(self, x, y ):
-    self.m = y 
-    self.n = x 
-    self.a = []
+# class Easy:
+#   def __init__(self, x, y ):
+#     self.m = y 
+#     self.n = x 
+#     self.a = []
 
-  def methodA(self, *args):
-    if len(args) == 0:
-      self.m += self.n
-      self.a.append(True)
-      print(self.a[0], self.m)
+#   def methodA(self, *args):
+#     if len(args) == 0:
+#       self.m += self.n
+#       self.a.append(True)
+#       print(self.a[0], self.m)
+#     else:
+#       self.a.append(args[0])
+#       self.methodB(self.m)
+
+#   def methodB(self,a):
+#     print(self.a[-1], a)
+
+
+#   def methodC(self):
+#     print(self.a[len(self.a)-1])
+
+# obj1 = Easy(2 , 3)
+# obj1.methodA(1)
+# obj1.methodB()
+# obj1.methodC()
+
+string = 'HOusE'
+upper = 0
+lower = 0 
+up= ''
+l = ''
+for i in string:        
+    if (i>='A'and i<='Z'): 
+      upper += 1    
+      up+=i 
     else:
-      self.a.append(args[0])
-      self.methodB(self.m)
-
-  def methodB(self,a):
-    print(self.a[-1], a)
-
-
-  def methodC(self):
-    print(self.a[len(self.a)-1])
-
-obj1 = Easy(2 , 3)
-obj1.methodA(1)
-obj1.methodB()
-obj1.methodC()
+      up+=i.upper()    
+    if (i>='a'and i<='z'): 
+      lower += 1
+      l+=i 
+    else:
+      l+=i.lower() 
+if upper > lower :
+    print(up)
+else:
+    print(l)
