@@ -1198,26 +1198,26 @@
 # obj1.methodB()
 # obj1.methodC()
 
-# string = 'HOusE'
-# upper = 0
-# lower = 0 
-# up= ''
-# l = ''
-# for i in string:        
-#     if (i>='A'and i<='Z'): 
-#       upper += 1    
-#       up+=i 
-#     else:
-#       up+=i.upper()    
-#     if (i>='a'and i<='z'): 
-#       lower += 1
-#       l+=i 
-#     else:
-#       l+=i.lower() 
-# if upper > lower :
-#     print(up)
-# else:
-#     print(l)
+string = 'HOusE'
+upper = 0
+lower = 0 
+up= ''
+l = ''
+for i in string:        
+    if (i>='A'and i<='Z'): 
+      upper += 1    
+      up+=i 
+    else:
+      up+=i.upper()    
+    if (i>='a'and i<='z'): 
+      lower += 1
+      l+=i 
+    else:
+      l+=i.lower() 
+if upper > lower :
+    print(up)
+else:
+    print(l)
 
 # string_1 = 'harry'
 # string_2 = 'hermioneh'
@@ -1244,15 +1244,15 @@
 # else:
 #     print(final_string)
 
-def maxt(n,k,y):
-  y=sorted(y,reverse=True)
-  c=0
-  for i in range(0,n,3):
-    if y[i]>=k:
-      c+=1
-    else:
-      break
-  return c
+# def maxt(n,k,y):
+#   y=sorted(y,reverse=True)
+#   c=0
+#   for i in range(0,n,3):
+#     if y[i]>=k:
+#       c+=1
+#     else:
+#       break
+#   return c
 
-y=list(map(int,input().split()))
-print(maxt(5,2,y))
+# y=list(map(int,input().split()))
+# print(maxt(5,2,y))
