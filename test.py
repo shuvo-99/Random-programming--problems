@@ -1263,10 +1263,24 @@
 
 # y=list(map(int,input().split()))
 # print(maxt(5,2,y))
-c=0
-l=[10,20,10,20,30,50,90]
-for i in l:
-  for j in l:
-    if i==j:
-      c+=1
-  print(i,'-',c)
+# c=0
+# l=[10,20,10,20,30,50,90]
+# for i in l:
+#   for j in l:
+#     if i==j:
+#       c+=1
+#   print(i,'-',c)
+def janina(line):
+  m=""
+  k= ".!?"
+  m=line[0].upper()
+  for i in range(1,len(line)):
+    if line[i-1] ==" " and line[i-2] in k:
+      m+=line[i].upper()
+    elif line[i-1] ==" " and line[i] =="i" and line[i+1] ==" " :
+      m+= 'I'
+    else:
+      m+=line[i]
+  print(m)
+line='guilty'
+janina(line)
