@@ -1343,3 +1343,20 @@
 # # Using slice constructor
 # s3 = slice(-1, -12, 2)
 # print(String[s3])
+# def fraction(num1,num2):
+#     # num1 = int(input("Enter the 1st number = "))
+#     # num2 = int(input("Enter the 2nd number = "))
+    
+#     # if num1 == 0:
+#     #     print('0')
+    
+#     if num2 > 0:
+#       return (num1%num2)/num2
+#     return 0
+#     # else:
+#     #     a = num1/num2
+#     #     b = int(a)
+#     #     fraction_part = a-b
+#     #     print(fraction_part)
+               
+# print(fraction(5,2))
