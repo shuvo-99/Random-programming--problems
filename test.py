@@ -1270,17 +1270,34 @@
 #     if i==j:
 #       c+=1
 #   print(i,'-',c)
-def janina(line):
-  m=""
-  k= ".!?"
-  m=line[0].upper()
-  for i in range(1,len(line)):
-    if line[i-1] ==" " and line[i-2] in k:
-      m+=line[i].upper()
-    elif line[i-1] ==" " and line[i] =="i" and line[i+1] ==" " :
-      m+= 'I'
+# def janina(line):
+#   m=""
+#   k= ".!?"
+#   m=line[0].upper()
+#   for i in range(1,len(line)):
+#     if line[i-1] ==" " and line[i-2] in k:
+#       m+=line[i].upper()
+#     elif line[i-1] ==" " and line[i] =="i" and line[i+1] ==" " :
+#       m+= 'I'
+#     else:
+#       m+=line[i]
+#   print(m)
+# line='guilty'
+# janina(line)
+def vowel(string):
+    vowel_list = ["a", "e", "i", "o", "u"]
+    new_list = 0
+    print_string = 'Vowels:'
+    for i in string:
+        if i in vowel_list:
+            new_list+=1
+    if new_list==0:
+      print("No vowels in the name!")
+    # length = len(new_list)
     else:
-      m+=line[i]
-  print(m)
-line='guilty'
-janina(line)
+        print(f'{print_string[0:-1]}.Total number of vowels:',new_list)
+    
+        
+
+# name = input('Enter the name = ')
+vowel('Steve Jobs')
