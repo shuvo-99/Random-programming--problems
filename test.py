@@ -1301,36 +1301,36 @@
 
 # # name = input('Enter the name = ')
 # vowel('Steve Jobs')
-# def year_month_day(num):
+def year_month_day(num):
     
     # num = int(input("Enter the number of days = "))
     
-#     year = num//365
+    year = num//365
     
-#     year1 = ((num/365)-year)*365
+    month = (num-(year*365))//30
     
-#     month = year1//30
+    # month = year1//30
     
-#     day = ((year1/30)-month)*30
+    day = (num-(year*365))-(month*30)
     
-#     print(year,"years,", month,"months",'and',day,"days ")
+    print(year,"years,", month,"months",'and',day,"days ")
 
-# year_month_day(4000)
-def vowel(string):
-    vowel_list = ["a", "e", "i", "o", "u"]
-    new_list = []
-    print_string = ''
-    for i in string:
-        if i in vowel_list:
-            new_list.append(i)
-    for j in new_list:
-        print_string += j
-        print_string += ","
-    length = len(new_list)
-    if length > 0:
-        print("Vowels:", print_string[:len(print_string)-1],"Total number of vowels:",length)
-    else:
-        print("No vowels in the name!")
+year_month_day(4320)
+# def vowel(string):
+#     vowel_list = ["a", "e", "i", "o", "u"]
+#     new_list = []
+#     print_string = ''
+#     for i in string:
+#         if i in vowel_list:
+#             new_list.append(i)
+#     for j in new_list:
+#         print_string += j
+#         print_string += ","
+#     length = len(new_list)
+#     if length > 0:
+#         print("Vowels:", print_string[:len(print_string)-1],"Total number of vowels:",length)
+#     else:
+#         print("No vowels in the name!")
 
-# name = input('Enter the name = ')
-vowel('Steve Jobs')
+# # name = input('Enter the name = ')
+# vowel('Steve Jobs')
