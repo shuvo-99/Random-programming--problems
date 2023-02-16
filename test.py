@@ -1360,3 +1360,18 @@
 #     #     print(fraction_part)
                
 # print(fraction(5,2))
+def year_month_day(num):
+    
+    # num = int(input("Enter the number of days = "))
+    
+    year = int(num/365)
+    
+    month = int((num%365)/7)
+    
+    # month = year1//30
+    
+    day = (num%365)%7
+    
+    print(year,"years,", month,"months",'and',day,"days ")
+
+year_month_day(4320)
