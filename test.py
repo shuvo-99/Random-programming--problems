@@ -1301,21 +1301,21 @@
 
 # # name = input('Enter the name = ')
 # vowel('Steve Jobs')
-def year_month_day(num):
+# def year_month_day(num):
     
-    # num = int(input("Enter the number of days = "))
+#     # num = int(input("Enter the number of days = "))
     
-    year = num//365
+#     year = num//365
     
-    month = (num-(year*365))//30
+#     month = (num-(year*365))//30
     
-    # month = year1//30
+#     # month = year1//30
     
-    day = (num-(year*365))-(month*30)
+#     day = (num-(year*365))-(month*30)
     
-    print(year,"years,", month,"months",'and',day,"days ")
+#     print(year,"years,", month,"months",'and',day,"days ")
 
-year_month_day(4320)
+# year_month_day(4320)
 # def vowel(string):
 #     vowel_list = ["a", "e", "i", "o", "u"]
 #     new_list = []
@@ -1334,3 +1334,12 @@ year_month_day(4320)
 
 # # name = input('Enter the name = ')
 # vowel('Steve Jobs')
+
+# Python program to demonstrate
+# string slicing
+ 
+# String slicing
+# String = 'ASTRING'
+# # Using slice constructor
+# s3 = slice(-1, -12, 2)
+# print(String[s3])
