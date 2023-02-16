@@ -1284,20 +1284,35 @@
 #   print(m)
 # line='guilty'
 # janina(line)
-def vowel(string):
-    vowel_list = ["a", "e", "i", "o", "u"]
-    new_list = 0
-    print_string = 'Vowels:'
-    for i in string:
-        if i in vowel_list:
-            new_list+=1
-    if new_list==0:
-      print("No vowels in the name!")
-    # length = len(new_list)
-    else:
-        print(f'{print_string[0:-1]}.Total number of vowels:',new_list)
+# def vowel(string):
+#     vowel_list = ["a", "e", "i", "o", "u"]
+#     new_list = 0
+#     print_string = 'Vowels:'
+#     for i in string:
+#         if i in vowel_list:
+#             new_list+=1
+#     if new_list==0:
+#       print("No vowels in the name!")
+#     # length = len(new_list)
+#     else:
+#         print(f'{print_string[0:-1]}.Total number of vowels:',new_list)
     
         
 
-# name = input('Enter the name = ')
-vowel('Steve Jobs')
+# # name = input('Enter the name = ')
+# vowel('Steve Jobs')
+def year_month_day(num):
+    
+    # num = int(input("Enter the number of days = "))
+    
+    year = num//365
+    
+    year1 = ((num/365)-year)*365
+    
+    month = year1//30
+    
+    day = ((year1/30)-month)*30
+    
+    print(year,"years,", month,"months",'and',day,"days ")
+
+year_month_day(4000)
