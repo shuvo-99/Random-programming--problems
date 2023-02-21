@@ -1360,18 +1360,42 @@
 #     #     print(fraction_part)
                
 # print(fraction(5,2))
-def year_month_day(num):
+# def year_month_day(num):
     
-    # num = int(input("Enter the number of days = "))
+#     # num = int(input("Enter the number of days = "))
     
-    year = int(num/365)
+#     year = int(num/365)
     
-    month = int((num%365)/7)
+#     month = int((num%365)/7)
     
-    # month = year1//30
+#     # month = year1//30
     
-    day = (num%365)%7
+#     day = (num%365)%7
     
-    print(year,"years,", month,"months",'and',day,"days ")
+#     print(year,"years,", month,"months",'and',day,"days ")
 
-year_month_day(4320)
+# year_month_day(4320)
+
+class DataType:
+    def __init__(self,name,value):
+        self.name = name
+        self.value = value
+
+    # def printDeatails(self):
+    #     print('Interger')
+    def __str__(self):
+        return 'Integer\n1234'
+
+data_type1 = DataType('Integer', 1234)
+print(data_type1)
+# data_type1.printDeatails()
+# print(data_type1.name)
+# print(data_type1.value)
+# print('=====================')
+data_type2 = DataType('String', 'Hello')
+# print(data_type2.name)
+# print(data_type2.value) 
+# print('=====================')
+data_type3 = DataType('Float', 4.0)
+# print(data_type3.name)
+# print(data_type3.value)
