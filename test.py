@@ -1376,26 +1376,35 @@
 
 # year_month_day(4320)
 
-class DataType:
-    def __init__(self,name,value):
-        self.name = name
-        self.value = value
+# class DataType:
+#     def __init__(self,name,value):
+#         self.name = name
+#         self.value = value
 
-    # def printDeatails(self):
-    #     print('Interger')
-    def __str__(self):
-        return 'Integer\n1234'
+#     # def printDeatails(self):
+#     #     print('Interger')
+#     def __str__(self):
+#         return 'Integer\n1234'
 
-data_type1 = DataType('Integer', 1234)
-print(data_type1)
-# data_type1.printDeatails()
-# print(data_type1.name)
-# print(data_type1.value)
-# print('=====================')
-data_type2 = DataType('String', 'Hello')
+# data_type1 = DataType('Integer', 1234)
+# print(data_type1)
+# # data_type1.printDeatails()
+# # print(data_type1.name)
+# # print(data_type1.value)
+# # print('=====================')
+# data_type2 = DataType('String', 'Hello')
 # print(data_type2.name)
 # print(data_type2.value) 
 # print('=====================')
-data_type3 = DataType('Float', 4.0)
+# data_type3 = DataType('Float', 4.0)
 # print(data_type3.name)
 # print(data_type3.value)
+
+class Student:
+  def __init__(self, name, id):
+    self.__name=name # protected attribute
+    self.__id=id # protected attribute
+s1=Student("Kiran",18101)
+print(s1.__id)
+s1.__id=18202
+print(s1.__id)
