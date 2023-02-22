@@ -1418,16 +1418,17 @@
 #     print(x, end=", ")
 #     num = y
 
-n='32768'
-res=''
-p = len(n)-1#3
-while True:
-    s = int(n)//pow(10,p) #7
-    n = int(n)%pow(10,p) #68
-    res += str(s)+', ' #3, 2, 7,
-    # print(s,end=', ') 
-    if n==0:
-        break
-    p-=1
-print(res)
-print(res[:-2])
+# n='32768'
+# res=''
+# p = len(n)-1#3
+# while True:
+#     s = int(n)//pow(10,p) #7
+#     n = int(n)%pow(10,p) #68
+#     res += str(s)+', ' #3, 2, 7,
+#     # print(s,end=', ') 
+#     if n==0:
+#         break
+#     p-=1
+# print(res)
+# print(res[:-2])
+print(32768//10)
