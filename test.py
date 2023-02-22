@@ -1400,11 +1400,34 @@
 # print(data_type3.name)
 # print(data_type3.value)
 
-class Student:
-  def __init__(self, name, id):
-    self.__name=name # protected attribute
-    self.__id=id # protected attribute
-s1=Student("Kiran",18101)
-print(s1.__id)
-s1.__id=18202
-print(s1.__id)
+# class Student:
+#   def __init__(self, name, id):
+#     self.__name=name # protected attribute
+#     self.__id=id # protected attribute
+# s1=Student("Kiran",18101)
+# print(s1.__id)
+# s1.__id=18202
+# print(s1.__id)
+
+# num = int(input("Enter the number = "))
+# y=0
+# x=0
+# while(x<num):
+#     x=num//10
+#     y=num%10
+#     print(x, end=", ")
+#     num = y
+
+n='32768'
+res=''
+p = len(n)-1#3
+while True:
+    s = int(n)//pow(10,p) #7
+    n = int(n)%pow(10,p) #68
+    res += str(s)+', ' #3, 2, 7,
+    # print(s,end=', ') 
+    if n==0:
+        break
+    p-=1
+print(res)
+print(res[:-2])
