@@ -1431,4 +1431,116 @@
 #     p-=1
 # print(res)
 # print(res[:-2])
-print(32768//10)
+# print(32768//10)
+
+# class StudentDatabase:
+#     def __init__(self,name,ID):
+#       self.name = name
+#       self.ID = ID
+#       self.grades= {}
+    
+#     def calculateGPA(self,course, sem):
+#       self.courseList = {}
+#       self.course = []
+#       self.cgpa = []
+#       self.sem = sem
+
+#       for i in course:
+#          var = i.split(': ')
+#          self.course.append(var[0])
+#          self.cgpa.append(float(var[1]))
+#       # for i in self.cgpa:
+         
+#       self.gpa = round(sum(self.cgpa)/len(self.course),2)
+
+#       self.courseList[tuple(self.course)] = self.gpa
+
+#       self.grades[self.sem] = self.courseList
+#       # print(self.grades)
+
+#     def printDetails(self):
+        
+#         print(f'Name: {self.name}\nID: {self.ID}')
+#         for k,v in self.grades.items():
+#           print(f'Courses Taken in {k}')
+#           for m,n in v.items():
+#               for i in m:
+#                 print(i)
+#           print('GPA',n)
+
+         
+
+# s1 = StudentDatabase('Pietro', '10101222')
+# s1.calculateGPA(['CSE230: 4.0', 'CSE220: 4.0', 'MAT110: 4.0'], 'Summer2020')
+# s1.calculateGPA(['CSE250: 3.7', 'CSE330: 4.0'], 'Summer2021')
+# print(f'Grades for {s1.name}\n{s1.grades}')
+# print('------------------------------------------------------')
+# s1.printDetails()
+# s2 = StudentDatabase('Wanda', '10103332')
+# s2.calculateGPA(['CSE111: 3.7', 'CSE260: 3.7', 'ENG101: 4.0'], 'Summer2022')
+# print('------------------------------------------------------')
+# print(f'Grades for {s2.name}\n{s2.grades}')
+# print('------------------------------------------------------')
+# s2.printDetails()
+
+class Vaccine:
+    def __init__(self,vaccine_type,place,day):
+        self.vaccine_type=vaccine_type
+        self.place=place
+        self.day=day
+class Person:
+    def __init__(self,name,age,x="General Citizen"):
+        self.name=name
+        self.age=age
+        self.proffesion=x
+        self.l=[]
+
+    def pushVaccine(self,vaccine_name,dose_num="1st dose"):
+        self.vaccine_name = vaccine_name
+        self.dose_num = dose_num
+        if len(self.l)==0:
+            self.l.append(self.vaccine_name)
+
+        if self.age <25 and self.proffesion !='Student':
+           print(f'Sorry {self.name}, Minimum age for taking vaccines is 25 years now.')
+        else:
+          if self.vaccine_name != self.l[0]:
+              print(f'Sorry {self.name}, you can’t take 2 different vaccines')
+          else:
+            print(f"{self.dose_num} done for {self.name}")
+
+    def showDetail(self):
+        print("Name:",self.name,"Age:",self.age,"Type:",self.proffesion)
+        print("Vaccine name:",self.vaccine_name.vaccine_type)
+        print("1st dose: Given")
+        if self.dose_num != '2nd Dose':
+          print(f"2nd dose: Please come after {self.vaccine_name.day} days")
+        else:
+          print('2nd dose: Given')
+
+astra = Vaccine("AstraZeneca", "UK", 60)
+modr = Vaccine("Moderna", "UK", 30)
+sin = Vaccine("Sinopharm", "China", 30)
+p1 = Person("Bob", 21, "Student")
+print("=================================")
+p1.pushVaccine(astra)
+print("=================================")
+p1.showDetail()
+print("=================================")
+p1.pushVaccine(sin, "2nd Dose")
+print("=================================")
+p1.pushVaccine(astra, "2nd Dose")
+print("=================================")
+p1.showDetail()
+print("=================================")
+p2 = Person("Carol", 23, "Actor")
+print("=================================")
+p2.pushVaccine(sin)
+print("=================================")
+p3 = Person("David", 34)
+print("=================================")
+p3.pushVaccine(modr)
+print("=================================")
+p3.showDetail()
+print("=================================")
+p3.pushVaccine(modr, "2nd Dose")
