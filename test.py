@@ -1483,64 +1483,150 @@
 # print('------------------------------------------------------')
 # s2.printDetails()
 
-class Vaccine:
-    def __init__(self,vaccine_type,place,day):
-        self.vaccine_type=vaccine_type
-        self.place=place
-        self.day=day
-class Person:
-    def __init__(self,name,age,x="General Citizen"):
-        self.name=name
-        self.age=age
-        self.proffesion=x
-        self.l=[]
+# class Vaccine:
+#     def __init__(self,vaccine_type,place,day):
+#         self.vaccine_type=vaccine_type
+#         self.place=place
+#         self.day=day
+# class Person:
+#     def __init__(self,name,age,x="General Citizen"):
+#         self.name=name
+#         self.age=age
+#         self.proffesion=x
+#         self.l=[]
 
-    def pushVaccine(self,vaccine_name,dose_num="1st dose"):
-        self.vaccine_name = vaccine_name
-        self.dose_num = dose_num
-        if len(self.l)==0:
-            self.l.append(self.vaccine_name)
+#     def pushVaccine(self,vaccine_name,dose_num="1st dose"):
+#         self.vaccine_name = vaccine_name
+#         self.dose_num = dose_num
+#         if len(self.l)==0:
+#             self.l.append(self.vaccine_name)
 
-        if self.age <25 and self.proffesion !='Student':
-           print(f'Sorry {self.name}, Minimum age for taking vaccines is 25 years now.')
-        else:
-          if self.vaccine_name != self.l[0]:
-              print(f'Sorry {self.name}, you can’t take 2 different vaccines')
-          else:
-            print(f"{self.dose_num} done for {self.name}")
+#         if self.age <25 and self.proffesion !='Student':
+#            print(f'Sorry {self.name}, Minimum age for taking vaccines is 25 years now.')
+#         else:
+#           if self.vaccine_name != self.l[0]:
+#               print(f'Sorry {self.name}, you can’t take 2 different vaccines')
+#           else:
+#             print(f"{self.dose_num} done for {self.name}")
 
-    def showDetail(self):
-        print("Name:",self.name,"Age:",self.age,"Type:",self.proffesion)
-        print("Vaccine name:",self.vaccine_name.vaccine_type)
-        print("1st dose: Given")
-        if self.dose_num != '2nd Dose':
-          print(f"2nd dose: Please come after {self.vaccine_name.day} days")
-        else:
-          print('2nd dose: Given')
+#     def showDetail(self):
+#         print("Name:",self.name,"Age:",self.age,"Type:",self.proffesion)
+#         print("Vaccine name:",self.vaccine_name.vaccine_type)
+#         print("1st dose: Given")
+#         if self.dose_num != '2nd Dose':
+#           print(f"2nd dose: Please come after {self.vaccine_name.day} days")
+#         else:
+#           print('2nd dose: Given')
 
-astra = Vaccine("AstraZeneca", "UK", 60)
-modr = Vaccine("Moderna", "UK", 30)
-sin = Vaccine("Sinopharm", "China", 30)
-p1 = Person("Bob", 21, "Student")
-print("=================================")
-p1.pushVaccine(astra)
-print("=================================")
-p1.showDetail()
-print("=================================")
-p1.pushVaccine(sin, "2nd Dose")
-print("=================================")
-p1.pushVaccine(astra, "2nd Dose")
-print("=================================")
-p1.showDetail()
-print("=================================")
-p2 = Person("Carol", 23, "Actor")
-print("=================================")
-p2.pushVaccine(sin)
-print("=================================")
-p3 = Person("David", 34)
-print("=================================")
-p3.pushVaccine(modr)
-print("=================================")
-p3.showDetail()
-print("=================================")
-p3.pushVaccine(modr, "2nd Dose")
+# astra = Vaccine("AstraZeneca", "UK", 60)
+# modr = Vaccine("Moderna", "UK", 30)
+# sin = Vaccine("Sinopharm", "China", 30)
+# p1 = Person("Bob", 21, "Student")
+# print("=================================")
+# p1.pushVaccine(astra)
+# print("=================================")
+# p1.showDetail()
+# print("=================================")
+# p1.pushVaccine(sin, "2nd Dose")
+# print("=================================")
+# p1.pushVaccine(astra, "2nd Dose")
+# print("=================================")
+# p1.showDetail()
+# print("=================================")
+# p2 = Person("Carol", 23, "Actor")
+# print("=================================")
+# p2.pushVaccine(sin)
+# print("=================================")
+# p3 = Person("David", 34)
+# print("=================================")
+# p3.pushVaccine(modr)
+# print("=================================")
+# p3.showDetail()
+# print("=================================")
+# p3.pushVaccine(modr, "2nd Dose")
+
+
+# class  PizzaMachine:
+#     def init(self,typei="Regular",size=6):
+#         self.alike=typei
+#         self.size=size
+#     def customizePizza(self,*args):
+#         tope=""
+#         self.spiceiwant=['Regular','Hot',"Super Naga"]
+#         if len(args)==2:
+#             self.toping=args[0]
+#             self.spicelevel=args[1]
+#         if  len(args)==1:
+#             if type(args[0])==str:
+#                 self.spicelevel=args[0]
+#                 self.toping=[] 
+#             else:
+#                 self.toping=args[0]
+#                 self.spicelevel="Regular"
+#         # for i in self.spiceiwant:
+#         if self.spicelevel not in self.spiceiwant:
+
+#             return "Sorry! Spice level not allowed. Can't bake pizza."
+#         if len(self.toping)==0:
+#             return "No toppings specified! Can't bake pizza."
+#         else:
+#             for i in self.toping:
+#                 tope+=i+","
+#         tope=tope[:-1]
+#         return f"Your {self.size} { self.spicelevel} spicy {self.alike} Pizza is ready with {tope}. Enjoy!"
+
+# class Patient:
+    
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+        
+    
+#     def add_Symptom(self,*symptom):
+#         self.symptom = symptom    
+    
+#     def printPatientDetail(self):
+#         print('Name:',self.name)
+#         print('Age:',self.age)
+#         s = ''
+#         for i in self.symptom:
+#             s = s + i + ', '
+            
+#         print('Symptoms:', s[:-2])
+        
+# p1 = Patient('Thomas', 23)
+# p1.add_Symptom('Headache')
+# p2 = Patient('Carol', 20)
+# p2.add_Symptom('Vomiting', 'Coughing')
+# p3 = Patient('Mike', 25)
+# p3.add_Symptom('Fever', 'Headache', 'Coughing')
+# print("=========================")
+# p1.printPatientDetail()
+# print("=========================")
+# p2.printPatientDetail()
+# print("=========================")
+# p3.printPatientDetail()
+# print("=========================")
+
+# class Match:
+#     def __init__(self,teams):
+#         self.team1,self.team2 = teams.split('-')
+#         self.run=0
+#         self.over = 0
+#         print('5..4..3..2..1.. Play !!!')
+
+#     def add(self,run):
+#         self.run +=run
+
+
+# match1 = Match("Rangpur Riders-Cumilla Victorians")
+# print("=========================")
+# match1.add_run(4)
+# match1.add_run(6)
+# match1.add_over(1)
+# print(match1.print_scoreboard())
+# print("=========================")
+# match1.add_over(5)
+# print("=========================")
+# match1.add_wicket(1)
+# print(match1.print_scoreboard())
