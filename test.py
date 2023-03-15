@@ -1630,3 +1630,13 @@
 # print("=========================")
 # match1.add_wicket(1)
 # print(match1.print_scoreboard())
+s='Ppython'
+res = ''
+value = 0
+for i in s:
+  asc = ord(i)
+  # print(asc)
+  res = str(asc)
+  value += int(res[0])
+print(value)
+  
