@@ -1630,13 +1630,117 @@
 # print("=========================")
 # match1.add_wicket(1)
 # print(match1.print_scoreboard())
-s='Ppython'
-res = ''
-value = 0
-for i in s:
-  asc = ord(i)
-  # print(asc)
-  res = str(asc)
-  value += int(res[0])
-print(value)
-  
+# s='Ppython'
+# res = ''
+# value = 0
+# for i in s:
+#   asc = ord(i)
+#   # print(asc)
+#   res = str(asc)
+#   value += int(res[0])
+# print(value)
+class Snapchat:
+    def __init__(self,name,horoscope,gender="Female",score=0):
+        self.name = name
+        self.horoscope = horoscope
+        self.gender = gender
+        self.score = score
+        self.friendno = 0
+        self.friend = []
+        self.msg = {}
+        self.msgno = 0
+    def QuickAdd(self,*args):
+        for user in args:
+            if user.name in self.friend:
+                pass
+            else:
+                self.friendno += 1
+                self.friend.append(user.name)
+                user.friendno += 1
+                user.friend.append(self.name)
+    def sendSnap(self,user):
+        if user.name in self.friend:
+            self.score += 1
+            print("Snap sent.")
+        else:
+            print(f"Sorry,{user.name} is not in your friend list.")
+    def sendMessage(self,user,message):
+        if user.name in self.friend:
+            #for key,val in user.msg.items():
+            if self.name in user.msg:
+                # print('yes')
+                user.msg[self.name].append(message)
+                
+            else:
+                user.msg[self.name] = [message]
+            print("Message sent.")
+            user.msgno += 1
+            # print(user.msg)
+        else:
+            print(f"Sorry,{user.name} is not in your friend list.")
+    def printDetails(self):
+        print(f"User Name:{self.name} Score:{self.score}\n Horoscope:{self.horoscope} Gender:{self.gender}")
+        frnd = ""
+        for i in self.friend:
+            frnd += i + ", "
+        print(f"Friends({self.friendno}):{frnd[0:len(frnd)-2]}")
+    def showInbox(self):
+        # print(self.msg)
+        if self.msgno != 0:
+            print(f"Messages:You have {self.msgno} new message(s).")
+            print("Here is your inbox:")
+            for key,val in self.msg.items():
+                print(f"From {key}")
+                # print(val)
+                for i in val:
+                    print(i)
+        else:
+            print("You have no message(s)")
+user1 = Snapchat("Jaime","Leo","Male",123)
+user2 = Snapchat("Bran","Virgo","Male")
+user3 = Snapchat("John","Aries","Male",234)
+user4 = Snapchat("Sansa","Scorpio")
+print("1----------------------------")
+user1.QuickAdd(user3)
+user1.QuickAdd(user2,user4)
+user2.QuickAdd(user3)
+user2.QuickAdd(user4)
+print("2----------------------------")
+user1.sendSnap(user2)
+print("3----------------------------")
+user1.sendSnap(user2)
+print("4----------------------------")
+user1.sendMessage(user2,"Hii")
+print("5----------------------------")
+user1.sendMessage(user2,"Can you help me with question 1?")
+print("6----------------------------")
+user2.sendSnap(user1)
+print("7----------------------------")
+user2.sendMessage(user1,"Hello")
+print("8----------------------------")
+user2.sendMessage(user1,"Sorry Bro.")
+print("9----------------------------")
+user3.sendSnap(user2)
+print("10----------------------------")
+user3.sendMessage(user2,"Hii there. Do you know when is our CSE111 Lab mid?")
+print("11----------------------------")
+user2.printDetails()
+print("12----------------------------")
+user2.showInbox()
+print("13----------------------------")
+user1.printDetails()
+user1.showInbox()
+print("14----------------------------")
+user1.sendMessage(user3,"Hey. You are giving it right now.")
+print("15----------------------------")
+user3.printDetails()
+print("16----------------------------")
+user3.showInbox()
+print("17----------------------------")
+user3.sendSnap(user4)
+print("18----------------------------")
+user4.sendMessage(user3,"Hi")
+print("19----------------------------")
+user4.printDetails()
+print("20----------------------------")
+user4.showInbox()
