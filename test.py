@@ -1433,55 +1433,55 @@
 # print(res[:-2])
 # print(32768//10)
 
-class StudentDatabase:
-    def __init__(self,name,ID):
-      self.name = name
-      self.ID = ID
-      self.grades= {}
+# class StudentDatabase:
+#     def __init__(self,name,ID):
+#       self.name = name
+#       self.ID = ID
+#       self.grades= {}
     
-    def calculateGPA(self,course, sem):
-      self.courseList = {}
-      self.course = []
-      self.cgpa = []
-      self.sem = sem
+#     def calculateGPA(self,course, sem):
+#       self.courseList = {}
+#       self.course = []
+#       self.cgpa = []
+#       self.sem = sem
 
-      for i in course:
-         var = i.split(': ')
-         self.course.append(var[0])
-         self.cgpa.append(float(var[1]))
-      # for i in self.cgpa:
+#       for i in course:
+#          var = i.split(': ')
+#          self.course.append(var[0])
+#          self.cgpa.append(float(var[1]))
+#       # for i in self.cgpa:
          
-      self.gpa = round(sum(self.cgpa)/len(self.course),2)
+#       self.gpa = round(sum(self.cgpa)/len(self.course),2)
 
-      self.courseList[tuple(self.course)] = self.gpa
+#       self.courseList[tuple(self.course)] = self.gpa
 
-      self.grades[self.sem] = self.courseList
-      # print(self.grades)
+#       self.grades[self.sem] = self.courseList
+#       # print(self.grades)
 
-    def printDetails(self):
+#     def printDetails(self):
         
-        print(f'Name: {self.name}\nID: {self.ID}')
-        for k,v in self.grades.items():
-          print(f'Courses Taken in {k}')
-          for m,n in v.items():
-              for i in m:
-                print(i)
-          print('GPA',n)
+#         print(f'Name: {self.name}\nID: {self.ID}')
+#         for k,v in self.grades.items():
+#           print(f'Courses Taken in {k}')
+#           for m,n in v.items():
+#               for i in m:
+#                 print(i)
+#           print('GPA',n)
 
          
 
-s1 = StudentDatabase('Pietro', '10101222')
-s1.calculateGPA(['CSE230: 4.0', 'CSE220: 4.0', 'MAT110: 4.0'], 'Summer2020')
-s1.calculateGPA(['CSE250: 3.7', 'CSE330: 4.0'], 'Summer2021')
-print(f'Grades for {s1.name}\n{s1.grades}')
-print('------------------------------------------------------')
-s1.printDetails()
-s2 = StudentDatabase('Wanda', '10103332')
-s2.calculateGPA(['CSE111: 3.7', 'CSE260: 3.7', 'ENG101: 4.0'], 'Summer2022')
-print('------------------------------------------------------')
-print(f'Grades for {s2.name}\n{s2.grades}')
-print('------------------------------------------------------')
-s2.printDetails()
+# s1 = StudentDatabase('Pietro', '10101222')
+# s1.calculateGPA(['CSE230: 4.0', 'CSE220: 4.0', 'MAT110: 4.0'], 'Summer2020')
+# s1.calculateGPA(['CSE250: 3.7', 'CSE330: 4.0'], 'Summer2021')
+# print(f'Grades for {s1.name}\n{s1.grades}')
+# print('------------------------------------------------------')
+# s1.printDetails()
+# s2 = StudentDatabase('Wanda', '10103332')
+# s2.calculateGPA(['CSE111: 3.7', 'CSE260: 3.7', 'ENG101: 4.0'], 'Summer2022')
+# print('------------------------------------------------------')
+# print(f'Grades for {s2.name}\n{s2.grades}')
+# print('------------------------------------------------------')
+# s2.printDetails()
 
 # class Vaccine:
 #     def __init__(self,vaccine_type,place,day):
@@ -1813,5 +1813,71 @@ s2.printDetails()
 # print("9***********************")
 # print(usis_obj.individualDetails(rakib))
 
-ind_diff = 2
-fare = (ind_diff)*100
+# ind_diff = 2
+# fare = (ind_diff)*100
+
+
+class Train:
+  def __init__(self,nam,*t):
+    self.train=nam
+    self.location=t
+    self.count=0
+    self.name=[]
+    self.start=[]
+    self.exit=[]
+    self.diff=[]
+    print('Welcome aboard on',self.train)
+    print('Start:',self.location[0])
+    print('Destination:',self.location[-1])
+  def addPassenger(self,*n):
+    self.count+=1
+    
+    for i in n:
+      print(i.name,'welcome aboard')
+      self.name.append(i.name)
+      # self.start.append(i.place1)
+      
+      if (i.place1==None):
+        i.place1=self.location[0]
+        self.start.append(i.place1)
+      else:
+        self.start.append(i.place1)
+
+      if (i.place2==None):
+        i.place2=self.location[-1]
+        self.exit.append(i.place2)
+      else:
+        self.exit.append(i.place2)
+      
+      diff = self.location.index(i.place2)-self.location.index(i.place1)
+      self.diff.append(diff)
+  def allPassengerDetails(self):
+    for i in range(len(self.name)): 
+      print(f'Name: {self.name[i]},Start: {self.start[i]}, Destination: {self.exit[i]}, Fair: ${self.diff[i]*100}')
+
+class Passenger:
+  def __init__(self,nam,enter=None,exit=None):
+    self.name=nam
+    self.place1=enter
+    self.place2=exit
+
+
+t1 = Train('T1-Express','New York','Manhattan','Brooklyn','Boston')
+print("1========================")
+p1 =Passenger("Naruto")
+t1.addPassenger(p1)
+p2 = Passenger("Sasuke","Manhattan")
+p3 = Passenger("Hinata","Manhattan","Brooklyn")
+print("2========================")
+t1.addPassenger(p2,p3)
+print("3========================")
+t1.allPassengerDetails()
+print("4========================")
+t2 = Train('Europe-Express','London','Paris','Brussels','Turkey')
+print("5========================")
+p4 =Passenger("Max","London","Brussels")
+p5 = Passenger("Eleven","Paris")
+p6 = Passenger("Mike","Brussels")
+t2.addPassenger(p4,p5,p6)
+print("6========================")
+t2.allPassengerDetails()
