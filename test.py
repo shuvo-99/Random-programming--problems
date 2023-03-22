@@ -1433,55 +1433,55 @@
 # print(res[:-2])
 # print(32768//10)
 
-# class StudentDatabase:
-#     def __init__(self,name,ID):
-#       self.name = name
-#       self.ID = ID
-#       self.grades= {}
+class StudentDatabase:
+    def __init__(self,name,ID):
+      self.name = name
+      self.ID = ID
+      self.grades= {}
     
-#     def calculateGPA(self,course, sem):
-#       self.courseList = {}
-#       self.course = []
-#       self.cgpa = []
-#       self.sem = sem
+    def calculateGPA(self,course, sem):
+      self.courseList = {}
+      self.course = []
+      self.cgpa = []
+      self.sem = sem
 
-#       for i in course:
-#          var = i.split(': ')
-#          self.course.append(var[0])
-#          self.cgpa.append(float(var[1]))
-#       # for i in self.cgpa:
+      for i in course:
+         var = i.split(': ')
+         self.course.append(var[0])
+         self.cgpa.append(float(var[1]))
+      # for i in self.cgpa:
          
-#       self.gpa = round(sum(self.cgpa)/len(self.course),2)
+      self.gpa = round(sum(self.cgpa)/len(self.course),2)
 
-#       self.courseList[tuple(self.course)] = self.gpa
+      self.courseList[tuple(self.course)] = self.gpa
 
-#       self.grades[self.sem] = self.courseList
-#       # print(self.grades)
+      self.grades[self.sem] = self.courseList
+      # print(self.grades)
 
-#     def printDetails(self):
+    def printDetails(self):
         
-#         print(f'Name: {self.name}\nID: {self.ID}')
-#         for k,v in self.grades.items():
-#           print(f'Courses Taken in {k}')
-#           for m,n in v.items():
-#               for i in m:
-#                 print(i)
-#           print('GPA',n)
+        print(f'Name: {self.name}\nID: {self.ID}')
+        for k,v in self.grades.items():
+          print(f'Courses Taken in {k}')
+          for m,n in v.items():
+              for i in m:
+                print(i)
+          print('GPA',n)
 
          
 
-# s1 = StudentDatabase('Pietro', '10101222')
-# s1.calculateGPA(['CSE230: 4.0', 'CSE220: 4.0', 'MAT110: 4.0'], 'Summer2020')
-# s1.calculateGPA(['CSE250: 3.7', 'CSE330: 4.0'], 'Summer2021')
-# print(f'Grades for {s1.name}\n{s1.grades}')
-# print('------------------------------------------------------')
-# s1.printDetails()
-# s2 = StudentDatabase('Wanda', '10103332')
-# s2.calculateGPA(['CSE111: 3.7', 'CSE260: 3.7', 'ENG101: 4.0'], 'Summer2022')
-# print('------------------------------------------------------')
-# print(f'Grades for {s2.name}\n{s2.grades}')
-# print('------------------------------------------------------')
-# s2.printDetails()
+s1 = StudentDatabase('Pietro', '10101222')
+s1.calculateGPA(['CSE230: 4.0', 'CSE220: 4.0', 'MAT110: 4.0'], 'Summer2020')
+s1.calculateGPA(['CSE250: 3.7', 'CSE330: 4.0'], 'Summer2021')
+print(f'Grades for {s1.name}\n{s1.grades}')
+print('------------------------------------------------------')
+s1.printDetails()
+s2 = StudentDatabase('Wanda', '10103332')
+s2.calculateGPA(['CSE111: 3.7', 'CSE260: 3.7', 'ENG101: 4.0'], 'Summer2022')
+print('------------------------------------------------------')
+print(f'Grades for {s2.name}\n{s2.grades}')
+print('------------------------------------------------------')
+s2.printDetails()
 
 # class Vaccine:
 #     def __init__(self,vaccine_type,place,day):
@@ -1746,71 +1746,72 @@
 # user4.showInbox()
 
 # class Student:   def init(self,name,id,dep):     self.name=name     self.id=id     self.dep=dep     self.email=None     self.password=None     self.login=None     print("Student object is created!")   class Usis:   def init(self):      print("USIS is ready to use!")   def login(self,name2):     if name2.email!=None and name2.password!=None and name2.login!=None:       print("Login successful!")     elif(name2.email!=None and name2.password!=None):       print("Email and password need to be set.")      def advising(self,name1,*course):     self.name1=name1     self.course='course'      if len(course)==0:       print("You haven't selected any courses.")     else:       if len(course)>3:         print("You need special approval to take more than 3 courses.")       else:         for i in course:           self.course+=i         print("Advising successful!")   def individualDetails(self,x):     print("Name:",x.name)     print("Id:",x.id)     print("Department:",x.dep)     # print("
-class Student:
-  def __init__(self,name,id,dep):
-    self.name=name
-    self.id=id
-    self.dep=dep
-    self.email=None
-    self.password=None
-    self.login=False
-    print("Student object is created!")
+# class Student:
+#   def __init__(self,name,id,dep):
+#     self.name=name
+#     self.id=id
+#     self.dep=dep
+#     self.email=None
+#     self.password=None
+#     self.login=False
+#     print("Student object is created!")
 
-class Usis:
-  def __init__(self):
+# class Usis:
+#   def __init__(self):
 
-    print("USIS is ready to use!")
+#     print("USIS is ready to use!")
 
-  def login(self,name2):
-    if name2.email!=None and name2.password!=None:
-      name2.login = True
-      print("Login successful!")
-    elif(name2.email==None and name2.password==None):
+#   def login(self,name2):
+#     if name2.email!=None and name2.password!=None:
+#       name2.login = True
+#       print("Login successful!")
+#     elif(name2.email==None and name2.password==None):
       
-      print("Email and password need to be set.")
+#       print("Email and password need to be set.")
 
-  def advising(self,name1,*course):
+#   def advising(self,name1,*course):
 
-    self.name1=name1
-    self.course=''
+#     self.name1=name1
+#     self.course=''
 
-    if name1.login == False:
-      print('Please login to advise courses!')
-    else:
-      if len(course)==0:
-        print("You haven't selected any courses.")
-      else:
-        if len(course)>3:
-          print("You need special approval to take more than 3 courses.")
-        else:
-          for i in course:
-            self.course+=i+', '
-          print("Advising successful!")
-  def individualDetails(self,x):
-    print("Name:",x.name)
-    print("Id:",x.id)
-    print("Department:",x.dep)
-    return f'Advised courses: {self.course[:-2]}'
+#     if name1.login == False:
+#       print('Please login to advise courses!')
+#     else:
+#       if len(course)==0:
+#         print("You haven't selected any courses.")
+#       else:
+#         if len(course)>3:
+#           print("You need special approval to take more than 3 courses.")
+#         else:
+#           for i in course:
+#             self.course+=i+', '
+#           print("Advising successful!")
+#   def individualDetails(self,x):
+#     print("Name:",x.name)
+#     print("Id:",x.id)
+#     print("Department:",x.dep)
+#     return f'Advised courses: {self.course[:-2]}'
 
+# rakib = Student("Rakib", 12301455, "CSE")
+# print("1***********************")
+# usis_obj = Usis()
+# print("2***********************")
+# usis_obj.login(rakib)
+# print("3***********************")
+# usis_obj.advising(rakib)
+# print("4***********************")
+# rakib.email = "rakib@hotmail.com"
+# rakib.password = "1234"
+# print("5***********************")
+# usis_obj.login(rakib)
+# print("6***********************")
+# usis_obj.advising(rakib)
+# print("7***********************")
+# usis_obj.advising(rakib, "CSE110", "PHY111", "MAT110", "CSE260")
+# print("8***********************")
+# usis_obj.advising(rakib, "CSE110", "PHY111", "MAT110")
+# print("9***********************")
+# print(usis_obj.individualDetails(rakib))
 
-
-rakib = Student("Rakib", 12301455, "CSE")
-print("1***********************")
-usis_obj = Usis()
-print("2***********************")
-usis_obj.login(rakib)
-print("3***********************")
-usis_obj.advising(rakib)
-print("4***********************")
-rakib.email = "rakib@hotmail.com"
-rakib.password = "1234"
-print("5***********************")
-usis_obj.login(rakib)
-print("6***********************")
-usis_obj.advising(rakib)
-print("7***********************")
-usis_obj.advising(rakib, "CSE110", "PHY111", "MAT110", "CSE260")
-print("8***********************")
-usis_obj.advising(rakib, "CSE110", "PHY111", "MAT110")
-print("9***********************")
-print(usis_obj.individualDetails(rakib))
+ind_diff = 2
+fare = (ind_diff)*100
