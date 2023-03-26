@@ -1817,67 +1817,145 @@
 # fare = (ind_diff)*100
 
 
-class Train:
-  def __init__(self,nam,*t):
-    self.train=nam
-    self.location=t
-    self.count=0
-    self.name=[]
-    self.start=[]
-    self.exit=[]
-    self.diff=[]
-    print('Welcome aboard on',self.train)
-    print('Start:',self.location[0])
-    print('Destination:',self.location[-1])
-  def addPassenger(self,*n):
-    self.count+=1
+# class Train:
+#   def __init__(self,nam,*t):
+#     self.train=nam
+#     self.location=t
+#     self.count=0
+#     self.name=[]
+#     self.start=[]
+#     self.exit=[]
+#     self.diff=[]
+#     print('Welcome aboard on',self.train)
+#     print('Start:',self.location[0])
+#     print('Destination:',self.location[-1])
+#   def addPassenger(self,*n):
+#     self.count+=1
     
-    for i in n:
-      print(i.name,'welcome aboard')
-      self.name.append(i.name)
-      # self.start.append(i.place1)
+#     for i in n:
+#       print(i.name,'welcome aboard')
+#       self.name.append(i.name)
+#       # self.start.append(i.place1)
       
-      if (i.place1==None):
-        i.place1=self.location[0]
-        self.start.append(i.place1)
-      else:
-        self.start.append(i.place1)
+#       if (i.place1==None):
+#         i.place1=self.location[0]
+#         self.start.append(i.place1)
+#       else:
+#         self.start.append(i.place1)
 
-      if (i.place2==None):
-        i.place2=self.location[-1]
-        self.exit.append(i.place2)
-      else:
-        self.exit.append(i.place2)
+#       if (i.place2==None):
+#         i.place2=self.location[-1]
+#         self.exit.append(i.place2)
+#       else:
+#         self.exit.append(i.place2)
       
-      diff = self.location.index(i.place2)-self.location.index(i.place1)
-      self.diff.append(diff)
-  def allPassengerDetails(self):
-    for i in range(len(self.name)): 
-      print(f'Name: {self.name[i]},Start: {self.start[i]}, Destination: {self.exit[i]}, Fair: ${self.diff[i]*100}')
+#       diff = self.location.index(i.place2)-self.location.index(i.place1)
+#       self.diff.append(diff)
+#   def allPassengerDetails(self):
+#     for i in range(len(self.name)): 
+#       print(f'Name: {self.name[i]},Start: {self.start[i]}, Destination: {self.exit[i]}, Fair: ${self.diff[i]*100}')
 
-class Passenger:
-  def __init__(self,nam,enter=None,exit=None):
-    self.name=nam
-    self.place1=enter
-    self.place2=exit
+# class Passenger:
+#   def __init__(self,nam,enter=None,exit=None):
+#     self.name=nam
+#     self.place1=enter
+#     self.place2=exit
 
 
-t1 = Train('T1-Express','New York','Manhattan','Brooklyn','Boston')
-print("1========================")
-p1 =Passenger("Naruto")
-t1.addPassenger(p1)
-p2 = Passenger("Sasuke","Manhattan")
-p3 = Passenger("Hinata","Manhattan","Brooklyn")
-print("2========================")
-t1.addPassenger(p2,p3)
-print("3========================")
-t1.allPassengerDetails()
-print("4========================")
-t2 = Train('Europe-Express','London','Paris','Brussels','Turkey')
-print("5========================")
-p4 =Passenger("Max","London","Brussels")
-p5 = Passenger("Eleven","Paris")
-p6 = Passenger("Mike","Brussels")
-t2.addPassenger(p4,p5,p6)
-print("6========================")
-t2.allPassengerDetails()
+# t1 = Train('T1-Express','New York','Manhattan','Brooklyn','Boston')
+# print("1========================")
+# p1 =Passenger("Naruto")
+# t1.addPassenger(p1)
+# p2 = Passenger("Sasuke","Manhattan")
+# p3 = Passenger("Hinata","Manhattan","Brooklyn")
+# print("2========================")
+# t1.addPassenger(p2,p3)
+# print("3========================")
+# t1.allPassengerDetails()
+# print("4========================")
+# t2 = Train('Europe-Express','London','Paris','Brussels','Turkey')
+# print("5========================")
+# p4 =Passenger("Max","London","Brussels")
+# p5 = Passenger("Eleven","Paris")
+# p6 = Passenger("Mike","Brussels")
+# t2.addPassenger(p4,p5,p6)
+# print("6========================")
+# t2.allPassengerDetails()
+
+class BracuStudent:
+    def __init__(self,name, live_in):
+      self.name = name
+      self.home = live_in
+      self.bus_pass = False
+    
+    def show_details(self):
+      print(f'Student Name: {self.name}\nLives in {self.home}\nHave Bus Pass? {self.bus_pass}')
+    
+    def get_pass(self):
+      self.bus_pass = True
+class BracuBus:
+    def __init__(self,route, max = 2):
+      self.route = route
+      self.max = max
+      self.on_board = []
+      self.passenger=[]
+      
+
+    def show_details(self):
+      print(f'Bus Route: {self.route}\nPassengers Count: {len(self.on_board)} (Max: {self.max})\nPassengers On Board: {self.on_board}')
+
+    def board(self, *args):
+      if len(args)==0:
+        print('No passenger!')
+      else:
+        for i in args:
+          if i.bus_pass == False:
+            print("You don't have bus pass!")
+          else:
+            if self.route != i.home:
+              print('You got on wrong bus!')
+            else:
+              self.passenger.append(i.name)
+        count=0
+        for i in self.passenger:
+          count+=1 
+          if count > self.max:
+            print('Bus is full!') 
+            return 
+          else:
+            self.on_board.append(i)
+            print(i,'boarded the bus')
+      
+
+st1 = BracuStudent("Afif", "Mirpur")
+print("1===========================")
+st2 = BracuStudent("Shanto", "Motijheel")
+st3 = BracuStudent("Taskin", "Mirpur")
+st1.show_details()
+st2.show_details()
+print("2===========================")
+st3.show_details()
+print("3===========================")
+bus1 = BracuBus("Mirpur")
+bus2 = BracuBus("Azimpur", 5)
+bus1.show_details()
+bus2.show_details()
+print("4===========================")
+st2.get_pass()
+st3.get_pass()
+print("5===========================")
+st2.show_details()
+st3.show_details()
+print("6===========================")
+bus1.board()
+print("7===========================")
+bus1.board(st1, st2)
+print("8===========================")
+st1.get_pass()
+st2.home = "Mirpur"
+st1.show_details()
+st2.show_details()
+print("9===========================")
+bus1.board(st1, st2, st3)
+print("10===========================")
+bus1.show_details()
