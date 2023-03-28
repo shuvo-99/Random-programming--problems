@@ -1882,80 +1882,218 @@
 # print("6========================")
 # t2.allPassengerDetails()
 
-class BracuStudent:
-    def __init__(self,name, live_in):
+# class BracuStudent:
+#     def __init__(self,name, live_in):
+#       self.name = name
+#       self.home = live_in
+#       self.bus_pass = False
+    
+#     def show_details(self):
+#       print(f'Student Name: {self.name}\nLives in {self.home}\nHave Bus Pass? {self.bus_pass}')
+    
+#     def get_pass(self):
+#       self.bus_pass = True
+# class BracuBus:
+#     def __init__(self,route, max = 2):
+#       self.route = route
+#       self.max = max
+#       self.on_board = []
+#       self.passenger=[]
+      
+
+#     def show_details(self):
+#       print(f'Bus Route: {self.route}\nPassengers Count: {len(self.on_board)} (Max: {self.max})\nPassengers On Board: {self.on_board}')
+
+#     def board(self, *args):
+#       if len(args)==0:
+#         print('No passenger!')
+#       else:
+#         for i in args:
+#           if i.bus_pass == False:
+#             print("You don't have bus pass!")
+#           else:
+#             if self.route != i.home:
+#               print('You got on wrong bus!')
+#             else:
+#               self.passenger.append(i.name)
+#         count=0
+#         for i in self.passenger:
+#           count+=1 
+#           if count > self.max:
+#             print('Bus is full!') 
+#             return 
+#           else:
+#             self.on_board.append(i)
+#             print(i,'boarded the bus')
+      
+
+# st1 = BracuStudent("Afif", "Mirpur")
+# print("1===========================")
+# st2 = BracuStudent("Shanto", "Motijheel")
+# st3 = BracuStudent("Taskin", "Mirpur")
+# st1.show_details()
+# st2.show_details()
+# print("2===========================")
+# st3.show_details()
+# print("3===========================")
+# bus1 = BracuBus("Mirpur")
+# bus2 = BracuBus("Azimpur", 5)
+# bus1.show_details()
+# bus2.show_details()
+# print("4===========================")
+# st2.get_pass()
+# st3.get_pass()
+# print("5===========================")
+# st2.show_details()
+# st3.show_details()
+# print("6===========================")
+# bus1.board()
+# print("7===========================")
+# bus1.board(st1, st2)
+# print("8===========================")
+# st1.get_pass()
+# st2.home = "Mirpur"
+# st1.show_details()
+# st2.show_details()
+# print("9===========================")
+# bus1.board(st1, st2, st3)
+# print("10===========================")
+# bus1.show_details()
+
+
+# class BracuStudent:
+#   def __init__(self,name,area,bpass=False):
+#     self.name=name
+#     self.area=area
+#     self.bpass=bpass
+#   def show_details(self):
+#     print("Student Name:",self.name)
+#     print("Lives in",self.area)
+#     print("Have Bus Pass?",self.bpass)
+#   def get_pass(self):
+#     self.bpass=True
+
+# class BracuBus:
+#   def __init__(self,route,max=2):
+#     self.route =route
+#     self.max=max
+#     self.count=0
+#     self.board1=[]
+#     # if board!=None:
+#     #   self.board1.append(board)
+#   def show_details(self):
+#     print("Bus Route:",self.route)
+#     print(f"Passengers Count:{self.count}(Max:{self.max})")
+#     print("Passengers On Board:",self.board1)
+#   def board(self,*x):
+#     if len(x)==0:
+#       print("No passenger!")
+#     else:
+#       if bpass.x[0]!=True and x[-1].area==self.route:
+#         print("You don't have bus pass!")
+#       elif x.bpass[0]==True and x[-1]!=self.route:
+#         print("You got on wrong bus!")
+# st1 = BracuStudent("Afif", "Mirpur")
+# print("1===========================")
+# st2 = BracuStudent("Shanto", "Motijheel")
+# st3 = BracuStudent("Taskin", "Mirpur")
+# st1.show_details()
+# st2.show_details()
+# print("2===========================")
+# st3.show_details()
+# print("3===========================")
+# bus1 = BracuBus("Mirpur")
+# bus2 = BracuBus("Azimpur", 5)
+# bus1.show_details()
+# bus2.show_details()
+# print("4===========================")
+# st2.get_pass()
+# st3.get_pass()
+# print("5===========================")
+# st2.show_details()
+# st3.show_details()
+# print("6===========================")
+# bus1.board()
+# print("7===========================")
+# bus1.board(st1, st2)
+# print("8===========================")
+# st1.get_pass()
+# st2.home = "Mirpur"
+# st1.show_details()
+# st2.show_details()
+# print("9===========================")
+# bus1.board(st1, st2, st3)
+# print("10===========================")
+# bus1.show_details()
+
+class Library:
+    def __init__(self,city, dict1):
+      self.city = city
+      self.book = dict1
+      self.borrower_detail = {}
+
+
+    def details(self):
+      print(f'{self.city} Library details\nBorrower details:\n{self.borrower_detail}\nBooks availability:\n{self.book}')
+        
+class Reader:
+    def __init__(self,name):
       self.name = name
-      self.home = live_in
-      self.bus_pass = False
-    
-    def show_details(self):
-      print(f'Student Name: {self.name}\nLives in {self.home}\nHave Bus Pass? {self.bus_pass}')
-    
-    def get_pass(self):
-      self.bus_pass = True
-class BracuBus:
-    def __init__(self,route, max = 2):
-      self.route = route
-      self.max = max
-      self.on_board = []
-      self.passenger=[]
+      self.borrow_no = []
+      self.borrower = {}
+    def borrow(self,*args):
+      self.obj = args[0]
       
-
-    def show_details(self):
-      print(f'Bus Route: {self.route}\nPassengers Count: {len(self.on_board)} (Max: {self.max})\nPassengers On Board: {self.on_board}')
-
-    def board(self, *args):
-      if len(args)==0:
-        print('No passenger!')
+      for i in range(1,len(args)):
+         for k,v in self.obj.book.items():
+            if args[i] == k:
+              if v==0:
+                print(f'{args[i]} books are not available at the moment.')
+              
+              elif len(self.borrow_no)>=5:
+                print('You cannot borrow more than 5 books.')
+                
+              else:
+                self.obj.book[k]-=1
+                print(f'{args[i]} book is borrowed successfully.')
+                self.borrow_no.append(args[i])
+                if k in self.borrower:
+                  self.borrower[k] += 1
+                else:
+                  self.borrower[k]=1
+      self.obj.borrower_detail[self.name] = len(self.borrow_no)
+    def readerInfo(self,*topic):
+      self.topic = topic
+      print(f'{self.name} you have {len(self.borrow_no)} book(s) with you')
+      if self.topic != '':
+        for k,v in self.borrower.items():
+          print(f'Books on {k}: {v}')
       else:
-        for i in args:
-          if i.bus_pass == False:
-            print("You don't have bus pass!")
-          else:
-            if self.route != i.home:
-              print('You got on wrong bus!')
-            else:
-              self.passenger.append(i.name)
-        count=0
-        for i in self.passenger:
-          count+=1 
-          if count > self.max:
-            print('Bus is full!') 
-            return 
-          else:
-            self.on_board.append(i)
-            print(i,'boarded the bus')
-      
+        for k,v in self.borrower.items():
+          for i in self.topic:
+            if i == k:
+              print(f'{self.name}, you have {v} {i} book(s) with you.')
+            # if self.topic == k:
+            #   print(f'{self.name}, you have {v} {self.topic} book(s) with you.')
 
-st1 = BracuStudent("Afif", "Mirpur")
-print("1===========================")
-st2 = BracuStudent("Shanto", "Motijheel")
-st3 = BracuStudent("Taskin", "Mirpur")
-st1.show_details()
-st2.show_details()
-print("2===========================")
-st3.show_details()
-print("3===========================")
-bus1 = BracuBus("Mirpur")
-bus2 = BracuBus("Azimpur", 5)
-bus1.show_details()
-bus2.show_details()
-print("4===========================")
-st2.get_pass()
-st3.get_pass()
-print("5===========================")
-st2.show_details()
-st3.show_details()
-print("6===========================")
-bus1.board()
-print("7===========================")
-bus1.board(st1, st2)
-print("8===========================")
-st1.get_pass()
-st2.home = "Mirpur"
-st1.show_details()
-st2.show_details()
-print("9===========================")
-bus1.board(st1, st2, st3)
-print("10===========================")
-bus1.show_details()
+
+L1=Library('Dhaka',{'Arts':15,'Fiction':135,'Politics':2,'Science':11,'Poetry':15})
+L1.details()
+print("1----------------------")
+r1=Reader('Aladdin')
+r1.borrow(L1,'Arts','Fiction','Fiction','Politics')
+print("2----------------------")
+r1.borrow(L1,'Politics','Fiction')
+print("3----------------------")
+r1.readerInfo()
+print("4----------------------")
+r1.readerInfo('Fiction')
+print("5----------------------")
+L1.details()
+print("6----------------------")
+r2=Reader('Jasmine')
+r2.borrow(L1,'Politics','Poetry')
+print("7----------------------")
+r2.readerInfo()
+print("8----------------------")
+L1.details()
