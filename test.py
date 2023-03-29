@@ -2173,3 +2173,35 @@
 # bus1.board(st1, st2, st3)
 # print("10===========================")
 # bus1.show_details()
+
+
+class Hashing:
+  def __init__(self,a):
+    self.a=a
+    self.l=[0]*9
+    self.ac=0
+    self.calculate(a)
+    print("==============Task 2==============")
+    print("Initial array:",arr)
+    print("Hash table:",self.l)
+  def calculate(self, a):
+    if a!=[]:
+      self.hashTable(strng(a[0],c=0))
+      return self.calculate(a[1:])
+  def hashTable(self,idx):
+    if self.l[idx]==0:
+      self.l[idx]=arr[self.ac]
+    else:
+      return self.hashTable((idx+1)%9)
+    self.ac+=1
+
+def strng(s,c=0):
+  if s!='':
+    if ord(s[0])>=65 and ord(s[0])<=90:
+      return strng(s[1:],c+24)
+    elif ord(s[0])>=48 and ord(s[0])<=57:
+      return strng(s[1:],c+int(s[0]))
+  return c%9
+
+arr = ["ST1E89B8A32",'7','7','8','9','85127H']
+Hashing(arr)
