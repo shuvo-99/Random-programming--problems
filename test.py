@@ -2175,33 +2175,100 @@
 # bus1.show_details()
 
 
-class Hashing:
-  def __init__(self,a):
-    self.a=a
-    self.l=[0]*9
-    self.ac=0
-    self.calculate(a)
-    print("==============Task 2==============")
-    print("Initial array:",arr)
-    print("Hash table:",self.l)
-  def calculate(self, a):
-    if a!=[]:
-      self.hashTable(strng(a[0],c=0))
-      return self.calculate(a[1:])
-  def hashTable(self,idx):
-    if self.l[idx]==0:
-      self.l[idx]=arr[self.ac]
-    else:
-      return self.hashTable((idx+1)%9)
-    self.ac+=1
+# class Hashing:
+#   def __init__(self,a):
+#     self.a=a
+#     self.l=[0]*9
+#     self.ac=0
+#     self.calculate(a)
+#     print("==============Task 2==============")
+#     print("Initial array:",arr)
+#     print("Hash table:",self.l)
+#   def calculate(self, a):
+#     if a!=[]:
+#       self.hashTable(strng(a[0],c=0))
+#       return self.calculate(a[1:])
+#   def hashTable(self,idx):
+#     if self.l[idx]==0:
+#       self.l[idx]=arr[self.ac]
+#     else:
+#       return self.hashTable((idx+1)%9)
+#     self.ac+=1
 
-def strng(s,c=0):
-  if s!='':
-    if ord(s[0])>=65 and ord(s[0])<=90:
-      return strng(s[1:],c+24)
-    elif ord(s[0])>=48 and ord(s[0])<=57:
-      return strng(s[1:],c+int(s[0]))
-  return c%9
+# def strng(s,c=0):
+#   if s!='':
+#     if ord(s[0])>=65 and ord(s[0])<=90:
+#       return strng(s[1:],c+24)
+#     elif ord(s[0])>=48 and ord(s[0])<=57:
+#       return strng(s[1:],c+int(s[0]))
+#   return c%9
 
-arr = ["ST1E89B8A32",'7','7','8','9','85127H']
-Hashing(arr)
+# arr = ["ST1E89B8A32",'7','7','8','9','85127H']
+# Hashing(arr)
+
+class Train:
+  def __init__(self,train_name,*locations):
+    self.train_name=train_name
+    self.locations=locations
+    self.name_list=[]
+    self.start_list=[]
+    self.destination_list=[]
+    self.diff=[]
+    print(f"Welcome aboard on {self.train_name}")
+    print(f"Start: {self.locations[0]}")
+    print(f"Destination: {self.locations[-1]}")
+
+  def addPassenger(self,*arg):
+    for i in arg:
+      print(i.name,'welcome aboard')
+      self.name_list.append(i.name)
+      if i.start==None:
+        i.start=self.locations[0]
+        self.start_list.append(i.start)
+      else:
+        self.start_list.append(i.start)
+      
+      if i.destination==None:
+        i.destination=self.locations[-1]
+        self.destination_list.append(i.destination)
+      else:
+        self.destination_list.append(i.destination)
+
+      
+      # print(self.locations)
+      # print('i = ',i.start)
+      # print('s = ',i.destination)
+      diff=self.locations.index(i.destination)-self.locations.index(i.start)
+      self.diff.append(diff)
+
+  def allPassengerDetails(self):
+    for i in range(len(self.name_list)):
+      print(f"Name: {self.name_list[i]},Start: {self.start_list[i]},Destination: {self.destination_list[i]},Fair: {self.diff[i]*100}")
+
+class Passenger:
+  def __init__(self,name,start=None,destination=None):
+    self.name=name
+    self.start=start
+    self.destination=destination
+    
+
+
+t1 = Train('T1-Express','New York','Manhattan','Brooklyn','Boston')
+print("1========================")
+p1 =Passenger("Naruto")
+t1.addPassenger(p1)
+p2 = Passenger("Sasuke","Manhattan")
+p3 = Passenger("Hinata","Manhattan","Brooklyn")
+print("2========================")
+t1.addPassenger(p2,p3)
+print("3========================")
+t1.allPassengerDetails()
+print("4========================")
+t2 = Train('Europe-Express','London','Paris','Brussels','Turkey')
+print("5========================")
+p4 =Passenger("Max","London","Brussels")
+p5 = Passenger("Eleven","Paris")
+p6 = Passenger("Mike","Brussels")
+t2.addPassenger(p4,p5,p6)
+print("6========================")
+t2.allPassengerDetails()
