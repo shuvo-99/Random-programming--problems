@@ -2206,69 +2206,101 @@
 # arr = ["ST1E89B8A32",'7','7','8','9','85127H']
 # Hashing(arr)
 
-class Train:
-  def __init__(self,train_name,*locations):
-    self.train_name=train_name
-    self.locations=locations
-    self.name_list=[]
-    self.start_list=[]
-    self.destination_list=[]
-    self.diff=[]
-    print(f"Welcome aboard on {self.train_name}")
-    print(f"Start: {self.locations[0]}")
-    print(f"Destination: {self.locations[-1]}")
+# class Train:
+#   def __init__(self,train_name,*locations):
+#     self.train_name=train_name
+#     self.locations=locations
+#     self.name_list=[]
+#     self.start_list=[]
+#     self.destination_list=[]
+#     self.diff=[]
+#     print(f"Welcome aboard on {self.train_name}")
+#     print(f"Start: {self.locations[0]}")
+#     print(f"Destination: {self.locations[-1]}")
 
-  def addPassenger(self,*arg):
-    for i in arg:
-      print(i.name,'welcome aboard')
-      self.name_list.append(i.name)
-      if i.start==None:
-        i.start=self.locations[0]
-        self.start_list.append(i.start)
-      else:
-        self.start_list.append(i.start)
+#   def addPassenger(self,*arg):
+#     for i in arg:
+#       print(i.name,'welcome aboard')
+#       self.name_list.append(i.name)
+#       if i.start==None:
+#         i.start=self.locations[0]
+#         self.start_list.append(i.start)
+#       else:
+#         self.start_list.append(i.start)
       
-      if i.destination==None:
-        i.destination=self.locations[-1]
-        self.destination_list.append(i.destination)
-      else:
-        self.destination_list.append(i.destination)
+#       if i.destination==None:
+#         i.destination=self.locations[-1]
+#         self.destination_list.append(i.destination)
+#       else:
+#         self.destination_list.append(i.destination)
 
       
-      # print(self.locations)
-      # print('i = ',i.start)
-      # print('s = ',i.destination)
-      diff=self.locations.index(i.destination)-self.locations.index(i.start)
-      self.diff.append(diff)
+#       # print(self.locations)
+#       # print('i = ',i.start)
+#       # print('s = ',i.destination)
+#       diff=self.locations.index(i.destination)-self.locations.index(i.start)
+#       self.diff.append(diff)
 
-  def allPassengerDetails(self):
-    for i in range(len(self.name_list)):
-      print(f"Name: {self.name_list[i]},Start: {self.start_list[i]},Destination: {self.destination_list[i]},Fair: {self.diff[i]*100}")
+#   def allPassengerDetails(self):
+#     for i in range(len(self.name_list)):
+#       print(f"Name: {self.name_list[i]},Start: {self.start_list[i]},Destination: {self.destination_list[i]},Fair: {self.diff[i]*100}")
 
-class Passenger:
-  def __init__(self,name,start=None,destination=None):
-    self.name=name
-    self.start=start
-    self.destination=destination
+# class Passenger:
+#   def __init__(self,name,start=None,destination=None):
+#     self.name=name
+#     self.start=start
+#     self.destination=destination
     
 
+# t1 = Train('T1-Express','New York','Manhattan','Brooklyn','Boston')
+# print("1========================")
+# p1 =Passenger("Naruto")
+# t1.addPassenger(p1)
+# p2 = Passenger("Sasuke","Manhattan")
+# p3 = Passenger("Hinata","Manhattan","Brooklyn")
+# print("2========================")
+# t1.addPassenger(p2,p3)
+# print("3========================")
+# t1.allPassengerDetails()
+# print("4========================")
+# t2 = Train('Europe-Express','London','Paris','Brussels','Turkey')
+# print("5========================")
+# p4 =Passenger("Max","London","Brussels")
+# p5 = Passenger("Eleven","Paris")
+# p6 = Passenger("Mike","Brussels")
+# t2.addPassenger(p4,p5,p6)
+# print("6========================")
+# t2.allPassengerDetails()
 
-t1 = Train('T1-Express','New York','Manhattan','Brooklyn','Boston')
-print("1========================")
-p1 =Passenger("Naruto")
-t1.addPassenger(p1)
-p2 = Passenger("Sasuke","Manhattan")
-p3 = Passenger("Hinata","Manhattan","Brooklyn")
-print("2========================")
-t1.addPassenger(p2,p3)
-print("3========================")
-t1.allPassengerDetails()
-print("4========================")
-t2 = Train('Europe-Express','London','Paris','Brussels','Turkey')
-print("5========================")
-p4 =Passenger("Max","London","Brussels")
-p5 = Passenger("Eleven","Paris")
-p6 = Passenger("Mike","Brussels")
-t2.addPassenger(p4,p5,p6)
-print("6========================")
-t2.allPassengerDetails()
+
+class SportsPerson:
+  def __init__(self, team_name, name, role):
+    self.__team = team_name
+    self.__name = name
+    self.role = role
+    self.earning_per_match = 0
+  def get_name_team(self):
+    return 'Name: '+self.__name+', Team Name: ' +self.__team
+class Player(SportsPerson):
+  def __init__(self,team_name,name,role,totalgoal,totalmatch):
+    super().__init__(team_name,name,role)
+    self.totalgoal=totalgoal
+    self.totalmatch=totalmatch
+  def calculate_ratio(self):
+    self.earning_per_match=(self.totalgoal*1000)+(self.totalmatch*10)
+  def print_details(self):
+    print( f"{super().get_name_team()}\nTeam Role: {self.role}\nTotal Goal : {self.totalgoal}, Total played : {self.totalmatch}\nGoal ratio : {self.totalgoal/self.totalmatch}\nMatch earning : {self.earning_per_match}K")
+class Manager(SportsPerson):
+  def __init__(self, team_name, name, role,win):
+     super().__init__(team_name, name, role)
+     self.win=win
+     
+  def print_details(self):
+    print( f"{super().get_name_team()}\nTeam Role: {self.role}\nTotal win : {self.win}\nMatch earning : {self.win*1000}K")
+#write your code here
+player_one = Player('Juventus', 'Ronaldo', 'Striker', 25, 32)
+player_one.calculate_ratio()
+player_one.print_details()
+print('------------------------------------------')
+manager_one = Manager('Real Madrid', 'Zidane', 'Manager', 25)
+manager_one.print_details()
