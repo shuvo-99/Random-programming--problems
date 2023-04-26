@@ -2273,34 +2273,115 @@
 # t2.allPassengerDetails()
 
 
-class SportsPerson:
-  def __init__(self, team_name, name, role):
-    self.__team = team_name
-    self.__name = name
-    self.role = role
-    self.earning_per_match = 0
-  def get_name_team(self):
-    return 'Name: '+self.__name+', Team Name: ' +self.__team
-class Player(SportsPerson):
-  def __init__(self,team_name,name,role,totalgoal,totalmatch):
-    super().__init__(team_name,name,role)
-    self.totalgoal=totalgoal
-    self.totalmatch=totalmatch
-  def calculate_ratio(self):
-    self.earning_per_match=(self.totalgoal*1000)+(self.totalmatch*10)
-  def print_details(self):
-    print( f"{super().get_name_team()}\nTeam Role: {self.role}\nTotal Goal : {self.totalgoal}, Total played : {self.totalmatch}\nGoal ratio : {self.totalgoal/self.totalmatch}\nMatch earning : {self.earning_per_match}K")
-class Manager(SportsPerson):
-  def __init__(self, team_name, name, role,win):
-     super().__init__(team_name, name, role)
-     self.win=win
+# class SportsPerson:
+#   def __init__(self, team_name, name, role):
+#     self.__team = team_name
+#     self.__name = name
+#     self.role = role
+#     self.earning_per_match = 0
+#   def get_name_team(self):
+#     return 'Name: '+self.__name+', Team Name: ' +self.__team
+# class Player(SportsPerson):
+#   def __init__(self,team_name,name,role,totalgoal,totalmatch):
+#     super().__init__(team_name,name,role)
+#     self.totalgoal=totalgoal
+#     self.totalmatch=totalmatch
+#   def calculate_ratio(self):
+#     self.earning_per_match=(self.totalgoal*1000)+(self.totalmatch*10)
+#   def print_details(self):
+#     print( f"{super().get_name_team()}\nTeam Role: {self.role}\nTotal Goal : {self.totalgoal}, Total played : {self.totalmatch}\nGoal ratio : {self.totalgoal/self.totalmatch}\nMatch earning : {self.earning_per_match}K")
+# class Manager(SportsPerson):
+#   def __init__(self, team_name, name, role,win):
+#      super().__init__(team_name, name, role)
+#      self.win=win
      
-  def print_details(self):
-    print( f"{super().get_name_team()}\nTeam Role: {self.role}\nTotal win : {self.win}\nMatch earning : {self.win*1000}K")
-#write your code here
-player_one = Player('Juventus', 'Ronaldo', 'Striker', 25, 32)
-player_one.calculate_ratio()
-player_one.print_details()
-print('------------------------------------------')
-manager_one = Manager('Real Madrid', 'Zidane', 'Manager', 25)
-manager_one.print_details()
+#   def print_details(self):
+#     print( f"{super().get_name_team()}\nTeam Role: {self.role}\nTotal win : {self.win}\nMatch earning : {self.win*1000}K")
+# #write your code here
+# player_one = Player('Juventus', 'Ronaldo', 'Striker', 25, 32)
+# player_one.calculate_ratio()
+# player_one.print_details()
+# print('------------------------------------------')
+# manager_one = Manager('Real Madrid', 'Zidane', 'Manager', 25)
+# manager_one.print_details()
+
+
+class Library:
+    Total_book = 1000
+    borrow_data = {}
+    book_list=[]
+    
+    def __init__(self,n,id):
+        self.student_name = n
+        self.student_id = id     
+    
+    def borrowbook(self):
+        print("A book is borrowed!")
+        
+    def __str__(self):
+        return "Library: XYZ"
+
+class Student(Library):
+    def __init__(self,n,id):
+        super().__init__(n,id) 
+        self.dictionary={}
+    def borrowbook(self,name,uniqueid=None):
+        if uniqueid==None:
+            self.name=name 
+            self.uniqueid=""
+        else:
+            self.name=name 
+            self.uniqueid=uniqueid
+        
+    
+        if Library.Total_book>0:
+            if self.name in Library.borrow_data:
+                print(f"Sorry {self.student_name}! '{self.name}' book is already borrowed by {Library.borrow_data[name][0]}")
+            else:
+                Library.borrow_data[self.name]=[self.student_name]
+                Library.book_list.append(self.name)
+                Library.Total_book-=1 
+                super().borrowbook()
+                print(f"{self.name} book with the unique id {self.uniqueid} is borrowed by by {self.student_name}({self.student_id})\nNumber of books available for borrowing={Library.Total_book}")
+       
+
+    def returnAllBooks(self):
+        # if Library.Total_book<999:
+        #     print(f"All the books have been returned by {self.student_name}")
+        borrow_dict2 = Library.borrow_data.copy()
+        for k,v in borrow_dict2.items():
+            for i in v:
+              # print(i)
+              # print(self.student_name)
+              if self.student_name == i:
+                  # print('yes')
+                  del Library.borrow_data[k]
+        print('All Books are returned by Alice.')
+
+              
+            
+
+    def __str__(self):
+        return(f"{super().__str__()}\nStudent Name:{self.student_name} ID:{self.student_id}\nBooks borrowed:{','.join(Library.book_list)}")
+#driver code
+s1 = Student("Alice",18101259)
+s1.borrowbook("The Alchemist", "Hdw652")
+print("1===============")
+print(s1)
+print("2===============")
+print(Library.borrow_data)
+print("3===============")
+s1.borrowbook("Wuthering Heights")
+print("4===============")
+print(s1)
+print("5===============")
+s2= Student("David",18141777)
+s2.borrowbook("The Alchemist", "Hdw652")
+print("6===============")
+s2.borrowbook("The Vampyre")
+print("7===============")
+print(Library.borrow_data)
+print("8===============")
+s1.returnAllBooks()
+print("9===============")
+print(Library.borrow_data)
