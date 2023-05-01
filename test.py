@@ -2386,8 +2386,73 @@
 # print("9===============")
 # print(Library.borrow_data)
 
+# class Mobile:
+#   countryCodes = {"880": "Bangladesh", "966": "India", "455": "USA"}
+#   def __init__(self, model, simCardStatus):
+#     self.model = model
+#     self.__simCardStatus = simCardStatus
+#     print(f"Model {model} is manufactured.")
+#   def setSimCardStatus(self,status):
+#     self.__simCardStatus = status
+#     print("SIM card status updated successfully.")
+#   def getSimCardStatus(self):
+#     return self.__simCardStatus
+#   def __str__(self):
+#     return f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.__simCardStatus}"
+# class Nokia(Mobile):
+#   def __init__(self, model, simCardStatus, balance=0):
+#     self.balance=balance
+#     self.dialCallHistory=[]
+#     super().__init__(model, simCardStatus)
+     
+#   def __str__(self):
+#     return(f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance: {self.balance} TK")
+  
+#   def rechargeSIMCard(self,new_b):
+#     self.balance+=new_b
+#     print(f"Recharge successful! Current balance: {self.balance} TK")
+  
+#   def changeSIMCardStatus(self):
+#     self.setSimCardStatus(not self.getSimCardStatus())
+#     return('SIM card status updated successfully.')
+#   def dialCall(self, num):
+#     if self.getSimCardStatus()==False:
+#       return('No SIM card available!')
+#     elif self.balance==0:
+#       return('Insufficient balance!')
+#     elif num[0:3] in Mobile.countryCodes:
+#       self.dialCallHistory.append(num)
+#       return(f"Dialing the number {num} to {Mobile.countryCodes[num[:3]]} region")
+#     elif num[0:3]!='880' or num[0:3]!='966' or num[0:3]!='455':
+#       return(f"Dialing is not allowed in this region.")
+# N3110 = Nokia("N3110", False)
+# print("#######################################")
+# print(N3110)
+# print("1======================================")
+# N1100 = Nokia("N1100", True,100)
+# print("#######################################")
+# print(N1100)
+# print("2======================================")
+# print(N3110.dialCall("88017196xxxx"))
+# print("3======================================")
+# N3110.changeSIMCardStatus()
+# print("4======================================")
+# print(N3110.dialCall("88017196xxxx"))
+# print("5======================================")
+# N3110.rechargeSIMCard(200)
+# print("6======================================")
+# print(N3110.dialCall("88017196xxxx"))
+# print("7======================================")
+# print(N1100.dialCall("45617196xxxx"))
+# print("8======================================")
+# print(N1100.dialCall("45517196xxxx"))
+# print(N1100.dialCall("96617196xxxx"))
+# print("9======================================")
+# print(f"Dial call history for {N1100.model}: {N1100.dialCallHistory}")
+# print(f"Dial call history for {N3110.model}: {N3110.dialCallHistory}")
+
 class Mobile:
-  countryCodes = {"880": "Bangladesh", "966": "India", "455": "USA"}
+  countryCodes = {"880": "Bangladesh", "966": "India","455": "USA"}
   def __init__(self, model, simCardStatus):
     self.model = model
     self.__simCardStatus = simCardStatus
@@ -2398,33 +2463,33 @@ class Mobile:
   def getSimCardStatus(self):
     return self.__simCardStatus
   def __str__(self):
-    return f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.__simCardStatus}"
+    return f"Mobile Phone Detail:\nModel:{self.model}\nSIM Card Status: {self.__simCardStatus}"
+#Write your code here
 class Nokia(Mobile):
-  def __init__(self, model, simCardStatus, balance=0):
+  def __init__(self,model,status,balance=0):
+    super().__init__(model,status)
     self.balance=balance
-    self.dialCallHistory=[]
-    super().__init__(model, simCardStatus)
-     
   def __str__(self):
-    return(f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance: {self.balance} TK")
-  
-  def rechargeSIMCard(self,new_b):
-    self.balance+=new_b
-    print(f"Recharge successful! Current balance: {self.balance} TK")
-  
-  def changeSIMCardStatus(self):
-    self.setSimCardStatus(not self.getSimCardStatus())
-    return('SIM card status updated successfully.')
-  def dialCall(self, num):
+    return f"Mobile Phone Detail:\nModel:{self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance:{self.balance}"
+    # print(super().__str__())
+    # print(f"Balance:",self.balance)
+  def dialCall(self,number):
+    self.code=number[:3]
+    # print(self.code)
     if self.getSimCardStatus()==False:
-      return('No SIM card available!')
-    elif self.balance==0:
-      return('Insufficient balance!')
-    elif num[0:3] in Mobile.countryCodes:
-      self.dialCallHistory.append(num)
-      return(f"Dialing the number {num} to {Mobile.countryCodes[num[:3]]} region")
-    elif num[0:3]!='880' or num[0:3]!='966' or num[0:3]!='455':
-      return(f"Dialing is not allowed in this region.")
+      return "No SIM card available!"
+      
+    elif(self.balance==0):
+      return "Insufficient balance!"
+    else:
+   
+      if self.code in Mobile.countryCodes:
+        for k,v in Mobile.countryCodes.items():
+          if self.code==k:
+            return f"Dialing the number {number} to {v} region."
+      else:
+        return "Dialing is not allowed in this region."
+        
 N3110 = Nokia("N3110", False)
 print("#######################################")
 print(N3110)
@@ -2435,11 +2500,11 @@ print(N1100)
 print("2======================================")
 print(N3110.dialCall("88017196xxxx"))
 print("3======================================")
-N3110.changeSIMCardStatus()
+# N3110.changeSIMCardStatus()
 print("4======================================")
 print(N3110.dialCall("88017196xxxx"))
 print("5======================================")
-N3110.rechargeSIMCard(200)
+# N3110.rechargeSIMCard(200)
 print("6======================================")
 print(N3110.dialCall("88017196xxxx"))
 print("7======================================")
@@ -2448,5 +2513,5 @@ print("8======================================")
 print(N1100.dialCall("45517196xxxx"))
 print(N1100.dialCall("96617196xxxx"))
 print("9======================================")
-print(f"Dial call history for {N1100.model}: {N1100.dialCallHistory}")
-print(f"Dial call history for {N3110.model}: {N3110.dialCallHistory}")
+# print(f"Dial call history for {N1100.model}:{N1100.dialCallHistory}")
+# print(f"Dial call history for {N3110.model}:{N3110.dialCallHistory}")
