@@ -2306,82 +2306,147 @@
 # manager_one.print_details()
 
 
-class Library:
-    Total_book = 1000
-    borrow_data = {}
-    book_list=[]
+# class Library:
+#     Total_book = 1000
+#     borrow_data = {}
+#     book_list=[]
     
-    def __init__(self,n,id):
-        self.student_name = n
-        self.student_id = id     
+#     def __init__(self,n,id):
+#         self.student_name = n
+#         self.student_id = id     
     
-    def borrowbook(self):
-        print("A book is borrowed!")
+#     def borrowbook(self):
+#         print("A book is borrowed!")
         
-    def __str__(self):
-        return "Library: XYZ"
+#     def __str__(self):
+#         return "Library: XYZ"
 
-class Student(Library):
-    def __init__(self,n,id):
-        super().__init__(n,id) 
-        self.dictionary={}
-    def borrowbook(self,name,uniqueid=None):
-        if uniqueid==None:
-            self.name=name 
-            self.uniqueid=""
-        else:
-            self.name=name 
-            self.uniqueid=uniqueid
+# class Student(Library):
+#     def __init__(self,n,id):
+#         super().__init__(n,id) 
+#         self.dictionary={}
+#     def borrowbook(self,name,uniqueid=None):
+#         if uniqueid==None:
+#             self.name=name 
+#             self.uniqueid=""
+#         else:
+#             self.name=name 
+#             self.uniqueid=uniqueid
         
     
-        if Library.Total_book>0:
-            if self.name in Library.borrow_data:
-                print(f"Sorry {self.student_name}! '{self.name}' book is already borrowed by {Library.borrow_data[name][0]}")
-            else:
-                Library.borrow_data[self.name]=[self.student_name]
-                Library.book_list.append(self.name)
-                Library.Total_book-=1 
-                super().borrowbook()
-                print(f"{self.name} book with the unique id {self.uniqueid} is borrowed by by {self.student_name}({self.student_id})\nNumber of books available for borrowing={Library.Total_book}")
+#         if Library.Total_book>0:
+#             if self.name in Library.borrow_data:
+#                 print(f"Sorry {self.student_name}! '{self.name}' book is already borrowed by {Library.borrow_data[name][0]}")
+#             else:
+#                 Library.borrow_data[self.name]=[self.student_name]
+#                 Library.book_list.append(self.name)
+#                 Library.Total_book-=1 
+#                 super().borrowbook()
+#                 print(f"{self.name} book with the unique id {self.uniqueid} is borrowed by by {self.student_name}({self.student_id})\nNumber of books available for borrowing={Library.Total_book}")
        
 
-    def returnAllBooks(self):
-        # if Library.Total_book<999:
-        #     print(f"All the books have been returned by {self.student_name}")
-        borrow_dict2 = Library.borrow_data.copy()
-        for k,v in borrow_dict2.items():
-            for i in v:
-              # print(i)
-              # print(self.student_name)
-              if self.student_name == i:
-                  # print('yes')
-                  del Library.borrow_data[k]
-        print('All Books are returned by Alice.')
+#     def returnAllBooks(self):
+#         # if Library.Total_book<999:
+#         #     print(f"All the books have been returned by {self.student_name}")
+#         borrow_dict2 = Library.borrow_data.copy()
+#         for k,v in borrow_dict2.items():
+#             for i in v:
+#               # print(i)
+#               # print(self.student_name)
+#               if self.student_name == i:
+#                   # print('yes')
+#                   del Library.borrow_data[k]
+#         print('All Books are returned by Alice.')
 
               
             
 
-    def __str__(self):
-        return(f"{super().__str__()}\nStudent Name:{self.student_name} ID:{self.student_id}\nBooks borrowed:{','.join(Library.book_list)}")
-#driver code
-s1 = Student("Alice",18101259)
-s1.borrowbook("The Alchemist", "Hdw652")
-print("1===============")
-print(s1)
-print("2===============")
-print(Library.borrow_data)
-print("3===============")
-s1.borrowbook("Wuthering Heights")
-print("4===============")
-print(s1)
-print("5===============")
-s2= Student("David",18141777)
-s2.borrowbook("The Alchemist", "Hdw652")
-print("6===============")
-s2.borrowbook("The Vampyre")
-print("7===============")
-print(Library.borrow_data)
-print("8===============")
-s1.returnAllBooks()
-print("9===============")
-print(Library.borrow_data)
+#     def __str__(self):
+#         return(f"{super().__str__()}\nStudent Name:{self.student_name} ID:{self.student_id}\nBooks borrowed:{','.join(Library.book_list)}")
+# #driver code
+# s1 = Student("Alice",18101259)
+# s1.borrowbook("The Alchemist", "Hdw652")
+# print("1===============")
+# print(s1)
+# print("2===============")
+# print(Library.borrow_data)
+# print("3===============")
+# s1.borrowbook("Wuthering Heights")
+# print("4===============")
+# print(s1)
+# print("5===============")
+# s2= Student("David",18141777)
+# s2.borrowbook("The Alchemist", "Hdw652")
+# print("6===============")
+# s2.borrowbook("The Vampyre")
+# print("7===============")
+# print(Library.borrow_data)
+# print("8===============")
+# s1.returnAllBooks()
+# print("9===============")
+# print(Library.borrow_data)
+
+class Mobile:
+  countryCodes = {"880": "Bangladesh", "966": "India", "455": "USA"}
+  def __init__(self, model, simCardStatus):
+    self.model = model
+    self.__simCardStatus = simCardStatus
+    print(f"Model {model} is manufactured.")
+  def setSimCardStatus(self,status):
+    self.__simCardStatus = status
+    print("SIM card status updated successfully.")
+  def getSimCardStatus(self):
+    return self.__simCardStatus
+  def __str__(self):
+    return f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.__simCardStatus}"
+class Nokia(Mobile):
+  def __init__(self, model, simCardStatus, balance=0):
+    self.balance=balance
+    self.dialCallHistory=[]
+    super().__init__(model, simCardStatus)
+     
+  def __str__(self):
+    return(f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance: {self.balance} TK")
+  
+  def rechargeSIMCard(self,new_b):
+    self.balance+=new_b
+    print(f"Recharge successful! Current balance: {self.balance} TK")
+  
+  def changeSIMCardStatus(self):
+    self.setSimCardStatus(not self.getSimCardStatus())
+    return('SIM card status updated successfully.')
+  def dialCall(self, num):
+    if self.getSimCardStatus()==False:
+      return('No SIM card available!')
+    elif self.balance==0:
+      return('Insufficient balance!')
+    elif num[0:3] in Mobile.countryCodes:
+      self.dialCallHistory.append(num)
+      return(f"Dialing the number {num} to {Mobile.countryCodes[num[:3]]} region")
+    elif num[0:3]!='880' or num[0:3]!='966' or num[0:3]!='455':
+      return(f"Dialing is not allowed in this region.")
+N3110 = Nokia("N3110", False)
+print("#######################################")
+print(N3110)
+print("1======================================")
+N1100 = Nokia("N1100", True,100)
+print("#######################################")
+print(N1100)
+print("2======================================")
+print(N3110.dialCall("88017196xxxx"))
+print("3======================================")
+N3110.changeSIMCardStatus()
+print("4======================================")
+print(N3110.dialCall("88017196xxxx"))
+print("5======================================")
+N3110.rechargeSIMCard(200)
+print("6======================================")
+print(N3110.dialCall("88017196xxxx"))
+print("7======================================")
+print(N1100.dialCall("45617196xxxx"))
+print("8======================================")
+print(N1100.dialCall("45517196xxxx"))
+print(N1100.dialCall("96617196xxxx"))
+print("9======================================")
+print(f"Dial call history for {N1100.model}: {N1100.dialCallHistory}")
+print(f"Dial call history for {N3110.model}: {N3110.dialCallHistory}")
