@@ -2556,32 +2556,88 @@
 # manager_one = Manager('Real Madrid', 'Zidane', 'Manager', 25)
 # manager_one.print_details()
 
-class A:
-    temp = 7
-    def __init__(self):
-        self.y = A.temp - 3
-        self.sum = self.temp + 2
-        A.temp += 3
-    def methodA(self, m, n, x=0):
-        self.y = self.y + m + (A.temp)
-        x = x + 2 + n
-        self.sum = self.sum + x + self.temp
-        print(x, self.y, self.sum)
-class B(A):
-    temp = 1
-    def __init__(self, obj=None):
-        super().__init__()
-        self.temp = self.temp + B.temp
-        self.sum = 3 + B.temp + A.temp
-        if obj != None:
-            obj.methodB(3, 6)
-        else:
-            self.methodB(1, 4)
-    def methodB(self, m, n):
-        y = self.temp + self.y + n
-        B.temp = m + self.y + n
-        self.methodA(n, m)
-        self.sum = self.y + y + A.temp
-        print(self.temp , y, self.sum)
-b1 = B()
-b2 = B(b1)
+# class A:
+#     temp = 7
+#     def __init__(self):
+#         self.y = A.temp - 3
+#         self.sum = self.temp + 2
+#         A.temp += 3
+#     def methodA(self, m, n, x=0):
+#         self.y = self.y + m + (A.temp)
+#         x = x + 2 + n
+#         self.sum = self.sum + x + self.temp
+#         print(x, self.y, self.sum)
+# class B(A):
+#     temp = 1
+#     def __init__(self, obj=None):
+#         super().__init__()
+#         self.temp = self.temp + B.temp
+#         self.sum = 3 + B.temp + A.temp
+#         if obj != None:
+#             obj.methodB(3, 6)
+#         else:
+#             self.methodB(1, 4)
+#     def methodB(self, m, n):
+#         y = self.temp + self.y + n
+#         B.temp = m + self.y + n
+#         self.methodA(n, m)
+#         self.sum = self.y + y + A.temp
+#         print(self.temp , y, self.sum)
+# b1 = B()
+# b2 = B(b1)
+
+
+# Summer final 2022
+class User:
+  activities = ["Post", "Like", "Comment"]
+  def __init__(self, name,email):
+    self.name = name
+    self.email = email
+  def UserActivity(self, activityType):
+    if activityType in User.activities:
+      return True
+    else:
+      return False
+  def userDetail(self):
+    return f"User Detail:\nName:{self.name}\nEmail: {self.email}"
+  
+class BracbookUser(User):
+  activity=['No recent acitivity.']
+  
+  def __init__(self, name, email, phn='No set'):
+    super().__init__(name, email)
+    self.phn = phn
+    self.task=''
+
+  def userDetail(self):
+    return f"User Detail:\nName:{self.name}\nEmail: {self.email}\nPhone: {self.phn}\nActivity Log: {BracbookUser.activity[0]}"
+
+  def UserActivity(self, activityType):
+    self.activityType = activityType
+    if super().UserActivity(activityType) == True:
+      self.task += self.activityType + ', '
+      print(f'{self.name} has {self.activityType}(d/ed) successfully')
+      BracbookUser.activity[0] = self.task[:-2]
+    else:
+      print(f'No activities found like {self.activityType}')
+
+
+user1 = BracbookUser("Rakait","xyz@gmail.com")
+print("1===========================")
+print(user1.userDetail())
+print("2===========================")
+user2 = BracbookUser("Sazzad","abc@gmail.com","01727xxxxxx")
+print("3===========================")
+print(user2.userDetail())
+print("4===========================")
+user1.UserActivity("Like")
+print("5===========================")
+user1.UserActivity("Comment")
+print("6===========================")
+print(user1.userDetail())
+print("7===========================")
+user2.UserActivity("Share")
+print("8===========================")
+user2.UserActivity("Comment")
+print("9===========================")
+print(user2.userDetail())
