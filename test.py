@@ -2451,67 +2451,106 @@
 # print(f"Dial call history for {N1100.model}: {N1100.dialCallHistory}")
 # print(f"Dial call history for {N3110.model}: {N3110.dialCallHistory}")
 
-class Mobile:
-  countryCodes = {"880": "Bangladesh", "966": "India","455": "USA"}
-  def __init__(self, model, simCardStatus):
-    self.model = model
-    self.__simCardStatus = simCardStatus
-    print(f"Model {model} is manufactured.")
-  def setSimCardStatus(self,status):
-    self.__simCardStatus = status
-    print("SIM card status updated successfully.")
-  def getSimCardStatus(self):
-    return self.__simCardStatus
-  def __str__(self):
-    return f"Mobile Phone Detail:\nModel:{self.model}\nSIM Card Status: {self.__simCardStatus}"
-#Write your code here
-class Nokia(Mobile):
-  def __init__(self,model,status,balance=0):
-    super().__init__(model,status)
-    self.balance=balance
-  def __str__(self):
-    return f"Mobile Phone Detail:\nModel:{self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance:{self.balance}"
-    # print(super().__str__())
-    # print(f"Balance:",self.balance)
-  def dialCall(self,number):
-    self.code=number[:3]
-    # print(self.code)
-    if self.getSimCardStatus()==False:
-      return "No SIM card available!"
+# class Mobile:
+#   countryCodes = {"880": "Bangladesh", "966": "India","455": "USA"}
+#   def __init__(self, model, simCardStatus):
+#     self.model = model
+#     self.__simCardStatus = simCardStatus
+#     print(f"Model {model} is manufactured.")
+#   def setSimCardStatus(self,status):
+#     self.__simCardStatus = status
+#     print("SIM card status updated successfully.")
+#   def getSimCardStatus(self):
+#     return self.__simCardStatus
+#   def __str__(self):
+#     return f"Mobile Phone Detail:\nModel:{self.model}\nSIM Card Status: {self.__simCardStatus}"
+# #Write your code here
+# class Nokia(Mobile):
+#   def __init__(self,model,status,balance=0):
+#     super().__init__(model,status)
+#     self.balance=balance
+#   def __str__(self):
+#     return f"Mobile Phone Detail:\nModel:{self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance:{self.balance}"
+#     # print(super().__str__())
+#     # print(f"Balance:",self.balance)
+#   def dialCall(self,number):
+#     self.code=number[:3]
+#     # print(self.code)
+#     if self.getSimCardStatus()==False:
+#       return "No SIM card available!"
       
-    elif(self.balance==0):
-      return "Insufficient balance!"
-    else:
+#     elif(self.balance==0):
+#       return "Insufficient balance!"
+#     else:
    
-      if self.code in Mobile.countryCodes:
-        for k,v in Mobile.countryCodes.items():
-          if self.code==k:
-            return f"Dialing the number {number} to {v} region."
-      else:
-        return "Dialing is not allowed in this region."
+#       if self.code in Mobile.countryCodes:
+#         for k,v in Mobile.countryCodes.items():
+#           if self.code==k:
+#             return f"Dialing the number {number} to {v} region."
+#       else:
+#         return "Dialing is not allowed in this region."
         
-N3110 = Nokia("N3110", False)
-print("#######################################")
-print(N3110)
-print("1======================================")
-N1100 = Nokia("N1100", True,100)
-print("#######################################")
-print(N1100)
-print("2======================================")
-print(N3110.dialCall("88017196xxxx"))
-print("3======================================")
-# N3110.changeSIMCardStatus()
-print("4======================================")
-print(N3110.dialCall("88017196xxxx"))
-print("5======================================")
-# N3110.rechargeSIMCard(200)
-print("6======================================")
-print(N3110.dialCall("88017196xxxx"))
-print("7======================================")
-print(N1100.dialCall("45617196xxxx"))
-print("8======================================")
-print(N1100.dialCall("45517196xxxx"))
-print(N1100.dialCall("96617196xxxx"))
-print("9======================================")
+# N3110 = Nokia("N3110", False)
+# print("#######################################")
+# print(N3110)
+# print("1======================================")
+# N1100 = Nokia("N1100", True,100)
+# print("#######################################")
+# print(N1100)
+# print("2======================================")
+# print(N3110.dialCall("88017196xxxx"))
+# print("3======================================")
+# # N3110.changeSIMCardStatus()
+# print("4======================================")
+# print(N3110.dialCall("88017196xxxx"))
+# print("5======================================")
+# # N3110.rechargeSIMCard(200)
+# print("6======================================")
+# print(N3110.dialCall("88017196xxxx"))
+# print("7======================================")
+# print(N1100.dialCall("45617196xxxx"))
+# print("8======================================")
+# print(N1100.dialCall("45517196xxxx"))
+# print(N1100.dialCall("96617196xxxx"))
+# print("9======================================")
 # print(f"Dial call history for {N1100.model}:{N1100.dialCallHistory}")
 # print(f"Dial call history for {N3110.model}:{N3110.dialCallHistory}")
+
+# class SportsPerson:
+#   def __init__(self, team_name, name, role):
+#     self.__team = team_name
+#     self.__name = name
+#     self.role = role
+#     self.earning_per_match = 0
+#   def get_name_team(self):
+#     return 'Name: '+self.__name+', Team Name: ' +self.__team
+# class Player(SportsPerson):
+#     def __init__(self, team_name, name, role, goal, played):
+#         super().__init__(team_name, name, role)
+#         self.goal = goal
+#         self.played = played
+#     def calculate_ratio(self):
+#         self.ratio = self.goal / self.played
+#     def print_details(self):
+#         earning = (self.goal * 1000) + (self.played * 10)
+#         print(super().get_name_team())
+#         print(f"Team Role: {self.role}")
+#         print(f"Total Goal: {self.goal}, Total Played: {self.played}")
+#         print(f"Goal Ratio: {self.ratio}")
+#         print(f"Match Earning: {earning}K")
+# class Manager(SportsPerson):
+#     def __init__(self, team_name, name, role, win):
+#         super().__init__(team_name, name, role)
+#         self.win = win
+#     def print_details(self):
+#         earning = self.win * 1000
+#         print(super().get_name_team())
+#         print(f"Team Role: {self.role}")
+#         print(f"Win: {self.win}")
+#         print(f"Match Earning: {earning}K")
+# player_one = Player('Juventus', 'Ronaldo', 'Striker', 25, 32)
+# player_one.calculate_ratio()
+# player_one.print_details()
+# print('------------------------------------------')
+# manager_one = Manager('Real Madrid', 'Zidane', 'Manager', 25)
+# manager_one.print_details()
