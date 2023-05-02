@@ -2404,6 +2404,7 @@
 #     self.balance=balance
 #     self.dialCallHistory=[]
 #     super().__init__(model, simCardStatus)
+#     print(self.model)
      
 #   def __str__(self):
 #     return(f"Mobile Phone Detail:\nModel: {self.model}\nSIM Card Status: {self.getSimCardStatus()}\nBalance: {self.balance} TK")
@@ -2554,3 +2555,33 @@
 # print('------------------------------------------')
 # manager_one = Manager('Real Madrid', 'Zidane', 'Manager', 25)
 # manager_one.print_details()
+
+class A:
+    temp = 7
+    def __init__(self):
+        self.y = A.temp - 3
+        self.sum = self.temp + 2
+        A.temp += 3
+    def methodA(self, m, n, x=0):
+        self.y = self.y + m + (A.temp)
+        x = x + 2 + n
+        self.sum = self.sum + x + self.temp
+        print(x, self.y, self.sum)
+class B(A):
+    temp = 1
+    def __init__(self, obj=None):
+        super().__init__()
+        self.temp = self.temp + B.temp
+        self.sum = 3 + B.temp + A.temp
+        if obj != None:
+            obj.methodB(3, 6)
+        else:
+            self.methodB(1, 4)
+    def methodB(self, m, n):
+        y = self.temp + self.y + n
+        B.temp = m + self.y + n
+        self.methodA(n, m)
+        self.sum = self.y + y + A.temp
+        print(self.temp , y, self.sum)
+b1 = B()
+b2 = B(b1)
