@@ -2733,3 +2733,22 @@
 
 # runGame()
 
+# Previous theory quiz question solve
+
+# t1=(('D',[12,22,95,43]) ,('e',[44,56,2]),('F',[6,8,22,1]), ('G', [55,15]),('h',[9,0,13,13,51,3]))
+# d={}
+# for i in t1:
+#     if 'A'<= i[0] <='Z':
+#         add=0
+#         for j in i[1]:
+#             add+=j
+#         k = 'Sum of '+i[0]
+#         d[k]=add
+#     else :
+#         prod = 1
+#         for k in i[1]:
+#             prod *= k 
+#         k = 'Product of '+i[0]
+#         d[k]=prod
+# print(d)
+
