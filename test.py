@@ -2752,3 +2752,57 @@
 #         d[k]=prod
 # print(d)
 
+# Assignment 2 - 2023
+
+# class CellPackage:
+#     def __init__(self, price, data, talk_time,messages,cashback, validity ):
+#         self.price = price
+#         data=data.split(' ')
+#         self.data = int(data[0])*1024
+#         self.talk_time = talk_time
+#         self.messages=messages
+#         self.cashback=int((self.price*(int(cashback[:-1])/100))//1)
+#         self.validity=validity
+#         # self.dict1={'Data =':f'{self.data} MB','Talktime =':f'{self.talk_time} Minutes','SMS/MMS =':f'{self.messages}','Validity =':f'{self.validity} Days','--> Price = ':f'{self.price} tk','Buy now to get':f'{self.cashback} tk cashback.'}
+
+# pkg = CellPackage(150, '6 GB', 99, 20, '7%', 7)
+# print('============= Package 1 =============')
+# # Subtask 2: Check each attribute and print
+# if pkg.data:
+#     print(f"Data = {pkg.data} MB")
+# if pkg.talk_time:
+#     print(f"Talktime = {pkg.talk_time} Minutes")
+# if pkg.messages:
+#     print(f"SMS/MMS = {pkg.messages}")
+# print(f"Validity = {pkg.validity} Days")
+# print(f"--> Price = {pkg.price} tk")
+# if pkg.cashback:
+#     print(f"Buy now to get {pkg.cashback} tk cashback.")
+
+# pkg2 = CellPackage(700, '35 GB', 700, 0, '10%', 30)
+# print('============= Package 2 =============')
+# # Subtask 3: Check each attribute and print
+# if pkg2.data:
+#     print(f"Data = {pkg2.data} MB")
+# if pkg2.talk_time:
+#     print(f"Talktime = {pkg2.talk_time} Minutes")
+# if pkg2.messages:
+#     print(f"SMS/MMS = {pkg2.messages}")
+# print(f"Validity = {pkg2.validity} Days")
+# print(f"--> Price = {pkg2.price} tk")
+# if pkg2.cashback:
+#     print(f"Buy now to get {pkg2.cashback} tk cashback.")
+    
+# pkg4 = CellPackage(120, '0 GB', 190, 0, '0%', 10)
+# print('============= Package 3 =============')
+# # Subtask 4: Check each attribute and print
+# if pkg4.data:
+#     print(f"Data = {pkg4.data} MB")
+# if pkg4.talk_time:
+#     print(f"Talktime = {pkg4.talk_time} Minutes")
+# if pkg4.messages:
+#     print(f"SMS/MMS = {pkg4.messages}")
+# print(f"Validity = {pkg4.validity} Days")
+# print(f"--> Price = {pkg4.price} tk")
+# if pkg4.cashback:
+#     print(f"Buy now to get {pkg4.cashback} tk cashback.")
