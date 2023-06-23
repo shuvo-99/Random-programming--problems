@@ -2753,7 +2753,7 @@
 # print(d)
 
 # Assignment 2 - 2023
-
+# TASK - 1
 # class CellPackage:
 #     def __init__(self, price, data, talk_time,messages,cashback, validity ):
 #         self.price = price
@@ -2806,3 +2806,26 @@
 # print(f"--> Price = {pkg4.price} tk")
 # if pkg4.cashback:
 #     print(f"Buy now to get {pkg4.cashback} tk cashback.")
+
+
+# TASK - 4
+import math
+class Vector3D:
+    def __init__(self, x, y, z):
+        self.x = x 
+        self.y = y
+        self.z = z
+        print(f'Vector <{self.x}, {self.y}, {self.z}> has been created.')
+vector1 = Vector3D(2,-3,1)
+vector2 = Vector3D(-1,4,0)
+magnitude1 = math.sqrt(pow(vector1.x,2)+pow(vector1.y,2)+pow(vector1.z,2))
+print('Magnitude of the first vector =',magnitude1)
+magnitude2 = math.sqrt(pow(vector2.x,2)+pow(vector2.y,2)+pow(vector2.z,2))
+print('Magnitude of the second vector =',magnitude2)
+dotproduct = (vector1.x*vector2.x)+(vector1.y*vector2.y)+(vector1.z*vector2.z)
+print('Dot product of the two vectors =',dotproduct)
+crossProduct_x = (vector1.y*vector2.z)-(vector1.z*vector2.y)
+crossProduct_y = (vector1.z*vector2.x)-(vector1.x*vector2.z)
+crossProduct_z = (vector1.x*vector2.y)-(vector1.y*vector2.x)
+vector3 = Vector3D(crossProduct_x,crossProduct_y,crossProduct_z)
+print(f'Cross product of the two vectors = <{crossProduct_x}, {crossProduct_y}, {crossProduct_z}>')
