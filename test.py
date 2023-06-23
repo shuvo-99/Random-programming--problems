@@ -2622,22 +2622,187 @@
 #       print(f'No activities found like {self.activityType}')
 
 
-user1 = BracbookUser("Rakait","xyz@gmail.com")
-print("1===========================")
-print(user1.userDetail())
-print("2===========================")
-user2 = BracbookUser("Sazzad","abc@gmail.com","01727xxxxxx")
-print("3===========================")
-print(user2.userDetail())
-print("4===========================")
-user1.UserActivity("Like")
-print("5===========================")
-user1.UserActivity("Comment")
-print("6===========================")
-print(user1.userDetail())
-print("7===========================")
-user2.UserActivity("Share")
-print("8===========================")
-user2.UserActivity("Comment")
-print("9===========================")
-print(user2.userDetail())
+# user1 = BracbookUser("Rakait","xyz@gmail.com")
+# print("1===========================")
+# print(user1.userDetail())
+# print("2===========================")
+# user2 = BracbookUser("Sazzad","abc@gmail.com","01727xxxxxx")
+# print("3===========================")
+# print(user2.userDetail())
+# print("4===========================")
+# user1.UserActivity("Like")
+# print("5===========================")
+# user1.UserActivity("Comment")
+# print("6===========================")
+# print(user1.userDetail())
+# print("7===========================")
+# user2.UserActivity("Share")
+# print("8===========================")
+# user2.UserActivity("Comment")
+# print("9===========================")
+# print(user2.userDetail())
+
+# -------------------- SUMMER 2023 -----------------------
+
+# Lab 2 Home Task - Tick Tac Toe
+
+# from IPython.display import clear_output
+# import time
+
+# # All the variables needed
+# board = [[1,2,3],[4,5,6],[7,8,9]] # The players will be placing their characters in this list
+# # and the whole game be conducted based on the current status of this list.
+# current_player_char = 'X' # The character of the current player
+# next_player_char = 'O' # The character of the next player
+# totalInputs = 9 # Since there are 9 slots in total in the whole board.
+# winner = None
+
+# def checkHorizontal():
+#     global winner
+#     for row in board:
+#         if row[0] == row[1] == row[2]:
+#             winner = "Player 1" if row[0] == 'X' else "Player 2"
+
+# def checkVertical():
+#     global winner
+#     for col in range(3):
+#         if board[0][col] == board[1][col] == board[2][col]:
+#             winner = "Player 1" if board[0][col] == 'X' else "Player 2"
+
+# def checkDiagonal():
+#     global winner
+#     if board[0][0] == board[1][1] == board[2][2] or board[0][2] == board[1][1] == board[2][0]:
+#         winner = "Player 1" if board[1][1] == 'X' else "Player 2"
+
+# def checkBoard():
+#     checkHorizontal()
+#     checkVertical()
+#     checkDiagonal()
+#     return winner is not None
+
+# def placeCharacterOnBoard(pos):
+#     if pos>=1 and pos<=9:
+#       row = (pos - 1) // 3
+#       col = (pos - 1) % 3
+
+#       if isinstance(board[row][col], int):
+#           board[row][col] = current_player_char
+#           return 1
+#       else:
+#           print("Invalid position. Please choose another position.")
+#           return 0
+#     else:
+#       print("Invalid position. Please choose another position.")
+#       return 0
+
+# # This function prints the current status of the 'board' list in a particular format.
+# def printCurrentBoard():
+#     print("-------------")
+#     for eachRow in board:
+#         print("|",end="")
+#         for eachCol in eachRow:
+#             print(f" {eachCol} ",end="|")
+#         print() #To move to the next row
+#         print("-------------")
+
+# # This function will simulate the whole game.
+# def runGame():
+#     global current_player_char, next_player_char, winner
+#     welcome_msg = '''Welcome to the TIC-TAC-TOE game. The first player to place a character on the board will be Player 1 (Character X) and the other player will be Player 2 (Character O).'''
+#     print(welcome_msg)
+#     inputCount = 0 # This variable is for counting the number of inputs and controlling the loop based on it.
+#     while inputCount < totalInputs:
+#         printCurrentBoard() # This function prints the current state of the board as a player needs to see it before making the next move.
+#         position = int(input(f"Player {(inputCount%2)+1}, enter a position that does not contain any X or O: ")) # The user needs to enter a position that does not contain any X or O.
+#         validityOfInput = placeCharacterOnBoard(position) # validityOfInput will be 1 if the user inputs a valid "position"; otherwise, it will be 0.
+#         inputCount += validityOfInput # If the player inputs a valid "position", the inputCount will increase by one; otherwise, it will remain as it is.
+#         if inputCount >= 5: # There is no need to check the board before 5 valid inputs as there will be no winners before 5 valid inputs.
+#             if checkBoard(): # If checkBoard() returns True, then the current player won the game.
+#                 winner = "Player 1" if current_player_char == 'X' else "Player 2"
+#                 clear_output() # This function clears the output panel.
+#                 break
+#         if validityOfInput: # Only if the player inputs a valid "position", the player characters will be swapped for the next move.
+#             current_player_char, next_player_char = next_player_char, current_player_char # The players will place characters alternatively. So if X is the current player's character, in the next turn O will be the current player's character.
+#         clear_output() # This function clears the output panel before printing the current board status for the next player.
+#     printCurrentBoard()
+#     # After the while loop, if the value of winner is still None, that means the game ended in a draw; otherwise, we have a winner.
+#     if winner is not None:
+#         print(f"Well done, {winner}. You have won the game.")
+#     else:
+#         print("The game ended in a draw.")
+
+# runGame()
+
+# Previous theory quiz question solve
+
+# t1=(('D',[12,22,95,43]) ,('e',[44,56,2]),('F',[6,8,22,1]), ('G', [55,15]),('h',[9,0,13,13,51,3]))
+# d={}
+# for i in t1:
+#     if 'A'<= i[0] <='Z':
+#         add=0
+#         for j in i[1]:
+#             add+=j
+#         k = 'Sum of '+i[0]
+#         d[k]=add
+#     else :
+#         prod = 1
+#         for k in i[1]:
+#             prod *= k 
+#         k = 'Product of '+i[0]
+#         d[k]=prod
+# print(d)
+
+# Assignment 2 - 2023
+
+# class CellPackage:
+#     def __init__(self, price, data, talk_time,messages,cashback, validity ):
+#         self.price = price
+#         data=data.split(' ')
+#         self.data = int(data[0])*1024
+#         self.talk_time = talk_time
+#         self.messages=messages
+#         self.cashback=int((self.price*(int(cashback[:-1])/100))//1)
+#         self.validity=validity
+#         # self.dict1={'Data =':f'{self.data} MB','Talktime =':f'{self.talk_time} Minutes','SMS/MMS =':f'{self.messages}','Validity =':f'{self.validity} Days','--> Price = ':f'{self.price} tk','Buy now to get':f'{self.cashback} tk cashback.'}
+
+# pkg = CellPackage(150, '6 GB', 99, 20, '7%', 7)
+# print('============= Package 1 =============')
+# # Subtask 2: Check each attribute and print
+# if pkg.data:
+#     print(f"Data = {pkg.data} MB")
+# if pkg.talk_time:
+#     print(f"Talktime = {pkg.talk_time} Minutes")
+# if pkg.messages:
+#     print(f"SMS/MMS = {pkg.messages}")
+# print(f"Validity = {pkg.validity} Days")
+# print(f"--> Price = {pkg.price} tk")
+# if pkg.cashback:
+#     print(f"Buy now to get {pkg.cashback} tk cashback.")
+
+# pkg2 = CellPackage(700, '35 GB', 700, 0, '10%', 30)
+# print('============= Package 2 =============')
+# # Subtask 3: Check each attribute and print
+# if pkg2.data:
+#     print(f"Data = {pkg2.data} MB")
+# if pkg2.talk_time:
+#     print(f"Talktime = {pkg2.talk_time} Minutes")
+# if pkg2.messages:
+#     print(f"SMS/MMS = {pkg2.messages}")
+# print(f"Validity = {pkg2.validity} Days")
+# print(f"--> Price = {pkg2.price} tk")
+# if pkg2.cashback:
+#     print(f"Buy now to get {pkg2.cashback} tk cashback.")
+    
+# pkg4 = CellPackage(120, '0 GB', 190, 0, '0%', 10)
+# print('============= Package 3 =============')
+# # Subtask 4: Check each attribute and print
+# if pkg4.data:
+#     print(f"Data = {pkg4.data} MB")
+# if pkg4.talk_time:
+#     print(f"Talktime = {pkg4.talk_time} Minutes")
+# if pkg4.messages:
+#     print(f"SMS/MMS = {pkg4.messages}")
+# print(f"Validity = {pkg4.validity} Days")
+# print(f"--> Price = {pkg4.price} tk")
+# if pkg4.cashback:
+#     print(f"Buy now to get {pkg4.cashback} tk cashback.")
