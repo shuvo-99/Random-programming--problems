@@ -2809,23 +2809,72 @@
 
 
 # TASK - 4
-import math
-class Vector3D:
-    def __init__(self, x, y, z):
-        self.x = x 
-        self.y = y
-        self.z = z
-        print(f'Vector <{self.x}, {self.y}, {self.z}> has been created.')
-vector1 = Vector3D(2,-3,1)
-vector2 = Vector3D(-1,4,0)
-magnitude1 = math.sqrt(pow(vector1.x,2)+pow(vector1.y,2)+pow(vector1.z,2))
-print('Magnitude of the first vector =',magnitude1)
-magnitude2 = math.sqrt(pow(vector2.x,2)+pow(vector2.y,2)+pow(vector2.z,2))
-print('Magnitude of the second vector =',magnitude2)
-dotproduct = (vector1.x*vector2.x)+(vector1.y*vector2.y)+(vector1.z*vector2.z)
-print('Dot product of the two vectors =',dotproduct)
-crossProduct_x = (vector1.y*vector2.z)-(vector1.z*vector2.y)
-crossProduct_y = (vector1.z*vector2.x)-(vector1.x*vector2.z)
-crossProduct_z = (vector1.x*vector2.y)-(vector1.y*vector2.x)
-vector3 = Vector3D(crossProduct_x,crossProduct_y,crossProduct_z)
-print(f'Cross product of the two vectors = <{crossProduct_x}, {crossProduct_y}, {crossProduct_z}>')
+# import math
+# class Vector3D:
+#     def __init__(self, x, y, z):
+#         self.x = x 
+#         self.y = y
+#         self.z = z
+#         print(f'Vector <{self.x}, {self.y}, {self.z}> has been created.')
+# vector1 = Vector3D(2,-3,1)
+# vector2 = Vector3D(-1,4,0)
+# magnitude1 = math.sqrt(pow(vector1.x,2)+pow(vector1.y,2)+pow(vector1.z,2))
+# print('Magnitude of the first vector =',magnitude1)
+# magnitude2 = math.sqrt(pow(vector2.x,2)+pow(vector2.y,2)+pow(vector2.z,2))
+# print('Magnitude of the second vector =',magnitude2)
+# dotproduct = (vector1.x*vector2.x)+(vector1.y*vector2.y)+(vector1.z*vector2.z)
+# print('Dot product of the two vectors =',dotproduct)
+# crossProduct_x = (vector1.y*vector2.z)-(vector1.z*vector2.y)
+# crossProduct_y = (vector1.z*vector2.x)-(vector1.x*vector2.z)
+# crossProduct_z = (vector1.x*vector2.y)-(vector1.y*vector2.x)
+# vector3 = Vector3D(crossProduct_x,crossProduct_y,crossProduct_z)
+# print(f'Cross product of the two vectors = <{crossProduct_x}, {crossProduct_y}, {crossProduct_z}>')
+
+# TASK-5
+
+class Order:
+  def __init__(self, menu,item_string):
+    self.menu = menu
+    self.item_string = item_string
+    self.item_list = self.item_string.split(', ')
+    self.items=[]
+    for i in self.item_list:
+      name, quan = i.split('-')
+      for k,v in self.menu.items():
+        if name==k:
+          price = int(quan)*v
+          self.items.append(name)
+          self.items.append(int(quan))
+          self.items.append(price)
+
+menu = {
+    'Chicken_Cheeseburger' : 249,
+    'Mega_Cheeseburger' : 289,
+    'Fries' : 139,
+    'Hot_Wings' : 99,
+    'Rice_Bowl' : 299,
+    'Soft_Drinks' : 50
+}
+
+order1 = Order(menu, "Chicken_Cheeseburger-2, Fries-3, Soft_Drinks-3")
+print(order1.items)
+print()
+
+print('-'*35)
+print('Item           x Quantity :   Price')
+print('--------------   --------   -------')
+
+index = 0
+total = 0
+while index < len(order1.items):
+  item = order1.items[index]
+  quantity = order1.items[index+1]
+  price = order1.items[index+2]
+
+  print(f'{item:20} x {quantity:2} : {price:7.2f}')
+  total += price
+  index += 3 # Going to next item
+
+print('-'*35)
+print(f'Total:                      {total:7.2f}')
+print('-'*35)
