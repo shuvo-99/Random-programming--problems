@@ -2926,41 +2926,41 @@
 
 # Task 2
 
-class SentenceAnalyzer:
-    def __init__(self,sen=None):
-        self.sen = sen
+# class SentenceAnalyzer:
+#     def __init__(self,sen=None):
+#         self.sen = sen
     
-    def set_sentence(self,sen):
-        self.sen = sen
+#     def set_sentence(self,sen):
+#         self.sen = sen
     
-    def get_word_count(self,char=0):
-        if char == 0:
-            word_count = self.sen.split(' ')
-            print(f'Number of words in the sentence: {len(word_count)}')
-        else:
-            char_count = 0
-            word_count = self.sen.split(' ')
-            for i in word_count:
-                if len(i) == char:
-                    char_count+=1
-            print(f'Number of words with {char} characters in the sentence: {char_count}')
+#     def get_word_count(self,char=0):
+#         if char == 0:
+#             word_count = self.sen.split(' ')
+#             print(f'Number of words in the sentence: {len(word_count)}')
+#         else:
+#             char_count = 0
+#             word_count = self.sen.split(' ')
+#             for i in word_count:
+#                 if len(i) == char:
+#                     char_count+=1
+#             print(f'Number of words with {char} characters in the sentence: {char_count}')
         
 
-analyzer1 = SentenceAnalyzer()
+# analyzer1 = SentenceAnalyzer()
 
 
-analyzer1.set_sentence("That's an easy one")
-print("1--------------------------")
-analyzer1.get_word_count()
-print("2--------------------------")
-analyzer2 = SentenceAnalyzer("Like I said it's easy")
+# analyzer1.set_sentence("That's an easy one")
+# print("1--------------------------")
+# analyzer1.get_word_count()
+# print("2--------------------------")
+# analyzer2 = SentenceAnalyzer("Like I said it's easy")
 
 
-print("3--------------------------")
-analyzer2.get_word_count()
+# print("3--------------------------")
+# analyzer2.get_word_count()
 
 
-print("4--------------------------")
-analyzer2.get_word_count(4)
-print("5--------------------------")
-analyzer1.get_word_count(5)
+# print("4--------------------------")
+# analyzer2.get_word_count(4)
+# print("5--------------------------")
+# analyzer1.get_word_count(5)
