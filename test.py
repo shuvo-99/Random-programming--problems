@@ -3013,3 +3013,46 @@
 # std4.checkScholarshipEligibility()
 # print('--------------------------')
 # std4.showDetails()
+
+
+# Task 4
+
+class Author:
+    def __init__(self,name=None):
+        self.name = name
+        self.bookdic = {}
+        self.count = 0
+    def addBook(self,bookname,genre):
+        if self.name == None:
+            print("A book cannot be added without author name")
+        else:
+            if genre not in self.bookdic:
+                self.bookdic[genre] = [bookname]
+                self.count+=1
+            else:
+                self.bookdic[genre].append(bookname)
+                self.count+=1
+    def setName(self,n_name):
+        self.name = n_name
+    def printDetail(self):
+        print("Number of Book(s):",self.count)
+        print("Author name:",self.name)
+        for key,value in self.bookdic.items():
+            print(f"{key}: {', '.join(value)}")
+a1 = Author()
+print("=================================")
+a1.addBook('Ice', 'Science Fiction')
+print("=================================")
+a1.setName('Anna Kavan')
+a1.addBook('Ice', 'Science Fiction')
+a1.printDetail()
+print("=================================")
+a2 = Author('Humayun Ahmed')
+a2.addBook('Onnobhubon', 'Science Fiction')
+a2.addBook('Megher Upor Bari', 'Horror')
+print("=================================")
+a2.printDetail()
+a2.addBook('Ireena', 'Science Fiction')
+print("=================================")
+a2.printDetail()
+print("=================================")
