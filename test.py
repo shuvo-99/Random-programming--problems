@@ -3111,3 +3111,34 @@
 # taxi2.printDetails()
 
 # -------------------- HOME WORK ---------------
+
+# Task 1
+class HackathonTeam:
+    def __init__(self,tname,*args):
+        self.tname=tname
+        self.args = args
+        
+    def information(self):
+        print(f'Team name: {self.tname} \nParticipants:')
+        if len(self.args)==3:
+            for i in self.args:
+                print(i)
+        if len(self.args)==2:
+            for i in self.args:
+                print(i)
+        if len(self.args)==1:
+            for i in self.args:
+                print(i)
+        
+
+team_1 = HackathonTeam("Atlantean", "Aquaman")
+team_1.information()
+print("=================")
+
+team_2 = HackathonTeam("Avengers", "Ironman", "Thor", "Hulk")
+team_2.information()
+print("=================")
+
+team_3 = HackathonTeam("X-Men", "Storm", "Mystique")
+team_3.information()
+
