@@ -2882,6 +2882,8 @@
 
 # ASSIGNMENT 4 Summer 2023
 
+# -------------------- CLASS WORK ---------------
+
 #Task 1
 # class Customer:
 #     def __init__(self):
