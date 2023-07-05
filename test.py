@@ -3142,3 +3142,53 @@
 # team_3 = HackathonTeam("X-Men", "Storm", "Mystique")
 # team_3.information()
 
+# Task 2
+class Foodie:
+    def __init__(self,name):
+        self.name = name
+        self.orderlist = []
+        self.total_price = 0
+        
+    def show_orders(self):
+        return f'{self.name} has {len(self.orderlist)} item(s) in the cart. \nItems: {self.orderlist} \nTotal spent: {self.total_price}.'
+        
+    def order(self, *args):
+        for i in args:
+            price=0
+            item, quan = i.split('-')
+            for k,v in menu.items():
+                if k==item:
+                    price = int(quan)*v
+                    self.total_price+=price
+                    self.orderlist.append(item)
+                    print(f'Ordered - {item}, quantity - {int(quan)}, price (per Unit) - {v}.\nTotal price - {price}')
+    
+    def pay_tips(self,tips=0):
+        self.total_price += tips
+        if tips==0:
+            print('No tips to the waiter.')
+        else:
+            print(f'Gives {tips}/- tips to the waiter.')
+        
+
+menu = {'Chicken Lollipop':15,'Beef Nugget':20,'Americano':180,'Red Velvet':150,'Prawn Tempura':80,'Saute Veg':200}
+
+f1 = Foodie('Frodo')
+print(f1.show_orders())
+print('1----------------------')
+f1.order('Chicken Lollipop-3','Beef Nugget-6','Americano-1')
+print('2----------------------')
+print(f1.show_orders())
+print('3----------------------')
+f1.order('Red Velvet-1')
+print('4----------------------')
+f1.pay_tips(20)
+print('5----------------------')
+print(f1.show_orders())
+f2 = Foodie('Bilbo')
+print('6----------------------')
+f2.order('Prawn Tempura-6','Saute Veg-1')
+print('7----------------------')
+f2.pay_tips()
+print('8----------------------')
+print(f2.show_orders())
