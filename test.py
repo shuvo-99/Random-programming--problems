@@ -3262,3 +3262,56 @@
 # print("-------------------")
 # f3.showGoods()
 # print("-------------------")
+
+# Task 4
+class UniversalStudiosUser:
+    def __init__(self,name,age,category):
+        self.name=name
+        self.age=age
+        self.category=category
+        self.total_price = 0
+        self.ride=[]
+        self.price=[]
+        print('Welcome to Universal Studios.')
+        
+    def selected_rides(self,*arg):
+        for i in arg:
+            r,a = i.split('-')
+            self.ride.append(r)
+            self.price.append(int(a))
+        
+        print('Added ride(s) successfully.')
+        
+    def show_details(self):
+        print(f'Your information: \nName: {self.name}, Age: {self.age}, Category: {self.category} \nSelected rides:')
+        for i in range(len(self.ride)):
+            print(f'Ride: {self.ride[i]}, Amount: {self.price[i]} dollar(s) ')
+        if self.category == 'Special' and len(self.ride)>3:
+            self.total_price = float(sum(self.price)-(sum(self.price)*(.2)))
+            print("Congratulations!!! You've got a 20% discount.")
+        else:
+            self.total_price = float(sum(self.price))
+        print(f'Please pay {self.total_price} dollar(s).')
+
+
+customer_1 = UniversalStudiosUser("Alice", 21, "Special")
+print("--------- 1 ---------")
+customer_1.selected_rides("Waterworld-100", "Accelerator-200", "DinoSoarin-50")
+print("--------- 2 ---------")
+customer_1.show_details()
+
+print("=================")
+
+customer_2 = UniversalStudiosUser("Bob", 20, "Normal")
+print("--------- 3 ---------")
+customer_2.selected_rides("Enchanted Airways-300", "Jurassic Park-500", "Accelerator-200", "DinoSoarin-50")
+print("--------- 4 ---------")
+customer_2.show_details()
+
+print("=================")
+
+customer_3 = UniversalStudiosUser("Mark", 15, "Special")
+print("--------- 5 ---------")
+customer_3.selected_rides("Transformers-450", "Jurassic Park-500", "Waterworld-100", "DinoSoarin-50")
+print("--------- 6 ---------")
+customer_3.show_details()
