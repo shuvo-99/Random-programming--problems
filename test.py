@@ -3364,3 +3364,91 @@
 # print(mega.merge_Department(d1, d2))
 # print('9-----------------------------------')
 # print(mega.merge_Department(d3))
+
+# Task 6
+class StudentRoutineGenerator:
+    def __init__(self,name, no_course):
+        self.name=name
+        self.no_course=no_course
+        self.routine = {'Sat/Thurs': {}, 'Sun/Tue': {}, 'Mon/Wed': {}}
+        print(f'Name: {self.name} \nMaximum Number of Courses: {self.no_course} \nInitial Routine: {self.routine}')
+        
+    def addCourses(self,*arg):
+        # self.routine2={}
+        for i in arg:
+            course,day,time = i.split('-')
+            for k,v in self.routine.items():
+                if course not in v.values():
+                    if day == k:
+                        if time not in v:
+                            v[time]=course
+                            print(f'Successfully added {course}!')
+                        else:
+                            print(f"Can't take {course}. It's clashing with your {v[time]}")
+                else:
+                    print(f'You already have {course} in your routine')
+        # print(self.routine)                
+                
+            # if course not in self.routine2.values():
+            #     self.routine2[time]=course
+            # print(self.routine2)
+            # for k,v in self.routine.items():
+            #     if day == k:
+            #         if len(self.routine[day])==0:
+            #             self.routine[day] = self.routine2
+                    # else:
+                    #     self.routine[day].appendself.routine2
+                        
+    def showRoutine(self):
+        print(f'Updated Routine: \n{self.routine} \nRoutine Details: ')
+        
+        for k,v in self.routine.items():
+            if len(v)!=0:
+                print(k)
+                for k2,v2 in v.items():
+                    print(f'{k2} - {v2}')
+            
+            
+    def dropCourse(self,drop):
+        # for k,v in self.routine.items():
+        #     if drop in v.values():
+        #         for k2,v2 in v.items():
+        #             
+        # if drop in self.routine.values():
+        flag = False
+        # self.routine2=self.routine.copy()
+        for k,v in self.routine.items():
+            for k2,v2 in v.items():
+                if drop in v2:
+                    # self.routine[k].pop(k2)
+                    self.routine2={key: val for key,val in v.items() if key != k2}
+                    self.routine={key: val for key,val in self.routine.items()}
+                    
+                    # print('yes')
+                else:
+                    flag = True
+        if flag == True:
+            print(f'No such course in your routine')
+        
+
+print('##################################')
+st1 = StudentRoutineGenerator('Harry', 4)
+print('------------------------------')
+st1.addCourses('CSE110-Mon/Wed-12:30', 'MAT110-Mon/Wed-2:00')
+st1.addCourses('ENG101-Sun/Tue-12:30', 'CSE110-Mon/Wed-9:30')
+st1.addCourses('PHY111-Sun/Tue-12:30')
+print('------------------------------')
+st1.showRoutine()
+print('------------------------------')
+st1.dropCourse('CSE110')
+st1.dropCourse('PHY112')
+print('------------------------------')
+st1.showRoutine()
+print('##################################')
+# st2 = StudentRoutineGenerator('John', 3)
+# print('------------------------------')
+# st2.addCourses('MAT110-Mon/Wed-8:00')
+# st2.addCourses('ENG101-Sat/Thurs-12:30', 'CSE110-Sun/Tue-9:30')
+# st2.addCourses('PHY111-Sun/Tue-12:30')
+# print('------------------------------')
+# st2.showRoutine()
