@@ -3194,71 +3194,71 @@
 # print(f2.show_orders())
 
 # Task 3
-class Farmer:
-    def __init__(self,name=''):
-        self.cropList = []
-        self.fishList = []
-        if name=='':
-            print('Welcome to your farm!')
-        elif type(name)==int:
-            print(f'Welcome to your farm. Your farm ID is {name}!')
-        else:
-            print(f'Welcome to your farm, {name}!')
+# class Farmer:
+#     def __init__(self,name=''):
+#         self.cropList = []
+#         self.fishList = []
+#         if name=='':
+#             print('Welcome to your farm!')
+#         elif type(name)==int:
+#             print(f'Welcome to your farm. Your farm ID is {name}!')
+#         else:
+#             print(f'Welcome to your farm, {name}!')
         
-    def addCrops(self,*crops):
-        if len(crops)==0:
-            print('No crop added.')
-        else:
-            for i in crops:
-                self.cropList.append(i)
-            print(f'{len(crops)} crop(s) added.')
+#     def addCrops(self,*crops):
+#         if len(crops)==0:
+#             print('No crop added.')
+#         else:
+#             for i in crops:
+#                 self.cropList.append(i)
+#             print(f'{len(crops)} crop(s) added.')
         
-    def addFishes(self,*fishs):
-        if len(fishs)==0:
-            print('No fish added.')
-        else:
-            for i in fishs:
-                self.fishList.append(i)
-            print(f'{len(fishs)} fish(s) added.')
+#     def addFishes(self,*fishs):
+#         if len(fishs)==0:
+#             print('No fish added.')
+#         else:
+#             for i in fishs:
+#                 self.fishList.append(i)
+#             print(f'{len(fishs)} fish(s) added.')
     
-    def showGoods(self):
-        if len(self.cropList)==0:
-            print("You don't have any crops(s).")
-        else:
-            print(f'You have {len(self.cropList)} crop(s):')
-            print(','.join(self.cropList))
+#     def showGoods(self):
+#         if len(self.cropList)==0:
+#             print("You don't have any crops(s).")
+#         else:
+#             print(f'You have {len(self.cropList)} crop(s):')
+#             print(','.join(self.cropList))
         
-        if len(self.fishList)==0:
-            print("You don't have any fish(s).")
-        else:
-            print(f'You have {len(self.fishList)} fishs(s):')
-            print(','.join(self.fishList))
+#         if len(self.fishList)==0:
+#             print("You don't have any fish(s).")
+#         else:
+#             print(f'You have {len(self.fishList)} fishs(s):')
+#             print(','.join(self.fishList))
 
-f1 = Farmer()
-print("-------------------")
-f1.addCrops('Rice', "Jute", "Cinnamon")
-print("-------------------")
-f1.addFishes()
-print("-------------------")
-f1.addCrops('Mustard')
-print("-------------------")
-f1.showGoods()
-print("-------------------")
-f2 = Farmer("Korim Mia")
-print("-------------------")
-f2.addFishes('Pangash', 'Magur')
-print("-------------------")
-f2.addCrops("Wheat", "Potato")
-print("-------------------")
-f2.addFishes("Koi", "Tuna", "Sardine")
-print("-------------------")
-f2.showGoods()
-print("-------------------")
-f3 = Farmer(2865127000)
-print("-------------------")
-f3.addCrops()
-print("-------------------")
-f3.addFishes("Katla")
-print("-------------------")
-f3.showGoods()
-print("-------------------")
+# f1 = Farmer()
+# print("-------------------")
+# f1.addCrops('Rice', "Jute", "Cinnamon")
+# print("-------------------")
+# f1.addFishes()
+# print("-------------------")
+# f1.addCrops('Mustard')
+# print("-------------------")
+# f1.showGoods()
+# print("-------------------")
+# f2 = Farmer("Korim Mia")
+# print("-------------------")
+# f2.addFishes('Pangash', 'Magur')
+# print("-------------------")
+# f2.addCrops("Wheat", "Potato")
+# print("-------------------")
+# f2.addFishes("Koi", "Tuna", "Sardine")
+# print("-------------------")
+# f2.showGoods()
+# print("-------------------")
+# f3 = Farmer(2865127000)
+# print("-------------------")
+# f3.addCrops()
+# print("-------------------")
+# f3.addFishes("Katla")
+# print("-------------------")
+# f3.showGoods()
+# print("-------------------")
