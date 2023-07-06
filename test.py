@@ -3317,50 +3317,50 @@
 # customer_3.show_details()
 
 # Task 5
-class Department:
-    def __init__(self, dept='ChE Department', section=5):
-        self.dept = dept
-        self.section = section
-        self.avg = 0
-        self.std=0
-        print(f'The {self.dept} has {self.section} sections.')
+# class Department:
+#     def __init__(self, dept='ChE Department', section=5):
+#         self.dept = dept
+#         self.section = section
+#         self.avg = 0
+#         self.std=0
+#         print(f'The {self.dept} has {self.section} sections.')
         
-    def add_students(self,*arg1):
-        self.arg1 = arg1
-        if len(arg1)!=self.section:
-            print(f"The {self.dept} doesn't have {len(arg1)} sections.")
-        else:
-            self.avg = sum(arg1)/len(arg1)
-            self.std+= (self.avg)*(self.section)
-            print(f'The {self.dept} has an average of {round(self.avg,2)} students in each section.')
+#     def add_students(self,*arg1):
+#         self.arg1 = arg1
+#         if len(arg1)!=self.section:
+#             print(f"The {self.dept} doesn't have {len(arg1)} sections.")
+#         else:
+#             self.avg = sum(arg1)/len(arg1)
+#             self.std+= (self.avg)*(self.section)
+#             print(f'The {self.dept} has an average of {round(self.avg,2)} students in each section.')
                 
 
-    def merge_Department(self,*arg2):
-        p=''
-        for i in arg2:
-            p+= i.dept + ' is merged to '+ self.dept + '\n'
-            self.std += (i.avg)*(i.section)
+#     def merge_Department(self,*arg2):
+#         p=''
+#         for i in arg2:
+#             p+= i.dept + ' is merged to '+ self.dept + '\n'
+#             self.std += (i.avg)*(i.section)
             
-        com_avg = self.std/self.section
-        p+=f'Now the {self.dept} has an average of {round(com_avg,2)} students in each section.'
-        return p
+#         com_avg = self.std/self.section
+#         p+=f'Now the {self.dept} has an average of {round(com_avg,2)} students in each section.'
+#         return p
 
-d1 = Department()
-print('1-----------------------------------')
-d2 = Department('MME Department')
-print('2-----------------------------------')
-d3 = Department('NCE Department', 8)
-print('3-----------------------------------')
-d1.add_students(12, 23, 12, 34, 21)
-print('4-----------------------------------')
-d2.add_students(40, 30, 21)
-print('5-----------------------------------')
-d3.add_students(12, 34, 41, 17, 30, 22, 32, 51)
-print('6-----------------------------------')
-mega = Department('Engineering Department', 10)
-print('7-----------------------------------')
-mega.add_students(21,30,40,36,10,32,27,51,45,15)
-print('8-----------------------------------')
-print(mega.merge_Department(d1, d2))
-print('9-----------------------------------')
-print(mega.merge_Department(d3))
+# d1 = Department()
+# print('1-----------------------------------')
+# d2 = Department('MME Department')
+# print('2-----------------------------------')
+# d3 = Department('NCE Department', 8)
+# print('3-----------------------------------')
+# d1.add_students(12, 23, 12, 34, 21)
+# print('4-----------------------------------')
+# d2.add_students(40, 30, 21)
+# print('5-----------------------------------')
+# d3.add_students(12, 34, 41, 17, 30, 22, 32, 51)
+# print('6-----------------------------------')
+# mega = Department('Engineering Department', 10)
+# print('7-----------------------------------')
+# mega.add_students(21,30,40,36,10,32,27,51,45,15)
+# print('8-----------------------------------')
+# print(mega.merge_Department(d1, d2))
+# print('9-----------------------------------')
+# print(mega.merge_Department(d3))
