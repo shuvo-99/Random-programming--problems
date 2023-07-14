@@ -3435,3 +3435,78 @@
 # st2.addCourses('PHY111-Sun/Tue-12:30')
 # print('------------------------------')
 # st2.showRoutine()
+
+# Mid Summer 2022
+
+class RickMote:
+  def __init__ (self):
+    self.pow="OFF"
+    self.volume=3
+    self.li=[0,2,3,6,7,9]
+    self.chanel=self.li[0]
+    self.count = 0
+
+
+  def power(self):
+    if self.pow=="OFF":
+      self.pow="ON"
+    else:
+      self.pow="OFF"
+
+  def changeChannel(self,c=''):
+    if self.pow=="OFF" :
+      print(f"Power is turned off. Cannot change channel.")
+    else:
+      if c=='':
+          self.count += 1
+          if self.count<len(self.li):
+            self.chanel = self.li[self.count]
+      
+      else: 
+          if c not in self.li:
+            print("TV channel does not exist.")
+          else:
+          
+            self.chanel = self.li[self.li.index(c)]
+
+  def changeVolumeLevel(self,v=1):
+    if self.pow=="OFF":
+      print(f"Power is turned off. Cannot change volume.")
+    else:
+      self.volume+=v
+
+  def showInfo(self):
+    print(f"ID Cable Box Status:")
+    print(f"Cable Box is:{self.pow}")
+    if self.pow!="OFF":
+      print(f"Channel:{self.chanel}")
+      print(f"Volume:{self.volume}")
+
+oTV = RickMote()
+oTV.power()
+print("1.############################")
+oTV.showInfo()
+print("2.############################")
+oTV.changeChannel()
+oTV.changeVolumeLevel()
+oTV.showInfo()
+print("3.############################")
+oTV.power()
+oTV.showInfo()
+print("4.############################")
+oTV.power()
+oTV.changeVolumeLevel(4)
+oTV.changeChannel(3)
+oTV.showInfo()
+print("5.############################")
+oTV.changeVolumeLevel(-2)
+oTV.showInfo()
+print("6.############################")
+oTV.power()
+oTV.changeChannel(9)
+oTV.changeVolumeLevel(-1)
+oTV.showInfo()
+print("7.############################")
+oTV.power()
+oTV.changeChannel(11)
+oTV.showInfo()
