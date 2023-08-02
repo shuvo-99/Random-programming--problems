@@ -3551,63 +3551,63 @@
 # t3.methodA()
 
 # Summer 23 Lab Mid Tracing SET-A
-class Midexam:
+# class Midexam:
 
-    def __init__(self):
-        self.z,self.x , self.y = 2, 1, 0
+#     def __init__(self):
+#         self.z,self.x , self.y = 2, 1, 0
     
-    def methodA(self):
+#     def methodA(self):
     
-        all = [1, 2]
+#         all = [1, 2]
     
-        self.y = self.y + self.methodB(all[1])
+#         self.y = self.y + self.methodB(all[1])
     
-        self.x=self.x+self.methodB(all,all[0])
+#         self.x=self.x+self.methodB(all,all[0])
     
-        self.z = self.x + self.y + all[0] + all[1]
+#         self.z = self.x + self.y + all[0] + all[1]
     
-        print(self.x, self.y, self.z)
+#         print(self.x, self.y, self.z)
     
-    def methodB(self, *args):
+#     def methodB(self, *args):
     
-        if len(args) == 1:
+#         if len(args) == 1:
         
-            a = args[0]
+#             a = args[0]
             
-            x, y = 0 , 2
+#             x, y = 0 , 2
             
-            y = y + a + x%7
+#             y = y + a + x%7
             
-            x=x+ self.y+a 
-            self.x=y+x+self.z
+#             x=x+ self.y+a 
+#             self.x=y+x+self.z
             
-            self.y = a + x + 2
+#             self.y = a + x + 2
             
-            self.z=self.x+self.y
+#             self.z=self.x+self.y
             
-            print(self.x, self.y, self.z)
+#             print(self.x, self.y, self.z)
             
-            return x
+#             return x
         
-        else:
+#         else:
         
-            b, a = args
+#             b, a = args
             
-            x = 0
+#             x = 0
             
-            self.y=self.y + b[1]
+#             self.y=self.y + b[1]
             
-            x= self.z+x+a
+#             x= self.z+x+a
             
-            self.z=self.z+x+self.y
+#             self.z=self.z+x+self.y
             
-            b[0]=self.y + b[1]
+#             b[0]=self.y + b[1]
             
-            x = a + x + 2
+#             x = a + x + 2
             
-            print (self.x, self.y, self.z)
+#             print (self.x, self.y, self.z)
             
-            return x
+#             return x
 
-t3=Midexam()
-t3.methodA()
+# t3=Midexam()
+# t3.methodA()
