@@ -3611,3 +3611,99 @@
 
 # t3=Midexam()
 # t3.methodA()
+
+
+# ASSIGNMENT 5 Summer 2023
+
+# -------------------- CLASS WORK ---------------
+
+#Task 1
+class Student:
+    def __init__(self, name, ID, cgpa):
+        self.name = name
+        self.__Id = ID
+        self.__cgpa = cgpa
+
+    def getID(self):
+        return self.__Id
+  
+    def setId(self, newID):
+        self.__Id = newID
+
+    def getCGPA(self):
+        return self.__cgpa
+
+
+
+class Department:
+    def __init__(self,dept):
+        self.dept = dept
+        self.stdList = []
+
+    def findStudent(self, findID):
+        if len(self.stdList) == 0:
+            print("Student with this ID doesn't exist, Please give a valid ID")
+        else:
+            flag = False
+            for i in self.stdList:
+                if  i.getID() == findID:
+                    flag = True
+                    print(f'Student info:\nStudent Name: {i.name}\nID: {i.getID()}\nCGPA:  {i.getCGPA()}')
+                  
+            if flag == False:
+                print("Student with this ID doesn't exist, Please give a valid ID")
+
+
+    def addStudent(self, *args):
+        self.arg = args
+        flag = False
+        for i in self.arg:
+            if len(self.stdList) == 0:
+              print(f'Welcome to {self.dept} department, {i.name}')
+              self.stdList.append(i)
+            
+            else:
+                for j in self.stdList:
+                    if i.getID() == j.getID():
+                        flag = True
+                        print("Student with the same ID already exists, Please try with another ID")
+                        break
+                
+                if flag == False:
+                  print(f'Welcome to {self.dept} department, {i.name}')
+                  self.stdList.append(i)
+
+    def details(self):
+        print(f'Department Name: {self.dept}')
+        print(f'Number of Student: {len(self.stdList)}')
+        print(f'Details of the students:')
+        for i in self.stdList:
+            print(f'Student name: {i.name}, ID: {i.getID()}, cgpa: {i.getCGPA()}')
+
+
+s1 = Student("Akib", 22301010, 3.29)
+s2 = Student("Reza", 22101010, 3.45)
+s3 = Student("Ruhan", 23101934, 4.00)
+print("1==================================")
+cse = Department("CSE")
+cse.findStudent(22112233)
+print("2==================================")
+cse.addStudent(s1,s2,s3)
+print("3==================================")
+cse.details()
+print("4==================================")
+cse.findStudent(22301010)
+print("5==================================")
+s4 = Student("Nakib",22301010,3.22)
+cse.addStudent(s4)
+print("6==================================")
+s4.setId(21201220)
+cse.addStudent(s4)
+print("7==================================")
+cse.details()
+print("8==================================")
+s5 = Student("Sakib",22201010,2.29)
+cse.addStudent(s5)
+print("9==================================")
+cse.details()
+
