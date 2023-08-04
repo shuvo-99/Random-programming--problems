@@ -3758,4 +3758,132 @@
 # enterprise.load_cargo(neutronium)  # This should not exceed Enterprise's capacity
 # enterprise.display_details()
 
+# Task 3
+class Song:
+    def __init__(self,*tup):
+        self.tup=tup
+        if len(tup)==3:
+            self.__title=tup[0]
+            self.__artist=tup[1]
+            self.__duration=tup[2]
+        elif len(tup)==2:
+            self.__title=tup[0]
+            self.__duration=tup[1]
+            self.__artist="Unknown Artist"
 
+    def info(self):
+       
+        if len(self.tup)==1:
+            return f'Cannot create song without title and duration!\n--- Error --- by --- Error --- (0:0)'
+        else:
+            self.min = self.__duration//60
+            self.sec = self.__duration%60
+            return f'{self.__title} by {self.__artist} ({self.min}:{self.sec})'
+    
+    def set_duration(self,s):
+        self.__duration=s
+    
+    def set_title(self,song):
+        self.__title=song
+    
+    def set_artist(self,name):
+        self.__artist=name
+    
+class Playlist:
+    def __init__(self,name,*args):
+
+        self.__name = name
+        self.__song_list=[]
+        for i in args:
+            self.__song_list.append(i)
+        self.__now_id = -1
+
+    def play_next(self):
+        self.__now_id+=1
+        if 0<=self.__now_id<=len(self.__song_list)-1:
+            print(f"Now playing: {self.__song_list[self.__now_id].info()}")
+        elif self.__now_id>=len(self.__song_list):
+            self.__now_id=0
+            print("Reached the end of the playlist, starting from the first song.")
+            print(f"Now playing: {self.__song_list[self.__now_id].info()}")
+    
+    def play_prev(self):
+        self.__now_id-=1
+        if 0<=self.__now_id<=len(self.__song_list)-1:
+            print(f"Now playing: {self.__song_list[self.__now_id].info()}")
+        elif self.__now_id==-1:
+            self.__now_id=0
+            print("Cannot go to previous from the first song.")
+            print(f"Now playing: {self.__song_list[self.__now_id].info()}")
+
+    def add_songs(self,*args):
+        for i in args:
+            self.__song_list.append(i)
+            print(f"Added {len(args)} song(s) to the playlist {self.__name}")
+    
+    def remove_song(self,a):
+        self.__song_list.remove(a)
+        print(f"Removed 1 song(s) from the playlist {self.__name}")
+    
+    def show_playlist(self):
+        print(f"Playlist: {self.__name}\nTotal Songs: {len(self.__song_list)}")
+        for k in range(len(self.__song_list)):
+            print(f"{k+1}. {self.__song_list[k].info()}")
+        
+
+    
+s1 = Song("The Flower Duet", "Leo Delibes", 86)
+print(s1.info())
+
+print('===============')
+s2 = Song("Winter")
+print(s2.info())
+
+print('===============')
+s2.set_title("Winter")
+s2.set_duration(223)
+s2.set_artist("Vivaldi")
+print(s2.info())
+
+print('===============')
+s3 = Song("Ride of the Valkyries", "Wagner", 137)
+s4 = Song("Russian Dance - Nutcracker", 71)
+
+p1 = Playlist("Classical Orchestra", s1, s2, s3)
+p1.show_playlist()
+
+print('===============')
+p1.play_next()
+
+print('===============')
+p1.play_prev()
+
+print('===============')
+p1.play_next()
+
+print('===============')
+p1.play_next()
+
+print('===============')
+p1.play_next()
+
+print('===============')
+p1.play_next()
+
+print('===============')
+p1.add_songs(s4)
+
+print('===============')
+p1.play_next()
+
+print('=========================')
+p1.remove_song(s4)
+
+print('===============')
+p1.play_next()
+
+print('===============')
+p1.play_prev()
+
+print('===============')
+p1.show_playlist() 
