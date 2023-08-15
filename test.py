@@ -4041,3 +4041,107 @@
 # # Display all books in the library
 # library.display_book_list()
 # library.display_library_members()
+
+# Assignment - 6
+# Home-Work 
+
+class Movie:
+  def __init__ (self, name, gen, time):
+    self.name=name
+    self.genre=gen
+    self.duration=time  #int
+
+  def movieInfo(self):
+    return f"Movie Name:{self.name}\nMovie Genre:{self.genre}\nMovie Duration:{self.duration} minutes"
+  
+  @classmethod 
+  def createMovie_fromString(cls, string ):
+    name, genre, duration = string.split('-')
+    obj=Movie(name, genre, duration)
+    return obj
+    
+
+class StarCinema:
+  all_branch_info={}
+  def __init__ (self,branch_name):
+    self.branch_name=branch_name
+    print(f"Welcome to the {self.branch_name} branch of StarCinema! ")
+    self.movie_list=[] #movie_list
+    StarCinema.all_branch_info[self.branch_name]=self.movie_list
+
+  def addMovies(self,*arg):
+    for i in arg:
+      # for j in i:
+      if i not in self.movie_list:
+        self.movie_list.append(i)
+        print(f"{i.name} added to {self.branch_name}")
+        StarCinema.all_branch_info[self.branch_name]=self.movie_list
+      else:
+        print(f'Movie is already added in this branch.')
+
+  def removeMovie(self,movie):
+    if movie in self.movie_list:
+        self.movie_list.remove(movie)
+    StarCinema.all_branch_info[self.branch_name]=self.movie_list
+
+  @classmethod
+  def check(cls,val):
+    flag = False
+    for k,v in  StarCinema.all_branch_info.items():
+      for i in v:
+        if i.name == val:
+          flag=True
+          print(f"{val} is being streamed in {k} branch.")
+          genre, duration = i.genre, i.duration
+    if flag == False:
+        print(f"{val} is not being streamed")
+    else:
+        print(f'It is of {genre} genre and {duration} minutes duration.')
+
+  @classmethod
+  def showAllBranchInfo(cls):
+    
+    for k,v in StarCinema.all_branch_info.items():
+        print(f"Branch Name:{k}")
+        count=1
+        for j in v:
+          print(f'Movie No: {count}')
+          print(j.movieInfo())
+          print('**************************')
+          count+=1
+        print('################################# ')
+        
+
+movie1 = Movie('Oppenheimer', 'Biographical Drama', 180)
+movie2 = Movie('Barbie', 'Fantasy Comedy', 114)
+movie3 = Movie('Mission: Impossible – Dead Reckoning Part One', 'Action', 163)
+print('1==========================================')
+print(movie3.movieInfo())
+print('2==========================================')
+movie4 = Movie.createMovie_fromString('Prohelika-Drama-153')
+print('3==========================================')
+print(movie4.movieInfo())
+print('4==========================================')
+branch1 = StarCinema('Mohakhali')
+print('5==========================================')
+branch1.addMovies(movie1, movie2, movie4)
+print('6==========================================')
+branch1.addMovies(movie1, movie3)
+print('7==========================================')
+StarCinema.showAllBranchInfo()
+print('8==========================================')
+branch2 = StarCinema('Mirpur')
+print('9==========================================')
+branch2.addMovies(movie1, movie2, movie3)
+print('10==========================================')
+StarCinema.showAllBranchInfo()
+print('11==========================================')
+StarCinema.check('Oppenheimer')
+print('12=========================================')
+StarCinema.check('Sound of Freedom')
+print('13=========================================')
+branch1.removeMovie(movie2)
+StarCinema.showAllBranchInfo()
+print('14=========================================')
+branch2.removeMovie(movie1)
+StarCinema.showAllBranchInfo()
