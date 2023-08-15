@@ -3889,155 +3889,155 @@
 # p1.show_playlist() 
 
 # Home Work
-class Book:
-    def __init__(self,title='',author='',genre=''):
-        self.__title = title 
-        self.__author = author
-        self.__genre = genre 
-        self.__available = True
-        self.__borrower = None
+# class Book:
+#     def __init__(self,title='',author='',genre=''):
+#         self.__title = title 
+#         self.__author = author
+#         self.__genre = genre 
+#         self.__available = True
+#         self.__borrower = None
 
-    def set_title(self,title):
-        self.__title = title
+#     def set_title(self,title):
+#         self.__title = title
 
-    def get_title(self):
-        return self.__title
+#     def get_title(self):
+#         return self.__title
     
-    def set_author(self,author):
-        self.__author = author
+#     def set_author(self,author):
+#         self.__author = author
 
-    def get_author(self):
-        return self.__author
+#     def get_author(self):
+#         return self.__author
     
-    def set_genre(self,genre):
-        self.__genre = genre
+#     def set_genre(self,genre):
+#         self.__genre = genre
 
-    def get_genre(self):
-        return self.__genre
+#     def get_genre(self):
+#         return self.__genre
     
-    def set_availability(self,available):
-        self.__available = available
+#     def set_availability(self,available):
+#         self.__available = available
 
-    def get_availability(self):
-        return self.__available
+#     def get_availability(self):
+#         return self.__available
     
-    def set_borrower(self,borrower):
-        # if borrower != None:
-        #     self.member_info = []
-        #     self.member_info.append(borrower.get_member_id())
-        #     self.member_info.append(borrower.get_name())
-        #     self.__borrower = self.member_info
-        # else:
-            self.__borrower = borrower
+#     def set_borrower(self,borrower):
+#         # if borrower != None:
+#         #     self.member_info = []
+#         #     self.member_info.append(borrower.get_member_id())
+#         #     self.member_info.append(borrower.get_name())
+#         #     self.__borrower = self.member_info
+#         # else:
+#             self.__borrower = borrower
 
-    def get_borrower(self):
-        return self.__borrower
+#     def get_borrower(self):
+#         return self.__borrower
     
-    def display_info(self):
-        print(f'Title: {self.__title}\nAuthor: {self.__author}\nGenre: {self.__genre}\n---------------')
+#     def display_info(self):
+#         print(f'Title: {self.__title}\nAuthor: {self.__author}\nGenre: {self.__genre}\n---------------')
 
-class LibraryMember:
-    def __init__(self, id, name):
-        self.__member_id = id 
-        self.__name = name
-        self.__borrowed_books=[] #[book1,book2]
+# class LibraryMember:
+#     def __init__(self, id, name):
+#         self.__member_id = id 
+#         self.__name = name
+#         self.__borrowed_books=[] #[book1,book2]
 
-    def set_member_id(self,member_id):
-        self.__member_id = member_id
+#     def set_member_id(self,member_id):
+#         self.__member_id = member_id
 
-    def get_member_id(self):
-        return self.__member_id
+#     def get_member_id(self):
+#         return self.__member_id
     
-    def set_name(self,name):
-        self.__name = name
+#     def set_name(self,name):
+#         self.__name = name
 
-    def get_name(self):
-        return self.__name
+#     def get_name(self):
+#         return self.__name
     
-    def borrow_book(self,book):
-        if book.get_availability() == True and book not in self.__borrowed_books:
-            book.set_availability(False)
-            book.set_borrower(self)
-            self.__borrowed_books.append(book)
+#     def borrow_book(self,book):
+#         if book.get_availability() == True and book not in self.__borrowed_books:
+#             book.set_availability(False)
+#             book.set_borrower(self)
+#             self.__borrowed_books.append(book)
 
-    def return_book(self,book):
-        self.__borrowed_books.remove(book)
-        book.set_availability(True)
-        book.set_borrower(None)
+#     def return_book(self,book):
+#         self.__borrowed_books.remove(book)
+#         book.set_availability(True)
+#         book.set_borrower(None)
 
-    def display_borrowed_books(self):
-        print(f'Books borrowed by {self.__name}')
-        for i in self.__borrowed_books:
-            print(f'Title: {i.get_title()}\nAuthor: {i.get_author()}\nGenre: {i.get_genre()}\nAvailable: {i.get_availability()}\n---------------')
+#     def display_borrowed_books(self):
+#         print(f'Books borrowed by {self.__name}')
+#         for i in self.__borrowed_books:
+#             print(f'Title: {i.get_title()}\nAuthor: {i.get_author()}\nGenre: {i.get_genre()}\nAvailable: {i.get_availability()}\n---------------')
 
-class Library:
-    def __init__(self):
-        self.__books_available=[] #[book1,book2,book3]
-        self.__library_members=[] #[member1,member2]
+# class Library:
+#     def __init__(self):
+#         self.__books_available=[] #[book1,book2,book3]
+#         self.__library_members=[] #[member1,member2]
 
-    def add_book(self,book):
-        self.__books_available.append(book)
+#     def add_book(self,book):
+#         self.__books_available.append(book)
 
-    def add_library_member(self,member):
-        self.__library_members.append(member)
+#     def add_library_member(self,member):
+#         self.__library_members.append(member)
 
-    def display_book_list(self):
-        print(f'All the books in library are:')
-        for i in self.__books_available:
-            if i.get_borrower() != None:
-                print(f'Title: {i.get_title()}\nAuthor: {i.get_author()}\nGenre: {i.get_genre()}\nAvailable: {i.get_availability()}\nBorrowed by:{i.get_borrower().get_member_id()}\n---------------')
-            else:
-                print(f'Title: {i.get_title()}\nAuthor: {i.get_author()}\nGenre: {i.get_genre()}\nAvailable: {i.get_availability()}\nBorrowed by:{i.get_borrower()}\n---------------')
+#     def display_book_list(self):
+#         print(f'All the books in library are:')
+#         for i in self.__books_available:
+#             if i.get_borrower() != None:
+#                 print(f'Title: {i.get_title()}\nAuthor: {i.get_author()}\nGenre: {i.get_genre()}\nAvailable: {i.get_availability()}\nBorrowed by:{i.get_borrower().get_member_id()}\n---------------')
+#             else:
+#                 print(f'Title: {i.get_title()}\nAuthor: {i.get_author()}\nGenre: {i.get_genre()}\nAvailable: {i.get_availability()}\nBorrowed by:{i.get_borrower()}\n---------------')
             
             
-    def display_library_members(self):
-        print(f'All the members in library are:')
-        for i in self.__library_members:
-            print(f'Member ID: {i.get_member_id()}\nMember Name: {i.get_name()}\n---------------')
+#     def display_library_members(self):
+#         print(f'All the members in library are:')
+#         for i in self.__library_members:
+#             print(f'Member ID: {i.get_member_id()}\nMember Name: {i.get_name()}\n---------------')
 
-book1 = Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling", "Fiction")
-book2 = Book("Nothing Lasts Forever", "Sidney Sheldon", "Fiction")
-book3 = Book("Calculus", "Gilbert Strang", "Education")
+# book1 = Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling", "Fiction")
+# book2 = Book("Nothing Lasts Forever", "Sidney Sheldon", "Fiction")
+# book3 = Book("Calculus", "Gilbert Strang", "Education")
 
-book1.display_info()
-book2.display_info()
-book3.display_info()
+# book1.display_info()
+# book2.display_info()
+# book3.display_info()
 
-# Create LibraryMember objects
-member1 = LibraryMember("LM01", "Tom Cruise")
-member2 = LibraryMember("LM02", "Brad Pitt")
+# # Create LibraryMember objects
+# member1 = LibraryMember("LM01", "Tom Cruise")
+# member2 = LibraryMember("LM02", "Brad Pitt")
 
-# Create Library object
-library = Library()
+# # Create Library object
+# library = Library()
 
-# Add books to the library
-library.add_book(book1)
-library.add_book(book2)
-library.add_book(book3)
+# # Add books to the library
+# library.add_book(book1)
+# library.add_book(book2)
+# library.add_book(book3)
 
-# Add library members
-library.add_library_member(member1)
-library.add_library_member(member2)
+# # Add library members
+# library.add_library_member(member1)
+# library.add_library_member(member2)
 
-# Library members borrow books
-member1.borrow_book(book1)
-member1.borrow_book(book2)
-member2.borrow_book(book3)
+# # Library members borrow books
+# member1.borrow_book(book1)
+# member1.borrow_book(book2)
+# member2.borrow_book(book3)
 
-# Display all books in the library
-library.display_book_list()
-print("1======================================")
+# # Display all books in the library
+# library.display_book_list()
+# print("1======================================")
 
-# Display library members and their borrowed books
-member1.display_borrowed_books()
-print("2======================================")
-member2.display_borrowed_books()
-print("3======================================")
-# Returning book2 by member 1
-member1.return_book(book2)
-print("4======================================")
-# Display library member1's borrowed books
-member1.display_borrowed_books()
-# Display all books in the library
-library.display_book_list()
-library.display_library_members()
+# # Display library members and their borrowed books
+# member1.display_borrowed_books()
+# print("2======================================")
+# member2.display_borrowed_books()
+# print("3======================================")
+# # Returning book2 by member 1
+# member1.return_book(book2)
+# print("4======================================")
+# # Display library member1's borrowed books
+# member1.display_borrowed_books()
+# # Display all books in the library
+# library.display_book_list()
+# library.display_library_members()
