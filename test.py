@@ -4145,3 +4145,13 @@
 # print('14=========================================')
 # branch2.removeMovie(movie1)
 # StarCinema.showAllBranchInfo()
+
+# Rotate the list
+list = [3,5,7,9]
+
+rotate = 2
+
+for i in range(rotate):
+  last_item = list.pop()
+  list.insert(0,last_item)
+print(list)
