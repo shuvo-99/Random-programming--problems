@@ -4197,3 +4197,28 @@
 # is_james_bond([1, 2, 4, 0, 0, 7, 5])
 # is_james_bond( [1, 7, 2, 0, 4, 5, 0] )
 # is_james_bond( [1, 0, 2, 0, 4, 7, 5] )
+
+
+# Task - 3
+def assign_students_to_sections(*data):
+  section = data[0]
+  dict1 = {}
+
+  for i in section:
+    dict1[i] = []
+
+  for i in range(1, len(data)):
+    sum = 0
+    name = data[i]
+    for j in name:
+      sum+= ord(j)
+    section_no = sum%len(section)
+
+    for i in range(len(section)):
+      if i == section_no:
+        dict1[section[i]].append(name)
+    
+  print(dict1)
+
+
+assign_students_to_sections('ABCDE', 'Alice','Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace')
