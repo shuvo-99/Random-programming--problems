@@ -4147,11 +4147,11 @@
 # StarCinema.showAllBranchInfo()
 
 # Rotate the list
-list = [3,5,7,9]
+# list = [3,5,7,9]
 
-rotate = 2
+# rotate = 2
 
-for i in range(rotate):
-  last_item = list.pop()
-  list.insert(0,last_item)
-print(list)
+# for i in range(rotate):
+#   last_item = list.pop()
+#   list.insert(0,last_item)
+# print(list)
