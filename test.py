@@ -4181,18 +4181,18 @@
 
 
 # Task - 2
-def is_james_bond(data):
-  l = []
-  for i in data:
-    if i == 0 or i == 7:
-      l.append(i)
+# def is_james_bond(data):
+#   l = []
+#   for i in data:
+#     if i == 0 or i == 7:
+#       l.append(i)
   
-  for j in range(len(l)):
-    if (l[j] == 7) and (j>1):
-      if (l[j-1]==0) and (l[j-2]==0):
-        print('True')
-        return
-  print('False')
+#   for j in range(len(l)):
+#     if (l[j] == 7) and (j>1):
+#       if (l[j-1]==0) and (l[j-2]==0):
+#         print('True')
+#         return
+#   print('False')
     
 # is_james_bond([1, 2, 4, 0, 0, 7, 5])
 # is_james_bond( [1, 7, 2, 0, 4, 5, 0] )
