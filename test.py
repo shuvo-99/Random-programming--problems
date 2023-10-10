@@ -4159,21 +4159,21 @@
 # ------------------------ FALL 2023 -------------------------------
 # Assignment 2 - HW
 # TASK -1
-def hospital_fee(**data):
-  max_value = 0
-  max_key = []
+# def hospital_fee(**data):
+#   max_value = 0
+#   max_key = []
 
-  for v in data.values():
-    if v > max_value:
-      max_value = v
+#   for v in data.values():
+#     if v > max_value:
+#       max_value = v
 
-  for k,v in data.items():
-    if v == max_value:
-      max_key.append(k)
+#   for k,v in data.items():
+#     if v == max_value:
+#       max_key.append(k)
 
-  max_person = ','.join(max_key)
-  return max_value, max_person
+#   max_person = ','.join(max_key)
+#   return max_value, max_person
 
-max_amount, max_payer=hospital_fee(Neymar=1000, Dembele=600, Reus=500, Bale=1000)
-# max_amount, max_payer = hospital_fee(Mashrafe=400, Bumrah=900, Steyn=1200, Cummins=900, Wood=400, Marsh=700)
-print(f'Highest fee was {max_amount} tk which was paid by {max_payer}.')
+# max_amount, max_payer=hospital_fee(Neymar=1000, Dembele=600, Reus=500, Bale=1000)
+# # max_amount, max_payer = hospital_fee(Mashrafe=400, Bumrah=900, Steyn=1200, Cummins=900, Wood=400, Marsh=700)
+# print(f'Highest fee was {max_amount} tk which was paid by {max_payer}.')
