@@ -4157,6 +4157,7 @@
 # print(list)
 
 # ------------------------ FALL 2023 -------------------------------
+
 # Assignment 2 - HW
 # TASK -1
 # def hospital_fee(**data):
@@ -4177,3 +4178,22 @@
 # max_amount, max_payer=hospital_fee(Neymar=1000, Dembele=600, Reus=500, Bale=1000)
 # # max_amount, max_payer = hospital_fee(Mashrafe=400, Bumrah=900, Steyn=1200, Cummins=900, Wood=400, Marsh=700)
 # print(f'Highest fee was {max_amount} tk which was paid by {max_payer}.')
+
+
+# Task - 2
+def is_james_bond(data):
+  l = []
+  for i in data:
+    if i == 0 or i == 7:
+      l.append(i)
+  
+  for j in range(len(l)):
+    if (l[j] == 7) and (j>1):
+      if (l[j-1]==0) and (l[j-2]==0):
+        print('True')
+        return
+  print('False')
+    
+# is_james_bond([1, 2, 4, 0, 0, 7, 5])
+# is_james_bond( [1, 7, 2, 0, 4, 5, 0] )
+# is_james_bond( [1, 0, 2, 0, 4, 7, 5] )
