@@ -4250,3 +4250,24 @@
 
 # first_name, middle_name, last_name, student_id= 'MD', '', 'Ishmam', 19992564
 # print(username_generator(first_name, last_name, student_id, middle_name))
+
+# Task - 5
+def key_generator(*data):
+  res_list = []
+  for i in data:
+    res= ''
+    fst = i[0].lower()
+    lst = i[-1].upper()
+    mid = i[1:-1]
+    rev_mid = ''
+
+    for k in mid:
+      rev_mid = str(ord(k)) + rev_mid
+    
+    res += fst+rev_mid+lst
+    res_list.append(res)
+  
+  return res_list
+    
+key_list = key_generator("Alex","Bob", "Trudy")
+print(f'Encrypted Keys: {key_list}')
