@@ -4200,25 +4200,25 @@
 
 
 # Task - 3
-def assign_students_to_sections(*data):
-  section = data[0]
-  dict1 = {}
+# def assign_students_to_sections(*data):
+#   section = data[0]
+#   dict1 = {}
 
-  for i in section:
-    dict1[i] = []
+#   for i in section:
+#     dict1[i] = []
 
-  for i in range(1, len(data)):
-    sum = 0
-    name = data[i]
-    for j in name:
-      sum+= ord(j)
-    section_no = sum%len(section)
+#   for i in range(1, len(data)):
+#     sum = 0
+#     name = data[i]
+#     for j in name:
+#       sum+= ord(j)
+#     section_no = sum%len(section)
 
-    for i in range(len(section)):
-      if i == section_no:
-        dict1[section[i]].append(name)
+#     for i in range(len(section)):
+#       if i == section_no:
+#         dict1[section[i]].append(name)
     
-  print(dict1)
+#   print(dict1)
 
 
-assign_students_to_sections('ABCDE', 'Alice','Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace')
+# assign_students_to_sections('ABCDE', 'Alice','Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace')
