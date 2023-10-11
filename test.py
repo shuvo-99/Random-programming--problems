@@ -4252,22 +4252,63 @@
 # print(username_generator(first_name, last_name, student_id, middle_name))
 
 # Task - 5
-def key_generator(*data):
-  res_list = []
-  for i in data:
-    res= ''
-    fst = i[0].lower()
-    lst = i[-1].upper()
-    mid = i[1:-1]
-    rev_mid = ''
+# def key_generator(*data):
+#   res_list = []
+#   for i in data:
+#     res= ''
+#     fst = i[0].lower()
+#     lst = i[-1].upper()
+#     mid = i[1:-1]
+#     rev_mid = ''
 
-    for k in mid:
-      rev_mid = str(ord(k)) + rev_mid
+#     for k in mid:
+#       rev_mid = str(ord(k)) + rev_mid
     
-    res += fst+rev_mid+lst
-    res_list.append(res)
+#     res += fst+rev_mid+lst
+#     res_list.append(res)
   
-  return res_list
+#   return res_list
     
-key_list = key_generator("Alex","Bob", "Trudy")
-print(f'Encrypted Keys: {key_list}')
+# key_list = key_generator("Alex","Bob", "Trudy")
+# print(f'Encrypted Keys: {key_list}')
+
+# Task - 6
+import random
+
+def playRockPaperScissor(rounds):
+  my_score = 0
+  com_score = 0
+  for i in range(rounds):
+    inp2 = input()
+    X = random.choice(['rock', 'paper', 'scissor'])
+    print(X)
+
+    if inp2 == X:
+      continue
+    elif inp2 == 'rock':
+      if X == 'paper':
+        com_score+=1
+      else:
+        my_score+=1
+    elif inp2 == 'paper':
+      if X == 'scissor':
+        com_score+=1
+      else:
+        my_score+=1
+    elif inp2 == 'scissor':
+      if X == 'rock':
+        com_score+=1
+      else:
+        my_score+=1
+  
+  print(f'Your Score: {my_score}')
+  print(f"Computer's Score: {com_score}")
+  if com_score>my_score:
+    print("Computer has won the game!")
+  elif com_score==my_score:
+    print("It's a draw!")
+  else:
+    print("You have won the game!")
+    
+inp = int(input())
+playRockPaperScissor(inp)
