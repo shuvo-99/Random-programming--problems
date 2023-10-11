@@ -4224,29 +4224,29 @@
 # assign_students_to_sections('ABCDE', 'Alice','Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace')
 
 # Task - 4
-def username_generator(f_name, l_name, std, m_name = ''):
-  std = str(std)
-  f_count = 0
-  l_count = 0
-  l_name2 = ''
-  res = ''
+# def username_generator(f_name, l_name, std, m_name = ''):
+#   std = str(std)
+#   f_count = 0
+#   l_count = 0
+#   l_name2 = ''
+#   res = ''
 
-  for i in f_name:
-    if f_count<3:
-      res+= i.upper()
-      f_count +=1
-  res+= m_name
+#   for i in f_name:
+#     if f_count<3:
+#       res+= i.upper()
+#       f_count +=1
+#   res+= m_name
 
-  rev_l_name = l_name[-1::-1] 
+#   rev_l_name = l_name[-1::-1] 
 
-  for i in rev_l_name:
-    if l_count<3:
-      l_name2 += i.lower()
-      l_count +=1
+#   for i in rev_l_name:
+#     if l_count<3:
+#       l_name2 += i.lower()
+#       l_count +=1
   
-  res+= l_name2[-1::-1]
-  res+= '_'+std[4:]
-  return res  
+#   res+= l_name2[-1::-1]
+#   res+= '_'+std[4:]
+#   return res  
 
-first_name, middle_name, last_name, student_id= 'MD', '', 'Ishmam', 19992564
-print(username_generator(first_name, last_name, student_id, middle_name))
+# first_name, middle_name, last_name, student_id= 'MD', '', 'Ishmam', 19992564
+# print(username_generator(first_name, last_name, student_id, middle_name))
