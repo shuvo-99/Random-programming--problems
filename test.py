@@ -4273,42 +4273,146 @@
 # print(f'Encrypted Keys: {key_list}')
 
 # Task - 6
-import random
+# import random
 
-def playRockPaperScissor(rounds):
-  my_score = 0
-  com_score = 0
-  for i in range(rounds):
-    inp2 = input()
-    X = random.choice(['rock', 'paper', 'scissor'])
-    print(X)
+# def playRockPaperScissor(rounds):
+#   my_score = 0
+#   com_score = 0
+#   for i in range(rounds):
+#     inp2 = input()
+#     X = random.choice(['rock', 'paper', 'scissor'])
+#     print(X)
 
-    if inp2 == X:
-      continue
-    elif inp2 == 'rock':
-      if X == 'paper':
-        com_score+=1
-      else:
-        my_score+=1
-    elif inp2 == 'paper':
-      if X == 'scissor':
-        com_score+=1
-      else:
-        my_score+=1
-    elif inp2 == 'scissor':
-      if X == 'rock':
-        com_score+=1
-      else:
-        my_score+=1
+#     if inp2 == X:
+#       continue
+#     elif inp2 == 'rock':
+#       if X == 'paper':
+#         com_score+=1
+#       else:
+#         my_score+=1
+#     elif inp2 == 'paper':
+#       if X == 'scissor':
+#         com_score+=1
+#       else:
+#         my_score+=1
+#     elif inp2 == 'scissor':
+#       if X == 'rock':
+#         com_score+=1
+#       else:
+#         my_score+=1
   
-  print(f'Your Score: {my_score}')
-  print(f"Computer's Score: {com_score}")
-  if com_score>my_score:
-    print("Computer has won the game!")
-  elif com_score==my_score:
-    print("It's a draw!")
-  else:
-    print("You have won the game!")
+#   print(f'Your Score: {my_score}')
+#   print(f"Computer's Score: {com_score}")
+#   if com_score>my_score:
+#     print("Computer has won the game!")
+#   elif com_score==my_score:
+#     print("It's a draw!")
+#   else:
+#     print("You have won the game!")
     
-inp = int(input())
-playRockPaperScissor(inp)
+# inp = int(input())
+# playRockPaperScissor(inp)
+
+
+#class Store:
+
+#   def __init__(self, amount):
+#     self.balance = amount
+#     self.total_items = 0 
+#     print('New Branch created!')
+#     self.groceries = {}
+
+#   def viewAllItems(self):
+#     var = ''
+#     if self.total_items == 0:
+#       print('There are no items in your inventory')
+#     else:
+#       for k in self.groceries.keys():
+#         var += k+','
+#       print(f'All Items: {var[:-1]}')
+    
+
+#   def viewAllItemDetails(self):
+#     print(self.groceries)
+
+#   def add_item(self,l):
+#     self.total_items+=1
+#     self.groceryDetail = {}
+#     self.item = l[0]
+#     self.stock = l[1]
+#     self.buy_price = l[2]
+#     self.sell_price = l[3]
+
+#     self.balance -= (self.stock * self.buy_price)
+
+#     print(f'Item added: {self.item}')
+
+#     self.groceryDetail['stock'] = self.stock
+#     self.groceryDetail['buying_price'] = self.buy_price
+#     self.groceryDetail['selling_price'] = self.sell_price
+
+#     self.groceries[self.item] = self.groceryDetail
+
+#   def sell_item(self, item, sell_quantity):
+#     self.selling_item = item
+#     self.sell_quantity = sell_quantity
+
+#     for k,v in self.groceries.items():
+#       if k == self.selling_item:
+#         for m,n in v.items():
+#           if m == 'stock':
+#             if self.sell_quantity<= v[m]:
+#               v[m] = v[m] - self.sell_quantity
+#               self.balance +=  (v['selling_price'] * self.sell_quantity)
+
+              
+#             else:
+#               print(f'Sorry! {self.selling_item} is not available at your desired quantity. Currently we have: {v[m]}')
+        
+          
+#   def restock_item(self, item, restock_quan):
+#     for k,v in self.groceries.items():
+#       if k == item:
+#         for m,n in v.items():
+#           if m == 'stock':
+#             # print(v[m])
+#             v[m] = v[m] + restock_quan
+#             self.balance -=  (v['buying_price'] * restock_quan)
+
+
+# print("==========================")
+# branch1 = Store(5000)
+# print(f"Current Balance: {branch1.balance}")
+# print(f"Total items: {branch1.total_items}")
+# branch1.viewAllItems()
+# branch1.viewAllItemDetails()
+# print("==========================")
+# print(f"Current Balance: {branch1.balance}")
+# branch1.add_item(["ChaCha Noodles", 10, 5, 8])
+# print(f"Current Balance: {branch1.balance}")
+# branch1.add_item(["Sparrow Shampoo", 5, 10, 20])
+# print(f"Current Balance: {branch1.balance}")
+# print("==========================")
+# branch1.viewAllItems()
+# print()
+# branch1.viewAllItemDetails()
+# print()
+# print("==========================")
+# print(f"Current Balance: {branch1.balance}\n")
+# branch1.sell_item("ChaCha Noodles", 15)
+# print(f"Current Balance: {branch1.balance}\n")
+# branch1.viewAllItemDetails()
+# print()
+# branch1.sell_item("ChaCha Noodles", 10)
+# print()
+# print(f"Current Balance: {branch1.balance}\n")
+# branch1.viewAllItemDetails()
+# print()
+# print("==========================")
+# print(f"Current Balance: {branch1.balance}\n")
+# branch1.restock_item("ChaCha Noodles", 5)
+# print()
+# branch1.viewAllItemDetails()
+# print()
+# print(f"Current Balance: {branch1.balance}\n")
+# print("==========================")
