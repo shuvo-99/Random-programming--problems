@@ -4417,74 +4417,146 @@
 # print(f"Current Balance: {branch1.balance}\n")
 # print("==========================")
 # ------------------------------------
-class Rickshaw:
-  def __init__(self,capacity=2):
-    self.capacity=capacity
-    self.booked = False
-    self.passenger=[]
-    self.dict={}
-    self.fare=0
+# class Rickshaw:
+#   def __init__(self,capacity=2):
+#     self.capacity=capacity
+#     self.booked = False
+#     self.passenger=[]
+#     self.dict={}
+#     self.fare=0
 
-  def addPassengers(self,*info):
+#   def addPassengers(self,*info):
 
-    if self.booked == False:
-      self.info = list(info)
-      self.km = self.info.pop()
-      count = 0
-      for i in range(len(self.info)):
-        self.names=''
-        if count < self.capacity:
-          self.passenger.append(self.info[i])
-          self.names += self.info[i]+', '
-          count+=1
+#     if self.booked == False:
+#       self.info = list(info)
+#       self.km = self.info.pop()
+#       count = 0
+#       for i in range(len(self.info)):
+#         self.names=''
+#         if count < self.capacity:
+#           self.passenger.append(self.info[i])
+#           self.names += self.info[i]+', '
+#           count+=1
           
-          self.names = self.names[:-2]
-          self.booked = True
-          print(f'{self.names} is ready to ride {self.km} km(s)')
+#           self.names = self.names[:-2]
+#           self.booked = True
+#           print(f'{self.names} is ready to ride {self.km} km(s)')
 
-        else:
-          self.names += self.info[i]+', '
-          self.names = self.names[:-2]
-          print(f'Sorry, {self.names}. No more capacity.')       
+#         else:
+#           self.names += self.info[i]+', '
+#           self.names = self.names[:-2]
+#           print(f'Sorry, {self.names}. No more capacity.')       
 
-    else:
-      print(f'{len(self.passenger)} person(s) already booked the Rickshaw. Take another vehicle.')
+#     else:
+#       print(f'{len(self.passenger)} person(s) already booked the Rickshaw. Take another vehicle.')
 
-  def dropPassengers(self):
-    if len(self.passenger) != 0:
-      self.fare += self.km * 20
-      self.passenger.clear()
-      self.booked = False
-      print('All the passengers were dropped off.')
+#   def dropPassengers(self):
+#     if len(self.passenger) != 0:
+#       self.fare += self.km * 20
+#       self.passenger.clear()
+#       self.booked = False
+#       print('All the passengers were dropped off.')
 
-    else:
-      print('No passenger to drop.')
+#     else:
+#       print('No passenger to drop.')
   
-  def showInfo(self):
-    return f"Capacity: {self.capacity}\nCurrent Passengers: {self.passenger}\nToday's Total Fare: {self.fare} Taka"
+#   def showInfo(self):
+#     return f"Capacity: {self.capacity}\nCurrent Passengers: {self.passenger}\nToday's Total Fare: {self.fare} Taka"
   
-r1 = Rickshaw()
-print("1===========================")
-r1.addPassengers("Rony", 3)
-print("2===========================")
-print(r1.showInfo())
-print("3===========================")
-r1.addPassengers("Shanto", "Shakib","Riyad", "Yasir", 4)
-print("4===========================")
-r2 = Rickshaw(3)
-r2.addPassengers("Shanto", "Shakib","Riyad", "Yasir", 4)
-print("5===========================")
-r1.dropPassengers()
-print("6===========================")
-print(r2.showInfo())
-print("7===========================")
-r1.dropPassengers()
-print("8===========================")
-r1.addPassengers("Yasir", 4)
-print("9===========================")
-r2.dropPassengers()
-r1.dropPassengers()
-print("10===========================")
-print(r1.showInfo())
-print("11===========================")
-print(r2.showInfo())
+# r1 = Rickshaw()
+# print("1===========================")
+# r1.addPassengers("Rony", 3)
+# print("2===========================")
+# print(r1.showInfo())
+# print("3===========================")
+# r1.addPassengers("Shanto", "Shakib","Riyad", "Yasir", 4)
+# print("4===========================")
+# r2 = Rickshaw(3)
+# r2.addPassengers("Shanto", "Shakib","Riyad", "Yasir", 4)
+# print("5===========================")
+# r1.dropPassengers()
+# print("6===========================")
+# print(r2.showInfo())
+# print("7===========================")
+# r1.dropPassengers()
+# print("8===========================")
+# r1.addPassengers("Yasir", 4)
+# print("9===========================")
+# r2.dropPassengers()
+# r1.dropPassengers()
+# print("10===========================")
+# print(r1.showInfo())
+# print("11===========================")
+# print(r2.showInfo())
+
+# ============ Assignment 7 FALL 2023 ===============
+
+# class KK_tea:
+#     dict1={}
+#     def __init__(self, price, teabag=50):
+#         self.price = price
+#         self.teabag = teabag
+#         self.name = 'KK Regular Tea'
+#         self.weight = self.teabag * 2
+#         self.status = False
+#         if self.name not in KK_tea.dict1:
+#             KK_tea.dict1[self.name] = 0
+
+#     def product_detail(self):
+#         print(f'Name: {self.name}, Weight: {self.weight}\nTea Bags: {self.teabag}, Price: {self.price}\nStatus: {self.status}')
+
+#     @classmethod
+#     def total_sales(cls):
+#         print(f'Total sales: {cls.dict1}')
+
+#     @classmethod
+#     def update_sold_status_regular(cls, *args):
+#         if type(args[0]) == tuple:
+#             args = args[0]
+            
+#         for i in args:
+#             i.status = True
+#             if i.name in cls.dict1:
+#                 cls.dict1[i.name] = cls.dict1[i.name] + 1
+
+# class KK_flavoured_tea(KK_tea):
+#     def __init__(self,name,price,teabag):
+#         super().__init__(price,teabag)
+#         self.name = 'KK '+name+' Tea'
+#         super().dict1[self.name] = 0
+
+#     @classmethod
+#     def update_sold_status_flavoured(self, *args):
+#         # print(args)
+#         super().update_sold_status_regular(args)
+
+#     @classmethod
+#     def total_sales(self):
+#         super().total_sales()
+
+
+# t1 = KK_tea(250)
+# print("-----------------1-----------------")
+# t1.product_detail()
+# print("-----------------2-----------------")
+# KK_tea.total_sales()
+# print("-----------------3-----------------")
+# t2 = KK_tea(470, 100)
+# t3 = KK_tea(360, 75)
+# KK_tea.update_sold_status_regular(t1, t2, t3)
+# print("-----------------4-----------------")
+# t3.product_detail()
+# print("-----------------5-----------------")
+# KK_tea.total_sales()
+# print("-----------------6-----------------")
+# t4 = KK_flavoured_tea("Jasmine", 260, 50)
+# t5 = KK_flavoured_tea("Honey Lemon", 270, 45)
+# t6 = KK_flavoured_tea("Honey Lemon", 270, 45)
+# print("-----------------7-----------------")
+# t4.product_detail()
+# print("-----------------8-----------------")
+# t6.product_detail()
+# print("-----------------9-----------------")
+# KK_flavoured_tea.update_sold_status_flavoured(t4, t5, t6)
+# print("-----------------10-----------------")
+# KK_tea.total_sales()
